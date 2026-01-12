@@ -5,6 +5,49 @@ import { useMapStore } from '../../../stores/mapStore';
 import { MOCK_CLUBS } from '../../../services/mock/clubs.mock';
 import { MapProvider } from '../MapContext';
 import { MapMarker } from '../MapMarker';
+import { FloatingActionButton } from '../../FloatingActionButton';
+import { useKeepsakeStore } from '../../../stores/keepsakeStore';
+import { Trophy, Shirt, Wind, Award } from 'lucide-react';
+
+// Internal component for Keepsake Pin Design
+const KeepsakePin: React.FC<{ type: string }> = ({ type }) => {
+    const getIcon = () => {
+        switch (type) {
+            case 'SHIRT': return <Shirt className="w-3 h-3" />;
+            case 'SCARF': return <Wind className="w-3 h-3" />;
+            case 'BADGE': return <Award className="w-3 h-3" />;
+            default: return <Trophy className="w-3 h-3" />;
+        }
+    };
+    
+    return (
+        <div className="group relative cursor-pointer hover:z-50">
+            <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#10b981"
+                stroke="white"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                    width: '24px',
+                    height: '24px',
+                    filter: 'drop-shadow(0 4px 3px rgb(0 0 0 / 0.5))',
+                    transformOrigin: 'bottom center',
+                    transition: 'transform 0.2s ease-out'
+                }}
+                className="group-hover:-translate-y-1 group-hover:scale-110"
+            >
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            </svg>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[70%] text-white">
+                {getIcon()}
+            </div>
+        </div>
+    );
+};
 
 // Internal component for the Pin Design
 const ClubPin: React.FC<{ color: string; isCollected: boolean }> = ({ color, isCollected }) => (
@@ -45,6 +88,7 @@ export const MapView: React.FC = () => {
     const mapContainer = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<maplibregl.Map | null>(null);
     const { center, zoom, setViewport, selectMarker } = useMapStore();
+    const keepsakes = useKeepsakeStore(state => state.keepsakes);
 
     // Initialize Map
     useEffect(() => {
@@ -99,7 +143,24 @@ export const MapView: React.FC = () => {
                         </MapMarker>
                     );
                 })}
+                
+                {keepsakes.map(keepsake => (
+                    <MapMarker
+                        key={keepsake.id}
+                        latitude={keepsake.coordinates.latitude}
+                        longitude={keepsake.coordinates.longitude}
+                        onClick={() => {
+                            mapInstance?.flyTo({
+                                center: [keepsake.coordinates.longitude, keepsake.coordinates.latitude],
+                                zoom: 12
+                            });
+                        }}
+                    >
+                        <KeepsakePin type={keepsake.type} />
+                    </MapMarker>
+                ))}
             </MapProvider>
+            <FloatingActionButton />
         </div>
     );
 };
