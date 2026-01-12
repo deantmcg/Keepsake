@@ -8,14 +8,15 @@ import { MapMarker } from '../MapMarker';
 import { FloatingActionButton } from '../../FloatingActionButton';
 import { useKeepsakeStore } from '../../../stores/keepsakeStore';
 import { Trophy, Shirt, Wind, Award } from 'lucide-react';
+import { ItemType } from '../../../types/domain';
 
 // Internal component for Keepsake Pin Design
 const KeepsakePin: React.FC<{ type: string }> = ({ type }) => {
     const getIcon = () => {
         switch (type) {
-            case 'SHIRT': return <Shirt className="w-3 h-3" />;
-            case 'SCARF': return <Wind className="w-3 h-3" />;
-            case 'BADGE': return <Award className="w-3 h-3" />;
+            case ItemType.SHIRT: return <Shirt className="w-3 h-3" />;
+            case ItemType.SCARF: return <Wind className="w-3 h-3" />;
+            case ItemType.BADGE: return <Award className="w-3 h-3" />;
             default: return <Trophy className="w-3 h-3" />;
         }
     };
@@ -26,7 +27,7 @@ const KeepsakePin: React.FC<{ type: string }> = ({ type }) => {
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                fill="#10b981"
+                fill="var(--success)"
                 stroke="white"
                 strokeWidth="1.5"
                 strokeLinecap="round"
