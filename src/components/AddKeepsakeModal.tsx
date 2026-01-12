@@ -5,6 +5,7 @@ import { MOCK_CLUBS } from '../services/mock/clubs.mock';
 import { useKeepsakeStore } from '../stores/keepsakeStore';
 import type { KeepsakeWithLocation } from '../stores/keepsakeStore';
 import { ItemType } from '../types/domain';
+import { SearchableSelect } from './SearchableSelect';
 
 interface AddKeepsakeModalProps {
     type: 'match' | 'shirt' | 'scarf' | 'badge';
@@ -131,18 +132,15 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                             <label className="block text-sm font-medium text-foreground mb-2">
                                 Select Match
                             </label>
-                            <select
+                            <SearchableSelect
                                 value={selectedMatchId}
-                                onChange={(e) => setSelectedMatchId(e.target.value)}
-                                className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
-                            >
-                                <option value="">Choose a match...</option>
-                                {MOCK_MATCHES.map(match => (
-                                    <option key={match.id} value={match.id}>
-                                        {formatMatchForDropdown(match)}
-                                    </option>
-                                ))}
-                            </select>
+                                onChange={setSelectedMatchId}
+                                options={MOCK_MATCHES.map(match => ({
+                                    value: match.id,
+                                    label: formatMatchForDropdown(match)
+                                }))}
+                                placeholder="Choose a match..."
+                            />
                         </div>
                     )}
                     
@@ -152,50 +150,49 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                                 <label className="block text-sm font-medium text-foreground mb-2">
                                     Team
                                 </label>
-                                <select
+                                <SearchableSelect
                                     value={shirtClubId}
-                                    onChange={(e) => setShirtClubId(e.target.value)}
-                                    className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
-                                >
-                                    <option value="">Choose a team...</option>
-                                    {MOCK_CLUBS.map(club => (
-                                        <option key={club.id} value={club.id}>
-                                            {club.name}
-                                        </option>
-                                    ))}
-                                </select>
+                                    onChange={setShirtClubId}
+                                    options={MOCK_CLUBS.map(club => ({
+                                        value: club.id,
+                                        label: club.name
+                                    }))}
+                                    placeholder="Choose a team..."
+                                />
                             </div>
                             
                             <div>
                                 <label className="block text-sm font-medium text-foreground mb-2">
                                     Kit Type
                                 </label>
-                                <select
+                                <SearchableSelect
                                     value={shirtKitType}
-                                    onChange={(e) => setShirtKitType(e.target.value as 'HOME' | 'AWAY' | 'THIRD')}
-                                    className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
-                                >
-                                    <option value="HOME">Home</option>
-                                    <option value="AWAY">Away</option>
-                                    <option value="THIRD">Alternative</option>
-                                </select>
+                                    onChange={(value) => setShirtKitType(value as 'HOME' | 'AWAY' | 'THIRD')}
+                                    options={[
+                                        { value: 'HOME', label: 'Home' },
+                                        { value: 'AWAY', label: 'Away' },
+                                        { value: 'THIRD', label: 'Alternative' }
+                                    ]}
+                                    placeholder="Select kit type..."
+                                />
                             </div>
                             
                             <div>
                                 <label className="block text-sm font-medium text-foreground mb-2">
                                     Season
                                 </label>
-                                <select
+                                <SearchableSelect
                                     value={shirtSeason}
-                                    onChange={(e) => setShirtSeason(e.target.value)}
-                                    className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
-                                >
-                                    <option value="2024/25">2024/25</option>
-                                    <option value="2023/24">2023/24</option>
-                                    <option value="2022/23">2022/23</option>
-                                    <option value="2021/22">2021/22</option>
-                                    <option value="2020/21">2020/21</option>
-                                </select>
+                                    onChange={setShirtSeason}
+                                    options={[
+                                        { value: '2024/25', label: '2024/25' },
+                                        { value: '2023/24', label: '2023/24' },
+                                        { value: '2022/23', label: '2022/23' },
+                                        { value: '2021/22', label: '2021/22' },
+                                        { value: '2020/21', label: '2020/21' }
+                                    ]}
+                                    placeholder="Select season..."
+                                />
                             </div>
                         </>
                     )}
@@ -205,18 +202,15 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                             <label className="block text-sm font-medium text-foreground mb-2">
                                 Team
                             </label>
-                            <select
+                            <SearchableSelect
                                 value={scarfClubId}
-                                onChange={(e) => setScarfClubId(e.target.value)}
-                                className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
-                            >
-                                <option value="">Choose a team...</option>
-                                {MOCK_CLUBS.map(club => (
-                                    <option key={club.id} value={club.id}>
-                                        {club.name}
-                                    </option>
-                                ))}
-                            </select>
+                                onChange={setScarfClubId}
+                                options={MOCK_CLUBS.map(club => ({
+                                    value: club.id,
+                                    label: club.name
+                                }))}
+                                placeholder="Choose a team..."
+                            />
                         </div>
                     )}
                     
@@ -225,18 +219,15 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                             <label className="block text-sm font-medium text-foreground mb-2">
                                 Team
                             </label>
-                            <select
+                            <SearchableSelect
                                 value={badgeClubId}
-                                onChange={(e) => setBadgeClubId(e.target.value)}
-                                className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
-                            >
-                                <option value="">Choose a team...</option>
-                                {MOCK_CLUBS.map(club => (
-                                    <option key={club.id} value={club.id}>
-                                        {club.name}
-                                    </option>
-                                ))}
-                            </select>
+                                onChange={setBadgeClubId}
+                                options={MOCK_CLUBS.map(club => ({
+                                    value: club.id,
+                                    label: club.name
+                                }))}
+                                placeholder="Choose a team..."
+                            />
                         </div>
                     )}
                     
