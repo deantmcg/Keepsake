@@ -1129,7 +1129,7 @@ export const MOCK_CLUBS: Club[] = [
             city: 'Genoa',
             country: 'Italy',
             coordinates: { latitude: 44.4167, longitude: 8.9524 },
-            clubs: ['268']
+            clubs: ['268', '303']
         },
         coordinates: { latitude: 44.4167, longitude: 8.9524 },
         founded: 1893,
@@ -1147,7 +1147,7 @@ export const MOCK_CLUBS: Club[] = [
             city: 'Milan',
             country: 'Italy',
             coordinates: { latitude: 45.4781, longitude: 9.124 },
-            clubs: ['269']
+            clubs: ['269', '271']
         },
         coordinates: { latitude: 45.4781, longitude: 9.124 },
         founded: 1908,
@@ -1178,12 +1178,12 @@ export const MOCK_CLUBS: Club[] = [
         country: 'Italy',
         city: 'Milan',
         stadium: {
-            id: 's271',
+            id: 's269',
             name: 'San Siro',
             city: 'Milan',
             country: 'Italy',
             coordinates: { latitude: 45.4781, longitude: 9.124 },
-            clubs: ['271']
+            clubs: ['269', '271']
         },
         coordinates: { latitude: 45.4781, longitude: 9.124 },
         founded: 1899,
@@ -1237,7 +1237,7 @@ export const MOCK_CLUBS: Club[] = [
             city: 'Rome',
             country: 'Italy',
             coordinates: { latitude: 41.9342, longitude: 12.4547 },
-            clubs: ['274']
+            clubs: ['274', '280']
         },
         coordinates: { latitude: 41.9342, longitude: 12.4547 },
         founded: 1900,
@@ -1340,12 +1340,12 @@ export const MOCK_CLUBS: Club[] = [
         country: 'Italy',
         city: 'Rome',
         stadium: {
-            id: 's280',
+            id: 's274',
             name: 'Stadio Olimpico',
             city: 'Rome',
             country: 'Italy',
             coordinates: { latitude: 41.9342, longitude: 12.4547 },
-            clubs: ['280']
+            clubs: ['274', '280']
         },
         coordinates: { latitude: 41.9342, longitude: 12.4547 },
         founded: 1927,
@@ -1394,12 +1394,12 @@ export const MOCK_CLUBS: Club[] = [
         country: 'Italy',
         city: 'Genoa',
         stadium: {
-            id: 's303',
+            id: 's268',
             name: 'Stadio Luigi Ferraris',
             city: 'Genoa',
             country: 'Italy',
             coordinates: { latitude: 44.4167, longitude: 8.9524 },
-            clubs: ['303']
+            clubs: ['268', '303']
         },
         coordinates: { latitude: 44.4167, longitude: 8.9524 },
         founded: 1946,
