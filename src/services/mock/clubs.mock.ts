@@ -4,6 +4,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '1',
         name: 'Crystal Palace',
+        normalizedName: 'CRYSTAL PALACE',
         shortName: 'Palace',
         country: 'England',
         city: 'London',
@@ -22,6 +23,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '2',
         name: 'Everton',
+        normalizedName: 'EVERTON',
         shortName: 'Everton',
         country: 'England',
         city: 'Liverpool',
@@ -40,7 +42,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '3',
         name: 'Sheffield United',
-        shortName: 'Sheffield United',
+        normalizedName: 'SHEFFIELD UNITED',
+        shortName: 'Sheffield Utd',
         country: 'England',
         city: 'Sheffield',
         stadium: {
@@ -58,7 +61,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '4',
         name: 'Manchester United',
-        shortName: 'Manchester United',
+        normalizedName: 'MANCHESTER UNITED',
+        shortName: 'Man Utd',
         country: 'England',
         city: 'Manchester',
         stadium: {
@@ -76,6 +80,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '5',
         name: 'Aston Villa',
+        normalizedName: 'ASTON VILLA',
         shortName: 'Villa',
         country: 'England',
         city: 'Birmingham',
@@ -94,7 +99,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '6',
         name: 'Tottenham Hotspur',
-        shortName: 'Tottenham Hotspur',
+        normalizedName: 'TOTTENHAM HOTSPUR',
+        shortName: 'Spurs',
         country: 'England',
         city: 'London',
         stadium: {
@@ -112,7 +118,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '7',
         name: 'Wolverhampton Wanderers',
-        shortName: 'Wolverhampton Wanderers',
+        normalizedName: 'WOLVERHAMPTON WANDERERS',
+        shortName: 'Wolves',
         country: 'England',
         city: 'Wolverhampton',
         stadium: {
@@ -130,7 +137,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '8',
         name: 'Norwich City',
-        shortName: 'Norwich City',
+        normalizedName: 'NORWICH CITY',
+        shortName: 'Norwich',
         country: 'England',
         city: 'Norwich',
         stadium: {
@@ -148,7 +156,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '9',
         name: 'West Ham United',
-        shortName: 'West Ham United',
+        normalizedName: 'WEST HAM UNITED',
+        shortName: 'West Ham',
         country: 'England',
         city: 'London',
         stadium: {
@@ -166,7 +175,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '10',
         name: 'Manchester City',
-        shortName: 'Manchester City',
+        normalizedName: 'MANCHESTER CITY',
+        shortName: 'Man City',
         country: 'England',
         city: 'Manchester',
         stadium: {
@@ -184,6 +194,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '11',
         name: 'Arsenal',
+        normalizedName: 'ARSENAL',
         shortName: 'Arsenal',
         country: 'England',
         city: 'London',
@@ -202,7 +213,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '12',
         name: 'Leicester City',
-        shortName: 'Leicester City',
+        normalizedName: 'LEICESTER CITY',
+        shortName: 'Leicester',
         country: 'England',
         city: 'Leicester',
         stadium: {
@@ -220,6 +232,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '13',
         name: 'Chelsea',
+        normalizedName: 'CHELSEA',
         shortName: 'Chelsea',
         country: 'England',
         city: 'London',
@@ -238,6 +251,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '16',
         name: 'Liverpool',
+        normalizedName: 'LIVERPOOL',
         shortName: 'Liverpool',
         country: 'England',
         city: 'Liverpool',
@@ -256,6 +270,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '17',
         name: 'Burnley',
+        normalizedName: 'BURNLEY',
         shortName: 'Burnley',
         country: 'England',
         city: 'Burnley',
@@ -274,6 +289,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '18',
         name: 'Bournemouth',
+        normalizedName: 'BOURNEMOUTH',
         shortName: 'Bournemouth',
         country: 'England',
         city: 'Bournemouth',
@@ -292,7 +308,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '19',
         name: 'Newcastle United',
-        shortName: 'Newcastle United',
+        normalizedName: 'NEWCASTLE UNITED',
+        shortName: 'Newcastle',
         country: 'England',
         city: 'Newcastle upon Tyne',
         stadium: {
@@ -310,7 +327,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '20',
         name: 'Brighton & Hove Albion',
-        shortName: 'Brighton & Hove Albion',
+        normalizedName: 'BRIGHTON & HOVE ALBION',
+        shortName: 'Brighton',
         country: 'England',
         city: 'Brighton',
         stadium: {
@@ -328,6 +346,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '21',
         name: 'Watford',
+        normalizedName: 'WATFORD',
         shortName: 'Watford',
         country: 'England',
         city: 'Watford',
@@ -346,6 +365,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '30',
         name: 'Southampton',
+        normalizedName: 'SOUTHAMPTON',
         shortName: 'Southampton',
         country: 'England',
         city: 'Southampton',
@@ -364,6 +384,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '32',
         name: 'Valencia',
+        normalizedName: 'VALENCIA',
         shortName: 'Valencia',
         country: 'Spain',
         city: 'Valencia',
@@ -382,6 +403,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '33',
         name: 'Lille',
+        normalizedName: 'LILLE',
         shortName: 'Lille',
         country: 'France',
         city: 'Lille',
@@ -400,7 +422,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '38',
         name: 'Bayern Munich',
-        shortName: 'Munich',
+        normalizedName: 'BAYERN MUNICH',
+        shortName: 'Bayern',
         country: 'Germany',
         city: 'Munich',
         stadium: {
@@ -418,6 +441,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '42',
         name: 'Napoli',
+        normalizedName: 'NAPOLI',
         shortName: 'Napoli',
         country: 'Italy',
         city: 'Naples',
@@ -436,7 +460,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '45',
         name: 'Atlético Madrid',
-        shortName: 'Madrid',
+        normalizedName: 'ATLETICO MADRID',
+        shortName: 'Atlético',
         country: 'Spain',
         city: 'Madrid',
         stadium: {
@@ -454,6 +479,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '50',
         name: 'Atalanta',
+        normalizedName: 'ATALANTA',
         shortName: 'Atalanta',
         country: 'Italy',
         city: 'Bergamo',
@@ -472,6 +498,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '79',
         name: 'RB Leipzig',
+        normalizedName: 'RB LEIPZIG',
         shortName: 'Leipzig',
         country: 'Germany',
         city: 'Leipzig',
@@ -490,6 +517,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '98',
         name: 'Leganés',
+        normalizedName: 'LEGANES',
         shortName: 'Leganés',
         country: 'Spain',
         city: 'Leganés',
@@ -508,6 +536,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '99',
         name: 'Villarreal',
+        normalizedName: 'VILLARREAL',
         shortName: 'Villarreal',
         country: 'Spain',
         city: 'Villarreal',
@@ -526,6 +555,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '100',
         name: 'Valladolid',
+        normalizedName: 'VALLADOLID',
         shortName: 'Valladolid',
         country: 'Spain',
         city: 'Valladolid',
@@ -544,7 +574,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '101',
         name: 'Barcelona',
-        shortName: 'Barcelona',
+        normalizedName: 'BARCELONA',
+        shortName: 'Barça',
         country: 'Spain',
         city: 'Barcelona',
         stadium: {
@@ -562,6 +593,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '102',
         name: 'Mallorca',
+        normalizedName: 'MALLORCA',
         shortName: 'Mallorca',
         country: 'Spain',
         city: 'Palma',
@@ -580,6 +612,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '103',
         name: 'Sevilla',
+        normalizedName: 'SEVILLA',
         shortName: 'Sevilla',
         country: 'Spain',
         city: 'Seville',
@@ -598,6 +631,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '104',
         name: 'Espanyol',
+        normalizedName: 'ESPANYOL',
         shortName: 'Espanyol',
         country: 'Spain',
         city: 'Barcelona',
@@ -616,6 +650,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '105',
         name: 'Eibar',
+        normalizedName: 'EIBAR',
         shortName: 'Eibar',
         country: 'Spain',
         city: 'Eibar',
@@ -634,7 +669,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '106',
         name: 'Athletic Club',
-        shortName: 'Club',
+        normalizedName: 'ATHLETIC CLUB',
+        shortName: 'Athletic',
         country: 'Spain',
         city: 'Bilbao',
         stadium: {
@@ -652,7 +688,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '107',
         name: 'Real Madrid',
-        shortName: 'Madrid',
+        normalizedName: 'REAL MADRID',
+        shortName: 'Real Madrid',
         country: 'Spain',
         city: 'Madrid',
         stadium: {
@@ -670,7 +707,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '114',
         name: 'Paris Saint-Germain',
-        shortName: 'Saint-Germain',
+        normalizedName: 'PARIS SAINT-GERMAIN',
+        shortName: 'PSG',
         country: 'France',
         city: 'Paris',
         stadium: {
@@ -688,6 +726,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '125',
         name: 'Eintracht Frankfurt',
+        normalizedName: 'EINTRACHT FRANKFURT',
         shortName: 'Frankfurt',
         country: 'Germany',
         city: 'Frankfurt',
@@ -706,6 +745,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '126',
         name: 'Werder Bremen',
+        normalizedName: 'WERDER BREMEN',
         shortName: 'Bremen',
         country: 'Germany',
         city: 'Bremen',
@@ -724,7 +764,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '127',
         name: 'Schalke 04',
-        shortName: '04',
+        normalizedName: 'SCHALKE 04',
+        shortName: 'Schalke',
         country: 'Germany',
         city: 'Gelsenkirchen',
         stadium: {
@@ -742,6 +783,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '128',
         name: 'Bayer Leverkusen',
+        normalizedName: 'BAYER LEVERKUSEN',
         shortName: 'Leverkusen',
         country: 'Germany',
         city: 'Leverkusen',
@@ -760,6 +802,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '129',
         name: 'Wolfsburg',
+        normalizedName: 'WOLFSBURG',
         shortName: 'Wolfsburg',
         country: 'Germany',
         city: 'Wolfsburg',
@@ -778,6 +821,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '130',
         name: 'Freiburg',
+        normalizedName: 'FREIBURG',
         shortName: 'Freiburg',
         country: 'Germany',
         city: 'Freiburg',
@@ -796,7 +840,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '131',
         name: 'Hertha BSC',
-        shortName: 'BSC',
+        normalizedName: 'HERTHA BSC',
+        shortName: 'Hertha',
         country: 'Germany',
         city: 'Berlin',
         stadium: {
@@ -814,6 +859,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '132',
         name: 'Köln',
+        normalizedName: 'KOLN',
         shortName: 'Köln',
         country: 'Germany',
         city: 'Cologne',
@@ -832,7 +878,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '133',
         name: 'Paderborn 07',
-        shortName: '07',
+        normalizedName: 'PADERBORN 07',
+        shortName: 'Paderborn',
         country: 'Germany',
         city: 'Paderborn',
         stadium: {
@@ -850,6 +897,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '134',
         name: 'Hoffenheim',
+        normalizedName: 'HOFFENHEIM',
         shortName: 'Hoffenheim',
         country: 'Germany',
         city: 'Sinsheim',
@@ -868,6 +916,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '135',
         name: 'Düsseldorf',
+        normalizedName: 'DUSSELDORF',
         shortName: 'Düsseldorf',
         country: 'Germany',
         city: 'Düsseldorf',
@@ -886,6 +935,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '136',
         name: 'Dortmund',
+        normalizedName: 'DORTMUND',
         shortName: 'Dortmund',
         country: 'Germany',
         city: 'Dortmund',
@@ -904,6 +954,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '137',
         name: 'Augsburg',
+        normalizedName: 'AUGSBURG',
         shortName: 'Augsburg',
         country: 'Germany',
         city: 'Augsburg',
@@ -922,16 +973,17 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '231',
         name: 'Torino',
+        normalizedName: 'TORINO',
         shortName: 'Torino',
         country: 'Italy',
         city: 'Turin',
         stadium: {
-            id: 's231',
+            id: 's274',
             name: 'Stadio Olimpico Grande Torino',
             city: 'Turin',
             country: 'Italy',
             coordinates: { latitude: 45.0619, longitude: 7.6414 },
-            clubs: ['231']
+            clubs: ['274', '280']
         },
         coordinates: { latitude: 45.0619, longitude: 7.6414 },
         founded: 1906,
@@ -940,6 +992,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '248',
         name: 'Alavés',
+        normalizedName: 'ALAVES',
         shortName: 'Alavés',
         country: 'Spain',
         city: 'Vitoria-Gasteiz',
@@ -958,6 +1011,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '249',
         name: 'Levante',
+        normalizedName: 'LEVANTE',
         shortName: 'Levante',
         country: 'Spain',
         city: 'Valencia',
@@ -976,7 +1030,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '250',
         name: 'Real Sociedad',
-        shortName: 'Sociedad',
+        normalizedName: 'REAL SOCIEDAD',
+        shortName: 'Real Sociedad',
         country: 'Spain',
         city: 'San Sebastián',
         stadium: {
@@ -994,6 +1049,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '251',
         name: 'Osasuna',
+        normalizedName: 'OSASUNA',
         shortName: 'Osasuna',
         country: 'Spain',
         city: 'Pamplona',
@@ -1012,6 +1068,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '252',
         name: 'Granada',
+        normalizedName: 'GRANADA',
         shortName: 'Granada',
         country: 'Spain',
         city: 'Granada',
@@ -1030,6 +1087,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '253',
         name: 'Getafe',
+        normalizedName: 'GETAFE',
         shortName: 'Getafe',
         country: 'Spain',
         city: 'Getafe',
@@ -1048,6 +1106,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '254',
         name: 'Real Betis',
+        normalizedName: 'REAL BETIS',
         shortName: 'Betis',
         country: 'Spain',
         city: 'Seville',
@@ -1066,6 +1125,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '257',
         name: 'Lyon',
+        normalizedName: 'LYON',
         shortName: 'Lyon',
         country: 'France',
         city: 'Lyon',
@@ -1084,6 +1144,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '266',
         name: 'Fiorentina',
+        normalizedName: 'FIORENTINA',
         shortName: 'Fiorentina',
         country: 'Italy',
         city: 'Florence',
@@ -1102,6 +1163,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '267',
         name: 'SPAL',
+        normalizedName: 'SPAL',
         shortName: 'SPAL',
         country: 'Italy',
         city: 'Ferrara',
@@ -1120,6 +1182,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '268',
         name: 'Genoa',
+        normalizedName: 'GENOA',
         shortName: 'Genoa',
         country: 'Italy',
         city: 'Genoa',
@@ -1138,7 +1201,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '269',
         name: 'Internazionale',
-        shortName: 'Internazionale',
+        normalizedName: 'INTERNAZIONALE',
+        shortName: 'Inter',
         country: 'Italy',
         city: 'Milan',
         stadium: {
@@ -1156,6 +1220,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '270',
         name: 'Juventus',
+        normalizedName: 'JUVENTUS',
         shortName: 'Juventus',
         country: 'Italy',
         city: 'Turin',
@@ -1174,6 +1239,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '271',
         name: 'Milan',
+        normalizedName: 'MILAN',
         shortName: 'Milan',
         country: 'Italy',
         city: 'Milan',
@@ -1192,6 +1258,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '272',
         name: 'Udinese',
+        normalizedName: 'UDINESE',
         shortName: 'Udinese',
         country: 'Italy',
         city: 'Udine',
@@ -1210,6 +1277,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '273',
         name: 'Brescia',
+        normalizedName: 'BRESCIA',
         shortName: 'Brescia',
         country: 'Italy',
         city: 'Brescia',
@@ -1228,6 +1296,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '274',
         name: 'Lazio',
+        normalizedName: 'LAZIO',
         shortName: 'Lazio',
         country: 'Italy',
         city: 'Rome',
@@ -1246,6 +1315,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '275',
         name: 'Sassuolo',
+        normalizedName: 'SASSUOLO',
         shortName: 'Sassuolo',
         country: 'Italy',
         city: 'Reggio Emilia',
@@ -1264,6 +1334,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '276',
         name: 'Parma',
+        normalizedName: 'PARMA',
         shortName: 'Parma',
         country: 'Italy',
         city: 'Parma',
@@ -1282,6 +1353,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '277',
         name: 'Cagliari',
+        normalizedName: 'CAGLIARI',
         shortName: 'Cagliari',
         country: 'Italy',
         city: 'Cagliari',
@@ -1300,6 +1372,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '278',
         name: 'Hellas Verona',
+        normalizedName: 'HELLAS VERONA',
         shortName: 'Verona',
         country: 'Italy',
         city: 'Verona',
@@ -1318,6 +1391,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '279',
         name: 'Lecce',
+        normalizedName: 'LECCE',
         shortName: 'Lecce',
         country: 'Italy',
         city: 'Lecce',
@@ -1336,6 +1410,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '280',
         name: 'Roma',
+        normalizedName: 'ROMA',
         shortName: 'Roma',
         country: 'Italy',
         city: 'Rome',
@@ -1354,6 +1429,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '281',
         name: 'Bologna',
+        normalizedName: 'BOLOGNA',
         shortName: 'Bologna',
         country: 'Italy',
         city: 'Bologna',
@@ -1372,7 +1448,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '295',
         name: 'Mainz 05',
-        shortName: '05',
+        normalizedName: 'MAINZ 05',
+        shortName: 'Mainz',
         country: 'Germany',
         city: 'Mainz',
         stadium: {
@@ -1390,6 +1467,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '303',
         name: 'Sampdoria',
+        normalizedName: 'SAMPDORIA',
         shortName: 'Sampdoria',
         country: 'Italy',
         city: 'Genoa',
@@ -1408,7 +1486,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '333',
         name: 'Celta Vigo',
-        shortName: 'Vigo',
+        normalizedName: 'CELTA VIGO',
+        shortName: 'Celta',
         country: 'Spain',
         city: 'Vigo',
         stadium: {
@@ -1426,7 +1505,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '366',
         name: 'Mönchengladbach',
-        shortName: 'Mönchengladbach',
+        normalizedName: 'MONCHENGLADBACH',
+        shortName: 'Gladbach',
         country: 'Germany',
         city: 'Mönchengladbach',
         stadium: {
@@ -1444,7 +1524,8 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '474',
         name: 'Union Berlin',
-        shortName: 'Berlin',
+        normalizedName: 'UNION BERLIN',
+        shortName: 'Union Berlin',
         country: 'Germany',
         city: 'Berlin',
         stadium: {
@@ -1462,6 +1543,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '488',
         name: 'Monaco',
+        normalizedName: 'MONACO',
         shortName: 'Monaco',
         country: 'France',
         city: 'Monaco',
@@ -1480,6 +1562,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '489',
         name: 'Marseille',
+        normalizedName: 'MARSEILLE',
         shortName: 'Marseille',
         country: 'France',
         city: 'Marseille',
@@ -1498,6 +1581,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '490',
         name: 'Reims',
+        normalizedName: 'REIMS',
         shortName: 'Reims',
         country: 'France',
         city: 'Reims',
@@ -1516,6 +1600,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '491',
         name: 'Nice',
+        normalizedName: 'NICE',
         shortName: 'Nice',
         country: 'France',
         city: 'Nice',
@@ -1534,6 +1619,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '492',
         name: 'Saint-Étienne',
+        normalizedName: 'SAINT-ETIENNE',
         shortName: 'Saint-Étienne',
         country: 'France',
         city: 'Saint-Étienne',
@@ -1552,6 +1638,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '493',
         name: 'Dijon',
+        normalizedName: 'DIJON',
         shortName: 'Dijon',
         country: 'France',
         city: 'Dijon',
@@ -1570,6 +1657,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '494',
         name: 'Bordeaux',
+        normalizedName: 'BORDEAUX',
         shortName: 'Bordeaux',
         country: 'France',
         city: 'Bordeaux',
@@ -1588,6 +1676,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '495',
         name: 'Toulouse',
+        normalizedName: 'TOULOUSE',
         shortName: 'Toulouse',
         country: 'France',
         city: 'Toulouse',
@@ -1606,6 +1695,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '496',
         name: 'Amiens',
+        normalizedName: 'AMIENS',
         shortName: 'Amiens',
         country: 'France',
         city: 'Amiens',
@@ -1624,6 +1714,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '511',
         name: 'Strasbourg',
+        normalizedName: 'STRASBOURG',
         shortName: 'Strasbourg',
         country: 'France',
         city: 'Strasbourg',
@@ -1642,6 +1733,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '514',
         name: 'Metz',
+        normalizedName: 'METZ',
         shortName: 'Metz',
         country: 'France',
         city: 'Metz',
@@ -1660,6 +1752,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '515',
         name: 'Rennes',
+        normalizedName: 'RENNES',
         shortName: 'Rennes',
         country: 'France',
         city: 'Rennes',
@@ -1678,6 +1771,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '516',
         name: 'Nantes',
+        normalizedName: 'NANTES',
         shortName: 'Nantes',
         country: 'France',
         city: 'Nantes',
@@ -1696,6 +1790,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '517',
         name: 'Montpellier',
+        normalizedName: 'MONTPELLIER',
         shortName: 'Montpellier',
         country: 'France',
         city: 'Montpellier',
@@ -1714,6 +1809,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '518',
         name: 'Brest',
+        normalizedName: 'BREST',
         shortName: 'Brest',
         country: 'France',
         city: 'Brest',
@@ -1732,6 +1828,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '620',
         name: 'Angers',
+        normalizedName: 'ANGERS',
         shortName: 'Angers',
         country: 'France',
         city: 'Angers',
@@ -1750,6 +1847,7 @@ export const MOCK_CLUBS: Club[] = [
     {
         id: '621',
         name: 'Nîmes',
+        normalizedName: 'NIMES',
         shortName: 'Nîmes',
         country: 'France',
         city: 'Nîmes',

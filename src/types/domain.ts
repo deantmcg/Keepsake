@@ -1,6 +1,7 @@
 export interface Club {
     id: string;
     name: string;
+    normalizedName: string;
     shortName?: string;
     country: string;
     city: string;
