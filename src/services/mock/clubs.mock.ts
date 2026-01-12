@@ -1863,4 +1863,1051 @@ export const MOCK_CLUBS: Club[] = [
         founded: 1937,
         colors: ['#000000', '#FFFFFF']
     },
+    // Primeira Liga (Portugal) - Rank 6
+    {
+        id: '622',
+        name: 'Benfica',
+        normalizedName: 'BENFICA',
+        shortName: 'Benfica',
+        country: 'Portugal',
+        city: 'Lisbon',
+        stadium: {
+            id: 's622',
+            name: 'Estádio da Luz',
+            city: 'Lisbon',
+            country: 'Portugal',
+            coordinates: { latitude: 38.7526, longitude: -9.1847 },
+            clubs: ['622']
+        },
+        coordinates: { latitude: 38.7526, longitude: -9.1847 },
+        founded: 1904,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: '623',
+        name: 'Porto',
+        normalizedName: 'PORTO',
+        shortName: 'Porto',
+        country: 'Portugal',
+        city: 'Porto',
+        stadium: {
+            id: 's623',
+            name: 'Estádio do Dragão',
+            city: 'Porto',
+            country: 'Portugal',
+            coordinates: { latitude: 41.1619, longitude: -8.5833 },
+            clubs: ['623']
+        },
+        coordinates: { latitude: 41.1619, longitude: -8.5833 },
+        founded: 1893,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '624',
+        name: 'Sporting CP',
+        normalizedName: 'SPORTING CP',
+        shortName: 'Sporting',
+        country: 'Portugal',
+        city: 'Lisbon',
+        stadium: {
+            id: 's624',
+            name: 'Estádio José Alvalade',
+            city: 'Lisbon',
+            country: 'Portugal',
+            coordinates: { latitude: 38.7614, longitude: -9.1608 },
+            clubs: ['624']
+        },
+        coordinates: { latitude: 38.7614, longitude: -9.1608 },
+        founded: 1906,
+        colors: ['#00b140', '#ffffff']
+    },
+    {
+        id: '625',
+        name: 'Braga',
+        normalizedName: 'BRAGA',
+        shortName: 'Braga',
+        country: 'Portugal',
+        city: 'Braga',
+        stadium: {
+            id: 's625',
+            name: 'Estádio Municipal de Braga',
+            city: 'Braga',
+            country: 'Portugal',
+            coordinates: { latitude: 41.5622, longitude: -8.4308 },
+            clubs: ['625']
+        },
+        coordinates: { latitude: 41.5622, longitude: -8.4308 },
+        founded: 1921,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    // Eredivisie (Netherlands) - Rank 7
+    {
+        id: '626',
+        name: 'Ajax',
+        normalizedName: 'AJAX',
+        shortName: 'Ajax',
+        country: 'Netherlands',
+        city: 'Amsterdam',
+        stadium: {
+            id: 's626',
+            name: 'Johan Cruyff Arena',
+            city: 'Amsterdam',
+            country: 'Netherlands',
+            coordinates: { latitude: 52.3142, longitude: 4.9419 },
+            clubs: ['626']
+        },
+        coordinates: { latitude: 52.3142, longitude: 4.9419 },
+        founded: 1900,
+        colors: ['#d2122e', '#ffffff']
+    },
+    {
+        id: '627',
+        name: 'PSV Eindhoven',
+        normalizedName: 'PSV EINDHOVEN',
+        shortName: 'PSV',
+        country: 'Netherlands',
+        city: 'Eindhoven',
+        stadium: {
+            id: 's627',
+            name: 'Philips Stadion',
+            city: 'Eindhoven',
+            country: 'Netherlands',
+            coordinates: { latitude: 51.4417, longitude: 5.4675 },
+            clubs: ['627']
+        },
+        coordinates: { latitude: 51.4417, longitude: 5.4675 },
+        founded: 1913,
+        colors: ['#ed1b2e', '#ffffff']
+    },
+    {
+        id: '628',
+        name: 'Feyenoord',
+        normalizedName: 'FEYENOORD',
+        shortName: 'Feyenoord',
+        country: 'Netherlands',
+        city: 'Rotterdam',
+        stadium: {
+            id: 's628',
+            name: 'De Kuip',
+            city: 'Rotterdam',
+            country: 'Netherlands',
+            coordinates: { latitude: 51.8939, longitude: 4.5236 },
+            clubs: ['628']
+        },
+        coordinates: { latitude: 51.8939, longitude: 4.5236 },
+        founded: 1908,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: '629',
+        name: 'AZ Alkmaar',
+        normalizedName: 'AZ ALKMAAR',
+        shortName: 'AZ',
+        country: 'Netherlands',
+        city: 'Alkmaar',
+        stadium: {
+            id: 's629',
+            name: 'AFAS Stadion',
+            city: 'Alkmaar',
+            country: 'Netherlands',
+            coordinates: { latitude: 52.6097, longitude: 4.7394 },
+            clubs: ['629']
+        },
+        coordinates: { latitude: 52.6097, longitude: 4.7394 },
+        founded: 1967,
+        colors: ['#da020e', '#ffffff']
+    },
+    // Belgian Pro League - Rank 8
+    {
+        id: '630',
+        name: 'Club Brugge',
+        normalizedName: 'CLUB BRUGGE',
+        shortName: 'Club Brugge',
+        country: 'Belgium',
+        city: 'Bruges',
+        stadium: {
+            id: 's630',
+            name: 'Jan Breydel Stadium',
+            city: 'Bruges',
+            country: 'Belgium',
+            coordinates: { latitude: 51.1948, longitude: 3.1789 },
+            clubs: ['630']
+        },
+        coordinates: { latitude: 51.1948, longitude: 3.1789 },
+        founded: 1891,
+        colors: ['#005baa', '#000000']
+    },
+    {
+        id: '631',
+        name: 'Anderlecht',
+        normalizedName: 'ANDERLECHT',
+        shortName: 'Anderlecht',
+        country: 'Belgium',
+        city: 'Brussels',
+        stadium: {
+            id: 's631',
+            name: 'Lotto Park',
+            city: 'Brussels',
+            country: 'Belgium',
+            coordinates: { latitude: 50.8333, longitude: 4.2975 },
+            clubs: ['631']
+        },
+        coordinates: { latitude: 50.8333, longitude: 4.2975 },
+        founded: 1908,
+        colors: ['#6c2782', '#ffffff']
+    },
+    {
+        id: '632',
+        name: 'Standard Liège',
+        normalizedName: 'STANDARD LIEGE',
+        shortName: 'Standard',
+        country: 'Belgium',
+        city: 'Liège',
+        stadium: {
+            id: 's632',
+            name: 'Maurice Dufrasne Stadium',
+            city: 'Liège',
+            country: 'Belgium',
+            coordinates: { latitude: 50.6114, longitude: 5.5392 },
+            clubs: ['632']
+        },
+        coordinates: { latitude: 50.6114, longitude: 5.5392 },
+        founded: 1898,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    // MLS (USA/Canada) - Rank 9
+    {
+        id: '633',
+        name: 'LA Galaxy',
+        normalizedName: 'LA GALAXY',
+        shortName: 'LA Galaxy',
+        country: 'USA',
+        city: 'Los Angeles',
+        stadium: {
+            id: 's633',
+            name: 'Dignity Health Sports Park',
+            city: 'Los Angeles',
+            country: 'USA',
+            coordinates: { latitude: 33.8644, longitude: -118.2611 },
+            clubs: ['633']
+        },
+        coordinates: { latitude: 33.8644, longitude: -118.2611 },
+        founded: 1995,
+        colors: ['#00245d', '#ffd200', '#ffffff']
+    },
+    {
+        id: '634',
+        name: 'Seattle Sounders',
+        normalizedName: 'SEATTLE SOUNDERS',
+        shortName: 'Sounders',
+        country: 'USA',
+        city: 'Seattle',
+        stadium: {
+            id: 's634',
+            name: 'Lumen Field',
+            city: 'Seattle',
+            country: 'USA',
+            coordinates: { latitude: 47.5952, longitude: -122.3316 },
+            clubs: ['634']
+        },
+        coordinates: { latitude: 47.5952, longitude: -122.3316 },
+        founded: 2007,
+        colors: ['#5d9741', '#005595', '#002f65']
+    },
+    {
+        id: '635',
+        name: 'Inter Miami',
+        normalizedName: 'INTER MIAMI',
+        shortName: 'Inter Miami',
+        country: 'USA',
+        city: 'Miami',
+        stadium: {
+            id: 's635',
+            name: 'Chase Stadium',
+            city: 'Fort Lauderdale',
+            country: 'USA',
+            coordinates: { latitude: 26.1931, longitude: -80.1628 },
+            clubs: ['635']
+        },
+        coordinates: { latitude: 26.1931, longitude: -80.1628 },
+        founded: 2018,
+        colors: ['#f7b5cd', '#000000']
+    },
+    // Süper Lig (Turkey) - Rank 10
+    {
+        id: '636',
+        name: 'Galatasaray',
+        normalizedName: 'GALATASARAY',
+        shortName: 'Galatasaray',
+        country: 'Turkey',
+        city: 'Istanbul',
+        stadium: {
+            id: 's636',
+            name: 'Türk Telekom Stadium',
+            city: 'Istanbul',
+            country: 'Turkey',
+            coordinates: { latitude: 41.1039, longitude: 28.9903 },
+            clubs: ['636']
+        },
+        coordinates: { latitude: 41.1039, longitude: 28.9903 },
+        founded: 1905,
+        colors: ['#fbb800', '#b71c1c']
+    },
+    {
+        id: '637',
+        name: 'Fenerbahçe',
+        normalizedName: 'FENERBAHCE',
+        shortName: 'Fenerbahçe',
+        country: 'Turkey',
+        city: 'Istanbul',
+        stadium: {
+            id: 's637',
+            name: 'Şükrü Saracoğlu Stadium',
+            city: 'Istanbul',
+            country: 'Turkey',
+            coordinates: { latitude: 40.9894, longitude: 29.0361 },
+            clubs: ['637']
+        },
+        coordinates: { latitude: 40.9894, longitude: 29.0361 },
+        founded: 1907,
+        colors: ['#ffed00', '#001489']
+    },
+    {
+        id: '638',
+        name: 'Beşiktaş',
+        normalizedName: 'BESIKTAS',
+        shortName: 'Beşiktaş',
+        country: 'Turkey',
+        city: 'Istanbul',
+        stadium: {
+            id: 's638',
+            name: 'Vodafone Park',
+            city: 'Istanbul',
+            country: 'Turkey',
+            coordinates: { latitude: 41.0392, longitude: 29.0031 },
+            clubs: ['638']
+        },
+        coordinates: { latitude: 41.0392, longitude: 29.0031 },
+        founded: 1903,
+        colors: ['#000000', '#ffffff']
+    },
+    // Liga Profesional (Argentina) - Rank 11
+    {
+        id: '639',
+        name: 'Boca Juniors',
+        normalizedName: 'BOCA JUNIORS',
+        shortName: 'Boca',
+        country: 'Argentina',
+        city: 'Buenos Aires',
+        stadium: {
+            id: 's639',
+            name: 'La Bombonera',
+            city: 'Buenos Aires',
+            country: 'Argentina',
+            coordinates: { latitude: -34.6356, longitude: -58.3647 },
+            clubs: ['639']
+        },
+        coordinates: { latitude: -34.6356, longitude: -58.3647 },
+        founded: 1905,
+        colors: ['#005ca9', '#fbff09']
+    },
+    {
+        id: '640',
+        name: 'River Plate',
+        normalizedName: 'RIVER PLATE',
+        shortName: 'River',
+        country: 'Argentina',
+        city: 'Buenos Aires',
+        stadium: {
+            id: 's640',
+            name: 'Estadio Monumental',
+            city: 'Buenos Aires',
+            country: 'Argentina',
+            coordinates: { latitude: -34.5453, longitude: -58.4497 },
+            clubs: ['640']
+        },
+        coordinates: { latitude: -34.5453, longitude: -58.4497 },
+        founded: 1901,
+        colors: ['#ffffff', '#ed1c24']
+    },
+    {
+        id: '641',
+        name: 'Racing Club',
+        normalizedName: 'RACING CLUB',
+        shortName: 'Racing',
+        country: 'Argentina',
+        city: 'Avellaneda',
+        stadium: {
+            id: 's641',
+            name: 'Estadio Presidente Perón',
+            city: 'Avellaneda',
+            country: 'Argentina',
+            coordinates: { latitude: -34.6672, longitude: -58.3697 },
+            clubs: ['641']
+        },
+        coordinates: { latitude: -34.6672, longitude: -58.3697 },
+        founded: 1903,
+        colors: ['#6bb4e7', '#ffffff']
+    },
+    // Brasileirão (Brazil) - Rank 12
+    {
+        id: '642',
+        name: 'Flamengo',
+        normalizedName: 'FLAMENGO',
+        shortName: 'Flamengo',
+        country: 'Brazil',
+        city: 'Rio de Janeiro',
+        stadium: {
+            id: 's642',
+            name: 'Maracanã',
+            city: 'Rio de Janeiro',
+            country: 'Brazil',
+            coordinates: { latitude: -22.9122, longitude: -43.2302 },
+            clubs: ['642', '643']
+        },
+        coordinates: { latitude: -22.9122, longitude: -43.2302 },
+        founded: 1895,
+        colors: ['#e31f26', '#000000']
+    },
+    {
+        id: '643',
+        name: 'Fluminense',
+        normalizedName: 'FLUMINENSE',
+        shortName: 'Fluminense',
+        country: 'Brazil',
+        city: 'Rio de Janeiro',
+        stadium: {
+            id: 's642',
+            name: 'Maracanã',
+            city: 'Rio de Janeiro',
+            country: 'Brazil',
+            coordinates: { latitude: -22.9122, longitude: -43.2302 },
+            clubs: ['642', '643']
+        },
+        coordinates: { latitude: -22.9122, longitude: -43.2302 },
+        founded: 1902,
+        colors: ['#6f263d', '#006341', '#ffffff']
+    },
+    {
+        id: '644',
+        name: 'Palmeiras',
+        normalizedName: 'PALMEIRAS',
+        shortName: 'Palmeiras',
+        country: 'Brazil',
+        city: 'São Paulo',
+        stadium: {
+            id: 's644',
+            name: 'Allianz Parque',
+            city: 'São Paulo',
+            country: 'Brazil',
+            coordinates: { latitude: -23.5272, longitude: -46.6794 },
+            clubs: ['644']
+        },
+        coordinates: { latitude: -23.5272, longitude: -46.6794 },
+        founded: 1914,
+        colors: ['#006f3c', '#ffffff']
+    },
+    {
+        id: '645',
+        name: 'São Paulo',
+        normalizedName: 'SAO PAULO',
+        shortName: 'São Paulo',
+        country: 'Brazil',
+        city: 'São Paulo',
+        stadium: {
+            id: 's645',
+            name: 'Morumbi',
+            city: 'São Paulo',
+            country: 'Brazil',
+            coordinates: { latitude: -23.6000, longitude: -46.7208 },
+            clubs: ['645']
+        },
+        coordinates: { latitude: -23.6000, longitude: -46.7208 },
+        founded: 1930,
+        colors: ['#ed1c24', '#000000', '#ffffff']
+    },
+    // Liga MX (Mexico) - Rank 13
+    {
+        id: '646',
+        name: 'Club América',
+        normalizedName: 'CLUB AMERICA',
+        shortName: 'América',
+        country: 'Mexico',
+        city: 'Mexico City',
+        stadium: {
+            id: 's646',
+            name: 'Estadio Azteca',
+            city: 'Mexico City',
+            country: 'Mexico',
+            coordinates: { latitude: 19.3028, longitude: -99.1506 },
+            clubs: ['646']
+        },
+        coordinates: { latitude: 19.3028, longitude: -99.1506 },
+        founded: 1916,
+        colors: ['#ffed00', '#002d62']
+    },
+    {
+        id: '647',
+        name: 'Chivas Guadalajara',
+        normalizedName: 'CHIVAS GUADALAJARA',
+        shortName: 'Chivas',
+        country: 'Mexico',
+        city: 'Guadalajara',
+        stadium: {
+            id: 's647',
+            name: 'Estadio Akron',
+            city: 'Guadalajara',
+            country: 'Mexico',
+            coordinates: { latitude: 20.6869, longitude: -103.4644 },
+            clubs: ['647']
+        },
+        coordinates: { latitude: 20.6869, longitude: -103.4644 },
+        founded: 1906,
+        colors: ['#ed1c24', '#ffffff', '#001f5c']
+    },
+    {
+        id: '648',
+        name: 'Cruz Azul',
+        normalizedName: 'CRUZ AZUL',
+        shortName: 'Cruz Azul',
+        country: 'Mexico',
+        city: 'Mexico City',
+        stadium: {
+            id: 's648',
+            name: 'Estadio Ciudad de los Deportes',
+            city: 'Mexico City',
+            country: 'Mexico',
+            coordinates: { latitude: 19.4061, longitude: -99.1808 },
+            clubs: ['648']
+        },
+        coordinates: { latitude: 19.4061, longitude: -99.1808 },
+        founded: 1927,
+        colors: ['#0066b3', '#ffffff']
+    },
+    // J1 League (Japan) - Rank 14
+    {
+        id: '649',
+        name: 'Urawa Red Diamonds',
+        normalizedName: 'URAWA RED DIAMONDS',
+        shortName: 'Urawa',
+        country: 'Japan',
+        city: 'Saitama',
+        stadium: {
+            id: 's649',
+            name: 'Saitama Stadium 2002',
+            city: 'Saitama',
+            country: 'Japan',
+            coordinates: { latitude: 35.9072, longitude: 139.6953 },
+            clubs: ['649']
+        },
+        coordinates: { latitude: 35.9072, longitude: 139.6953 },
+        founded: 1950,
+        colors: ['#e30613', '#000000']
+    },
+    {
+        id: '650',
+        name: 'Yokohama F. Marinos',
+        normalizedName: 'YOKOHAMA F. MARINOS',
+        shortName: 'Marinos',
+        country: 'Japan',
+        city: 'Yokohama',
+        stadium: {
+            id: 's650',
+            name: 'Nissan Stadium',
+            city: 'Yokohama',
+            country: 'Japan',
+            coordinates: { latitude: 35.5092, longitude: 139.6050 },
+            clubs: ['650']
+        },
+        coordinates: { latitude: 35.5092, longitude: 139.6050 },
+        founded: 1972,
+        colors: ['#004a9d', '#ffffff']
+    },
+    {
+        id: '651',
+        name: 'Kawasaki Frontale',
+        normalizedName: 'KAWASAKI FRONTALE',
+        shortName: 'Kawasaki',
+        country: 'Japan',
+        city: 'Kawasaki',
+        stadium: {
+            id: 's651',
+            name: 'Todoroki Athletics Stadium',
+            city: 'Kawasaki',
+            country: 'Japan',
+            coordinates: { latitude: 35.5667, longitude: 139.6544 },
+            clubs: ['651']
+        },
+        coordinates: { latitude: 35.5667, longitude: 139.6544 },
+        founded: 1955,
+        colors: ['#28b8e7', '#000000']
+    },
+    // Scottish Premiership - Rank 26
+    {
+        id: '652',
+        name: 'Celtic',
+        normalizedName: 'CELTIC',
+        shortName: 'Celtic',
+        country: 'Scotland',
+        city: 'Glasgow',
+        stadium: {
+            id: 's652',
+            name: 'Celtic Park',
+            city: 'Glasgow',
+            country: 'Scotland',
+            coordinates: { latitude: 55.8494, longitude: -4.2055 },
+            clubs: ['652']
+        },
+        coordinates: { latitude: 55.8494, longitude: -4.2055 },
+        founded: 1887,
+        colors: ['#009a44', '#ffffff']
+    },
+    {
+        id: '653',
+        name: 'Rangers',
+        normalizedName: 'RANGERS',
+        shortName: 'Rangers',
+        country: 'Scotland',
+        city: 'Glasgow',
+        stadium: {
+            id: 's653',
+            name: 'Ibrox Stadium',
+            city: 'Glasgow',
+            country: 'Scotland',
+            coordinates: { latitude: 55.8533, longitude: -4.3092 },
+            clubs: ['653']
+        },
+        coordinates: { latitude: 55.8533, longitude: -4.3092 },
+        founded: 1872,
+        colors: ['#0d4fa5', '#ed1c24', '#ffffff']
+    },
+    {
+        id: '654',
+        name: 'Aberdeen',
+        normalizedName: 'ABERDEEN',
+        shortName: 'Aberdeen',
+        country: 'Scotland',
+        city: 'Aberdeen',
+        stadium: {
+            id: 's654',
+            name: 'Pittodrie Stadium',
+            city: 'Aberdeen',
+            country: 'Scotland',
+            coordinates: { latitude: 57.1594, longitude: -2.0886 },
+            clubs: ['654']
+        },
+        coordinates: { latitude: 57.1594, longitude: -2.0886 },
+        founded: 1903,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    // Saudi Pro League - Rank 25
+    {
+        id: '655',
+        name: 'Al Hilal',
+        normalizedName: 'AL HILAL',
+        shortName: 'Al Hilal',
+        country: 'Saudi Arabia',
+        city: 'Riyadh',
+        stadium: {
+            id: 's655',
+            name: 'King Fahd International Stadium',
+            city: 'Riyadh',
+            country: 'Saudi Arabia',
+            coordinates: { latitude: 24.6881, longitude: 46.6833 },
+            clubs: ['655']
+        },
+        coordinates: { latitude: 24.6881, longitude: 46.6833 },
+        founded: 1957,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '656',
+        name: 'Al Nassr',
+        normalizedName: 'AL NASSR',
+        shortName: 'Al Nassr',
+        country: 'Saudi Arabia',
+        city: 'Riyadh',
+        stadium: {
+            id: 's656',
+            name: 'Mrsool Park',
+            city: 'Riyadh',
+            country: 'Saudi Arabia',
+            coordinates: { latitude: 24.6947, longitude: 46.7089 },
+            clubs: ['656']
+        },
+        coordinates: { latitude: 24.6947, longitude: 46.7089 },
+        founded: 1955,
+        colors: ['#ffed00', '#0066cc']
+    },
+    {
+        id: '657',
+        name: 'Al Ittihad',
+        normalizedName: 'AL ITTIHAD',
+        shortName: 'Al Ittihad',
+        country: 'Saudi Arabia',
+        city: 'Jeddah',
+        stadium: {
+            id: 's657',
+            name: 'King Abdullah Sports City',
+            city: 'Jeddah',
+            country: 'Saudi Arabia',
+            coordinates: { latitude: 21.6708, longitude: 39.1147 },
+            clubs: ['657']
+        },
+        coordinates: { latitude: 21.6708, longitude: 39.1147 },
+        founded: 1927,
+        colors: ['#000000', '#ffed00']
+    },
+    // Additional European leagues
+    // Danish Superligaen - Rank 17
+    {
+        id: '658',
+        name: 'FC Copenhagen',
+        normalizedName: 'FC COPENHAGEN',
+        shortName: 'Copenhagen',
+        country: 'Denmark',
+        city: 'Copenhagen',
+        stadium: {
+            id: 's658',
+            name: 'Parken Stadium',
+            city: 'Copenhagen',
+            country: 'Denmark',
+            coordinates: { latitude: 55.7025, longitude: 12.5722 },
+            clubs: ['658']
+        },
+        coordinates: { latitude: 55.7025, longitude: 12.5722 },
+        founded: 1992,
+        colors: ['#001f5c', '#ffffff']
+    },
+    {
+        id: '659',
+        name: 'Brøndby',
+        normalizedName: 'BRONDBY',
+        shortName: 'Brøndby',
+        country: 'Denmark',
+        city: 'Brøndby',
+        stadium: {
+            id: 's659',
+            name: 'Brøndby Stadium',
+            city: 'Brøndby',
+            country: 'Denmark',
+            coordinates: { latitude: 55.6475, longitude: 12.4253 },
+            clubs: ['659']
+        },
+        coordinates: { latitude: 55.6475, longitude: 12.4253 },
+        founded: 1964,
+        colors: ['#003d7a', '#ffed00']
+    },
+    // Swedish Allsvenskan - Rank 18
+    {
+        id: '660',
+        name: 'Malmö FF',
+        normalizedName: 'MALMO FF',
+        shortName: 'Malmö',
+        country: 'Sweden',
+        city: 'Malmö',
+        stadium: {
+            id: 's660',
+            name: 'Eleda Stadion',
+            city: 'Malmö',
+            country: 'Sweden',
+            coordinates: { latitude: 55.5636, longitude: 12.9958 },
+            clubs: ['660']
+        },
+        coordinates: { latitude: 55.5636, longitude: 12.9958 },
+        founded: 1910,
+        colors: ['#6bb4e7', '#ffffff']
+    },
+    {
+        id: '661',
+        name: 'AIK',
+        normalizedName: 'AIK',
+        shortName: 'AIK',
+        country: 'Sweden',
+        city: 'Stockholm',
+        stadium: {
+            id: 's661',
+            name: 'Friends Arena',
+            city: 'Stockholm',
+            country: 'Sweden',
+            coordinates: { latitude: 59.3717, longitude: 17.9297 },
+            clubs: ['661']
+        },
+        coordinates: { latitude: 59.3717, longitude: 17.9297 },
+        founded: 1891,
+        colors: ['#000000', '#ffed00']
+    },
+    // Austrian Bundesliga - Rank 20
+    {
+        id: '662',
+        name: 'Red Bull Salzburg',
+        normalizedName: 'RED BULL SALZBURG',
+        shortName: 'Salzburg',
+        country: 'Austria',
+        city: 'Salzburg',
+        stadium: {
+            id: 's662',
+            name: 'Red Bull Arena',
+            city: 'Salzburg',
+            country: 'Austria',
+            coordinates: { latitude: 47.8167, longitude: 13.0447 },
+            clubs: ['662']
+        },
+        coordinates: { latitude: 47.8167, longitude: 13.0447 },
+        founded: 1933,
+        colors: ['#ed1b2e', '#ffffff']
+    },
+    {
+        id: '663',
+        name: 'Rapid Wien',
+        normalizedName: 'RAPID WIEN',
+        shortName: 'Rapid',
+        country: 'Austria',
+        city: 'Vienna',
+        stadium: {
+            id: 's663',
+            name: 'Allianz Stadion',
+            city: 'Vienna',
+            country: 'Austria',
+            coordinates: { latitude: 48.1603, longitude: 16.2697 },
+            clubs: ['663']
+        },
+        coordinates: { latitude: 48.1603, longitude: 16.2697 },
+        founded: 1899,
+        colors: ['#009a44', '#ffffff']
+    },
+    // Swiss Super League - Rank 21
+    {
+        id: '664',
+        name: 'Young Boys',
+        normalizedName: 'YOUNG BOYS',
+        shortName: 'Young Boys',
+        country: 'Switzerland',
+        city: 'Bern',
+        stadium: {
+            id: 's664',
+            name: 'Wankdorf Stadium',
+            city: 'Bern',
+            country: 'Switzerland',
+            coordinates: { latitude: 46.9631, longitude: 7.4650 },
+            clubs: ['664']
+        },
+        coordinates: { latitude: 46.9631, longitude: 7.4650 },
+        founded: 1898,
+        colors: ['#ffed00', '#000000']
+    },
+    {
+        id: '665',
+        name: 'Basel',
+        normalizedName: 'BASEL',
+        shortName: 'Basel',
+        country: 'Switzerland',
+        city: 'Basel',
+        stadium: {
+            id: 's665',
+            name: 'St. Jakob-Park',
+            city: 'Basel',
+            country: 'Switzerland',
+            coordinates: { latitude: 47.5417, longitude: 7.6208 },
+            clubs: ['665']
+        },
+        coordinates: { latitude: 47.5417, longitude: 7.6208 },
+        founded: 1893,
+        colors: ['#ed1c24', '#0066cc']
+    },
+    // Norwegian Eliteserien - Rank 22
+    {
+        id: '666',
+        name: 'Rosenborg',
+        normalizedName: 'ROSENBORG',
+        shortName: 'Rosenborg',
+        country: 'Norway',
+        city: 'Trondheim',
+        stadium: {
+            id: 's666',
+            name: 'Lerkendal Stadion',
+            city: 'Trondheim',
+            country: 'Norway',
+            coordinates: { latitude: 63.4128, longitude: 10.4053 },
+            clubs: ['666']
+        },
+        coordinates: { latitude: 63.4128, longitude: 10.4053 },
+        founded: 1917,
+        colors: ['#ffffff', '#000000']
+    },
+    {
+        id: '667',
+        name: 'Molde',
+        normalizedName: 'MOLDE',
+        shortName: 'Molde',
+        country: 'Norway',
+        city: 'Molde',
+        stadium: {
+            id: 's667',
+            name: 'Aker Stadion',
+            city: 'Molde',
+            country: 'Norway',
+            coordinates: { latitude: 62.7411, longitude: 7.2164 },
+            clubs: ['667']
+        },
+        coordinates: { latitude: 62.7411, longitude: 7.2164 },
+        founded: 1911,
+        colors: ['#0066cc', '#ffffff']
+    },
+    // Polish Ekstraklasa - Rank 16
+    {
+        id: '668',
+        name: 'Legia Warsaw',
+        normalizedName: 'LEGIA WARSAW',
+        shortName: 'Legia',
+        country: 'Poland',
+        city: 'Warsaw',
+        stadium: {
+            id: 's668',
+            name: 'Stadion Wojska Polskiego',
+            city: 'Warsaw',
+            country: 'Poland',
+            coordinates: { latitude: 52.2308, longitude: 20.9944 },
+            clubs: ['668']
+        },
+        coordinates: { latitude: 52.2308, longitude: 20.9944 },
+        founded: 1916,
+        colors: ['#009a44', '#ffffff']
+    },
+    {
+        id: '669',
+        name: 'Lech Poznań',
+        normalizedName: 'LECH POZNAN',
+        shortName: 'Lech',
+        country: 'Poland',
+        city: 'Poznań',
+        stadium: {
+            id: 's669',
+            name: 'ENEA Stadium',
+            city: 'Poznań',
+            country: 'Poland',
+            coordinates: { latitude: 52.3975, longitude: 16.8847 },
+            clubs: ['669']
+        },
+        coordinates: { latitude: 52.3975, longitude: 16.8847 },
+        founded: 1922,
+        colors: ['#0066cc', '#ffffff']
+    },
+    // Croatian Prva HNL - Rank 15
+    {
+        id: '670',
+        name: 'Dinamo Zagreb',
+        normalizedName: 'DINAMO ZAGREB',
+        shortName: 'Dinamo',
+        country: 'Croatia',
+        city: 'Zagreb',
+        stadium: {
+            id: 's670',
+            name: 'Stadion Maksimir',
+            city: 'Zagreb',
+            country: 'Croatia',
+            coordinates: { latitude: 45.8197, longitude: 16.0169 },
+            clubs: ['670']
+        },
+        coordinates: { latitude: 45.8197, longitude: 16.0169 },
+        founded: 1945,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '671',
+        name: 'Hajduk Split',
+        normalizedName: 'HAJDUK SPLIT',
+        shortName: 'Hajduk',
+        country: 'Croatia',
+        city: 'Split',
+        stadium: {
+            id: 's671',
+            name: 'Stadion Poljud',
+            city: 'Split',
+            country: 'Croatia',
+            coordinates: { latitude: 43.5203, longitude: 16.4383 },
+            clubs: ['671']
+        },
+        coordinates: { latitude: 43.5203, longitude: 16.4383 },
+        founded: 1911,
+        colors: ['#ffffff', '#0066cc']
+    },
+    // Czech First League - Rank 23
+    {
+        id: '672',
+        name: 'Slavia Prague',
+        normalizedName: 'SLAVIA PRAGUE',
+        shortName: 'Slavia',
+        country: 'Czech Republic',
+        city: 'Prague',
+        stadium: {
+            id: 's672',
+            name: 'Fortuna Arena',
+            city: 'Prague',
+            country: 'Czech Republic',
+            coordinates: { latitude: 50.0697, longitude: 14.4711 },
+            clubs: ['672']
+        },
+        coordinates: { latitude: 50.0697, longitude: 14.4711 },
+        founded: 1892,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    {
+        id: '673',
+        name: 'Sparta Prague',
+        normalizedName: 'SPARTA PRAGUE',
+        shortName: 'Sparta',
+        country: 'Czech Republic',
+        city: 'Prague',
+        stadium: {
+            id: 's673',
+            name: 'Generali Česká pojišťovna Arena',
+            city: 'Prague',
+            country: 'Czech Republic',
+            coordinates: { latitude: 50.0997, longitude: 14.4164 },
+            clubs: ['673']
+        },
+        coordinates: { latitude: 50.0997, longitude: 14.4164 },
+        founded: 1893,
+        colors: ['#9c1919', '#ffed00']
+    },
+    // Ukrainian Premier League - Rank 39
+    {
+        id: '674',
+        name: 'Dynamo Kyiv',
+        normalizedName: 'DYNAMO KYIV',
+        shortName: 'Dynamo',
+        country: 'Ukraine',
+        city: 'Kyiv',
+        stadium: {
+            id: 's674',
+            name: 'NSC Olimpiyskiy',
+            city: 'Kyiv',
+            country: 'Ukraine',
+            coordinates: { latitude: 50.4339, longitude: 30.5217 },
+            clubs: ['674']
+        },
+        coordinates: { latitude: 50.4339, longitude: 30.5217 },
+        founded: 1927,
+        colors: ['#ffffff', '#0066cc']
+    },
+    {
+        id: '675',
+        name: 'Shakhtar Donetsk',
+        normalizedName: 'SHAKHTAR DONETSK',
+        shortName: 'Shakhtar',
+        country: 'Ukraine',
+        city: 'Donetsk',
+        stadium: {
+            id: 's675',
+            name: 'Donbass Arena',
+            city: 'Donetsk',
+            country: 'Ukraine',
+            coordinates: { latitude: 48.0161, longitude: 37.8047 },
+            clubs: ['675']
+        },
+        coordinates: { latitude: 48.0161, longitude: 37.8047 },
+        founded: 1936,
+        colors: ['#ff6600', '#000000']
+    },
 ];
