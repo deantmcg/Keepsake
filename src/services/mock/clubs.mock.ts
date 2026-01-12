@@ -2910,4 +2910,823 @@ export const MOCK_CLUBS: Club[] = [
         founded: 1936,
         colors: ['#ff6600', '#000000']
     },
+    // Russian Premier League - Rank 19
+    {
+        id: '676',
+        name: 'Zenit St Petersburg',
+        normalizedName: 'ZENIT ST PETERSBURG',
+        shortName: 'Zenit',
+        country: 'Russia',
+        city: 'St Petersburg',
+        stadium: {
+            id: 's676',
+            name: 'Gazprom Arena',
+            city: 'St Petersburg',
+            country: 'Russia',
+            coordinates: { latitude: 59.9729, longitude: 30.2217 },
+            clubs: ['676']
+        },
+        coordinates: { latitude: 59.9729, longitude: 30.2217 },
+        founded: 1925,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '677',
+        name: 'Spartak Moscow',
+        normalizedName: 'SPARTAK MOSCOW',
+        shortName: 'Spartak',
+        country: 'Russia',
+        city: 'Moscow',
+        stadium: {
+            id: 's677',
+            name: 'Otkritie Arena',
+            city: 'Moscow',
+            country: 'Russia',
+            coordinates: { latitude: 55.8181, longitude: 37.4406 },
+            clubs: ['677']
+        },
+        coordinates: { latitude: 55.8181, longitude: 37.4406 },
+        founded: 1922,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    // Liga Pro (Ecuador) - Rank 24
+    {
+        id: '678',
+        name: 'Barcelona SC',
+        normalizedName: 'BARCELONA SC',
+        shortName: 'Barcelona SC',
+        country: 'Ecuador',
+        city: 'Guayaquil',
+        stadium: {
+            id: 's678',
+            name: 'Estadio Monumental',
+            city: 'Guayaquil',
+            country: 'Ecuador',
+            coordinates: { latitude: -2.1453, longitude: -79.8858 },
+            clubs: ['678']
+        },
+        coordinates: { latitude: -2.1453, longitude: -79.8858 },
+        founded: 1925,
+        colors: ['#ffed00', '#000000']
+    },
+    {
+        id: '679',
+        name: 'LDU Quito',
+        normalizedName: 'LDU QUITO',
+        shortName: 'LDU',
+        country: 'Ecuador',
+        city: 'Quito',
+        stadium: {
+            id: 's679',
+            name: 'Estadio Rodrigo Paz Delgado',
+            city: 'Quito',
+            country: 'Ecuador',
+            coordinates: { latitude: -0.1352, longitude: -78.4633 },
+            clubs: ['679']
+        },
+        coordinates: { latitude: -0.1352, longitude: -78.4633 },
+        founded: 1918,
+        colors: ['#ffffff', '#000000']
+    },
+    // Cypriot First Division - Rank 27
+    {
+        id: '680',
+        name: 'APOEL',
+        normalizedName: 'APOEL',
+        shortName: 'APOEL',
+        country: 'Cyprus',
+        city: 'Nicosia',
+        stadium: {
+            id: 's680',
+            name: 'GSP Stadium',
+            city: 'Nicosia',
+            country: 'Cyprus',
+            coordinates: { latitude: 35.1575, longitude: 33.3444 },
+            clubs: ['680']
+        },
+        coordinates: { latitude: 35.1575, longitude: 33.3444 },
+        founded: 1926,
+        colors: ['#0066cc', '#ffed00']
+    },
+    {
+        id: '681',
+        name: 'Omonia',
+        normalizedName: 'OMONIA',
+        shortName: 'Omonia',
+        country: 'Cyprus',
+        city: 'Nicosia',
+        stadium: {
+            id: 's681',
+            name: 'GSP Stadium',
+            city: 'Nicosia',
+            country: 'Cyprus',
+            coordinates: { latitude: 35.1575, longitude: 33.3444 },
+            clubs: ['681']
+        },
+        coordinates: { latitude: 35.1575, longitude: 33.3444 },
+        founded: 1948,
+        colors: ['#009a44', '#ffffff']
+    },
+    // Colombian Primera A - Rank 28
+    {
+        id: '682',
+        name: 'Millonarios',
+        normalizedName: 'MILLONARIOS',
+        shortName: 'Millonarios',
+        country: 'Colombia',
+        city: 'Bogotá',
+        stadium: {
+            id: 's682',
+            name: 'Estadio El Campín',
+            city: 'Bogotá',
+            country: 'Colombia',
+            coordinates: { latitude: 4.6481, longitude: -74.0772 },
+            clubs: ['682']
+        },
+        coordinates: { latitude: 4.6481, longitude: -74.0772 },
+        founded: 1946,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '683',
+        name: 'Atlético Nacional',
+        normalizedName: 'ATLETICO NACIONAL',
+        shortName: 'Nacional',
+        country: 'Colombia',
+        city: 'Medellín',
+        stadium: {
+            id: 's683',
+            name: 'Estadio Atanasio Girardot',
+            city: 'Medellín',
+            country: 'Colombia',
+            coordinates: { latitude: 6.2567, longitude: -75.5903 },
+            clubs: ['683']
+        },
+        coordinates: { latitude: 6.2567, longitude: -75.5903 },
+        founded: 1947,
+        colors: ['#009a44', '#ffffff']
+    },
+    // Serie B (Italy) - Rank 29
+    {
+        id: '684',
+        name: 'Cremonese',
+        normalizedName: 'CREMONESE',
+        shortName: 'Cremonese',
+        country: 'Italy',
+        city: 'Cremona',
+        stadium: {
+            id: 's684',
+            name: 'Stadio Giovanni Zini',
+            city: 'Cremona',
+            country: 'Italy',
+            coordinates: { latitude: 45.1478, longitude: 10.0511 },
+            clubs: ['684']
+        },
+        coordinates: { latitude: 45.1478, longitude: 10.0511 },
+        founded: 1903,
+        colors: ['#ed1c24', '#808080']
+    },
+    {
+        id: '685',
+        name: 'Palermo',
+        normalizedName: 'PALERMO',
+        shortName: 'Palermo',
+        country: 'Italy',
+        city: 'Palermo',
+        stadium: {
+            id: 's685',
+            name: 'Stadio Renzo Barbera',
+            city: 'Palermo',
+            country: 'Italy',
+            coordinates: { latitude: 38.1511, longitude: 13.3386 },
+            clubs: ['685']
+        },
+        coordinates: { latitude: 38.1511, longitude: 13.3386 },
+        founded: 1900,
+        colors: ['#ffb6c1', '#000000']
+    },
+    // Uruguayan Primera División - Rank 30
+    {
+        id: '686',
+        name: 'Peñarol',
+        normalizedName: 'PENAROL',
+        shortName: 'Peñarol',
+        country: 'Uruguay',
+        city: 'Montevideo',
+        stadium: {
+            id: 's686',
+            name: 'Estadio Campeón del Siglo',
+            city: 'Montevideo',
+            country: 'Uruguay',
+            coordinates: { latitude: -34.8919, longitude: -56.1564 },
+            clubs: ['686']
+        },
+        coordinates: { latitude: -34.8919, longitude: -56.1564 },
+        founded: 1891,
+        colors: ['#ffed00', '#000000']
+    },
+    {
+        id: '687',
+        name: 'Nacional',
+        normalizedName: 'NACIONAL',
+        shortName: 'Nacional',
+        country: 'Uruguay',
+        city: 'Montevideo',
+        stadium: {
+            id: 's687',
+            name: 'Estadio Gran Parque Central',
+            city: 'Montevideo',
+            country: 'Uruguay',
+            coordinates: { latitude: -34.8944, longitude: -56.1689 },
+            clubs: ['687']
+        },
+        coordinates: { latitude: -34.8944, longitude: -56.1689 },
+        founded: 1899,
+        colors: ['#0066cc', '#ed1c24', '#ffffff']
+    },
+    // Israeli Ligat HaAl - Rank 31
+    {
+        id: '688',
+        name: 'Maccabi Tel Aviv',
+        normalizedName: 'MACCABI TEL AVIV',
+        shortName: 'Maccabi TA',
+        country: 'Israel',
+        city: 'Tel Aviv',
+        stadium: {
+            id: 's688',
+            name: 'Bloomfield Stadium',
+            city: 'Tel Aviv',
+            country: 'Israel',
+            coordinates: { latitude: 32.0656, longitude: 34.7731 },
+            clubs: ['688']
+        },
+        coordinates: { latitude: 32.0656, longitude: 34.7731 },
+        founded: 1906,
+        colors: ['#ffed00', '#0066cc']
+    },
+    {
+        id: '689',
+        name: 'Maccabi Haifa',
+        normalizedName: 'MACCABI HAIFA',
+        shortName: 'Maccabi Haifa',
+        country: 'Israel',
+        city: 'Haifa',
+        stadium: {
+            id: 's689',
+            name: 'Sammy Ofer Stadium',
+            city: 'Haifa',
+            country: 'Israel',
+            coordinates: { latitude: 32.7964, longitude: 34.9889 },
+            clubs: ['689']
+        },
+        coordinates: { latitude: 32.7964, longitude: 34.9889 },
+        founded: 1913,
+        colors: ['#009a44', '#ffffff']
+    },
+    // Chilean Primera División - Rank 32
+    {
+        id: '690',
+        name: 'Colo-Colo',
+        normalizedName: 'COLO-COLO',
+        shortName: 'Colo-Colo',
+        country: 'Chile',
+        city: 'Santiago',
+        stadium: {
+            id: 's690',
+            name: 'Estadio Monumental',
+            city: 'Santiago',
+            country: 'Chile',
+            coordinates: { latitude: -33.4639, longitude: -70.6064 },
+            clubs: ['690']
+        },
+        coordinates: { latitude: -33.4639, longitude: -70.6064 },
+        founded: 1925,
+        colors: ['#ffffff', '#000000']
+    },
+    {
+        id: '691',
+        name: 'Universidad de Chile',
+        normalizedName: 'UNIVERSIDAD DE CHILE',
+        shortName: 'U de Chile',
+        country: 'Chile',
+        city: 'Santiago',
+        stadium: {
+            id: 's691',
+            name: 'Estadio Nacional',
+            city: 'Santiago',
+            country: 'Chile',
+            coordinates: { latitude: -33.4644, longitude: -70.6111 },
+            clubs: ['691']
+        },
+        coordinates: { latitude: -33.4644, longitude: -70.6111 },
+        founded: 1927,
+        colors: ['#0066cc', '#ed1c24']
+    },
+    // Costa Rican Primera División - Rank 33
+    {
+        id: '692',
+        name: 'Saprissa',
+        normalizedName: 'SAPRISSA',
+        shortName: 'Saprissa',
+        country: 'Costa Rica',
+        city: 'San José',
+        stadium: {
+            id: 's692',
+            name: 'Estadio Ricardo Saprissa',
+            city: 'San José',
+            country: 'Costa Rica',
+            coordinates: { latitude: 9.9500, longitude: -84.0903 },
+            clubs: ['692']
+        },
+        coordinates: { latitude: 9.9500, longitude: -84.0903 },
+        founded: 1935,
+        colors: ['#6f263d', '#ffffff']
+    },
+    {
+        id: '693',
+        name: 'Alajuelense',
+        normalizedName: 'ALAJUELENSE',
+        shortName: 'Alajuelense',
+        country: 'Costa Rica',
+        city: 'Alajuela',
+        stadium: {
+            id: 's693',
+            name: 'Estadio Alejandro Morera Soto',
+            city: 'Alajuela',
+            country: 'Costa Rica',
+            coordinates: { latitude: 10.0167, longitude: -84.2167 },
+            clubs: ['693']
+        },
+        coordinates: { latitude: 10.0167, longitude: -84.2167 },
+        founded: 1919,
+        colors: ['#ed1c24', '#000000']
+    },
+    // Slovak Super Liga - Rank 34
+    {
+        id: '694',
+        name: 'Slovan Bratislava',
+        normalizedName: 'SLOVAN BRATISLAVA',
+        shortName: 'Slovan',
+        country: 'Slovakia',
+        city: 'Bratislava',
+        stadium: {
+            id: 's694',
+            name: 'Tehelné pole',
+            city: 'Bratislava',
+            country: 'Slovakia',
+            coordinates: { latitude: 48.1569, longitude: 17.1244 },
+            clubs: ['694']
+        },
+        coordinates: { latitude: 48.1569, longitude: 17.1244 },
+        founded: 1919,
+        colors: ['#6bb4e7', '#ffffff']
+    },
+    {
+        id: '695',
+        name: 'Spartak Trnava',
+        normalizedName: 'SPARTAK TRNAVA',
+        shortName: 'Spartak',
+        country: 'Slovakia',
+        city: 'Trnava',
+        stadium: {
+            id: 's695',
+            name: 'Štadión Antona Malatinského',
+            city: 'Trnava',
+            country: 'Slovakia',
+            coordinates: { latitude: 48.3697, longitude: 17.5886 },
+            clubs: ['695']
+        },
+        coordinates: { latitude: 48.3697, longitude: 17.5886 },
+        founded: 1923,
+        colors: ['#0066cc', '#ffffff']
+    },
+    // Slovenian PrvaLiga - Rank 35
+    {
+        id: '696',
+        name: 'Maribor',
+        normalizedName: 'MARIBOR',
+        shortName: 'Maribor',
+        country: 'Slovenia',
+        city: 'Maribor',
+        stadium: {
+            id: 's696',
+            name: 'Stadion Ljudski vrt',
+            city: 'Maribor',
+            country: 'Slovenia',
+            coordinates: { latitude: 46.5544, longitude: 15.6472 },
+            clubs: ['696']
+        },
+        coordinates: { latitude: 46.5544, longitude: 15.6472 },
+        founded: 1960,
+        colors: ['#6f263d', '#ffffff']
+    },
+    {
+        id: '697',
+        name: 'Olimpija Ljubljana',
+        normalizedName: 'OLIMPIJA LJUBLJANA',
+        shortName: 'Olimpija',
+        country: 'Slovenia',
+        city: 'Ljubljana',
+        stadium: {
+            id: 's697',
+            name: 'Stožice Stadium',
+            city: 'Ljubljana',
+            country: 'Slovenia',
+            coordinates: { latitude: 46.0786, longitude: 14.5106 },
+            clubs: ['697']
+        },
+        coordinates: { latitude: 46.0786, longitude: 14.5106 },
+        founded: 2005,
+        colors: ['#009a44', '#ffffff']
+    },
+    // Iranian Persian Gulf Pro League - Rank 36
+    {
+        id: '698',
+        name: 'Persepolis',
+        normalizedName: 'PERSEPOLIS',
+        shortName: 'Persepolis',
+        country: 'Iran',
+        city: 'Tehran',
+        stadium: {
+            id: 's698',
+            name: 'Azadi Stadium',
+            city: 'Tehran',
+            country: 'Iran',
+            coordinates: { latitude: 35.7219, longitude: 51.2797 },
+            clubs: ['698', '699']
+        },
+        coordinates: { latitude: 35.7219, longitude: 51.2797 },
+        founded: 1963,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    {
+        id: '699',
+        name: 'Esteghlal',
+        normalizedName: 'ESTEGHLAL',
+        shortName: 'Esteghlal',
+        country: 'Iran',
+        city: 'Tehran',
+        stadium: {
+            id: 's698',
+            name: 'Azadi Stadium',
+            city: 'Tehran',
+            country: 'Iran',
+            coordinates: { latitude: 35.7219, longitude: 51.2797 },
+            clubs: ['698', '699']
+        },
+        coordinates: { latitude: 35.7219, longitude: 51.2797 },
+        founded: 1945,
+        colors: ['#0066cc', '#ffffff']
+    },
+    // Bolivian Primera División - Rank 37
+    {
+        id: '700',
+        name: 'Bolívar',
+        normalizedName: 'BOLIVAR',
+        shortName: 'Bolívar',
+        country: 'Bolivia',
+        city: 'La Paz',
+        stadium: {
+            id: 's700',
+            name: 'Estadio Hernando Siles',
+            city: 'La Paz',
+            country: 'Bolivia',
+            coordinates: { latitude: -16.5306, longitude: -68.0869 },
+            clubs: ['700']
+        },
+        coordinates: { latitude: -16.5306, longitude: -68.0869 },
+        founded: 1925,
+        colors: ['#6bb4e7', '#ffffff']
+    },
+    {
+        id: '701',
+        name: 'The Strongest',
+        normalizedName: 'THE STRONGEST',
+        shortName: 'The Strongest',
+        country: 'Bolivia',
+        city: 'La Paz',
+        stadium: {
+            id: 's701',
+            name: 'Estadio Rafael Mendoza',
+            city: 'La Paz',
+            country: 'Bolivia',
+            coordinates: { latitude: -16.5333, longitude: -68.0611 },
+            clubs: ['701']
+        },
+        coordinates: { latitude: -16.5333, longitude: -68.0611 },
+        founded: 1908,
+        colors: ['#ffed00', '#000000']
+    },
+    // UAE Pro League - Rank 38
+    {
+        id: '702',
+        name: 'Al Ain',
+        normalizedName: 'AL AIN',
+        shortName: 'Al Ain',
+        country: 'United Arab Emirates',
+        city: 'Al Ain',
+        stadium: {
+            id: 's702',
+            name: 'Hazza bin Zayed Stadium',
+            city: 'Al Ain',
+            country: 'United Arab Emirates',
+            coordinates: { latitude: 24.1917, longitude: 55.7339 },
+            clubs: ['702']
+        },
+        coordinates: { latitude: 24.1917, longitude: 55.7339 },
+        founded: 1968,
+        colors: ['#6f263d', '#ffffff']
+    },
+    {
+        id: '703',
+        name: 'Al Wahda',
+        normalizedName: 'AL WAHDA',
+        shortName: 'Al Wahda',
+        country: 'United Arab Emirates',
+        city: 'Abu Dhabi',
+        stadium: {
+            id: 's703',
+            name: 'Al Nahyan Stadium',
+            city: 'Abu Dhabi',
+            country: 'United Arab Emirates',
+            coordinates: { latitude: 24.4461, longitude: 54.3697 },
+            clubs: ['703']
+        },
+        coordinates: { latitude: 24.4461, longitude: 54.3697 },
+        founded: 1974,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    // South African PSL - Rank 40
+    {
+        id: '704',
+        name: 'Kaizer Chiefs',
+        normalizedName: 'KAIZER CHIEFS',
+        shortName: 'Chiefs',
+        country: 'South Africa',
+        city: 'Johannesburg',
+        stadium: {
+            id: 's704',
+            name: 'FNB Stadium',
+            city: 'Johannesburg',
+            country: 'South Africa',
+            coordinates: { latitude: -26.2347, longitude: 27.9822 },
+            clubs: ['704', '705']
+        },
+        coordinates: { latitude: -26.2347, longitude: 27.9822 },
+        founded: 1970,
+        colors: ['#ffed00', '#000000']
+    },
+    {
+        id: '705',
+        name: 'Orlando Pirates',
+        normalizedName: 'ORLANDO PIRATES',
+        shortName: 'Pirates',
+        country: 'South Africa',
+        city: 'Johannesburg',
+        stadium: {
+            id: 's704',
+            name: 'FNB Stadium',
+            city: 'Johannesburg',
+            country: 'South Africa',
+            coordinates: { latitude: -26.2347, longitude: 27.9822 },
+            clubs: ['704', '705']
+        },
+        coordinates: { latitude: -26.2347, longitude: 27.9822 },
+        founded: 1937,
+        colors: ['#000000', '#ffffff']
+    },
+    // Australian A-League - Rank 41
+    {
+        id: '706',
+        name: 'Sydney FC',
+        normalizedName: 'SYDNEY FC',
+        shortName: 'Sydney',
+        country: 'Australia',
+        city: 'Sydney',
+        stadium: {
+            id: 's706',
+            name: 'Allianz Stadium',
+            city: 'Sydney',
+            country: 'Australia',
+            coordinates: { latitude: -33.8886, longitude: 151.2247 },
+            clubs: ['706']
+        },
+        coordinates: { latitude: -33.8886, longitude: 151.2247 },
+        founded: 2004,
+        colors: ['#6bb4e7', '#ffffff']
+    },
+    {
+        id: '707',
+        name: 'Melbourne Victory',
+        normalizedName: 'MELBOURNE VICTORY',
+        shortName: 'Victory',
+        country: 'Australia',
+        city: 'Melbourne',
+        stadium: {
+            id: 's707',
+            name: 'AAMI Park',
+            city: 'Melbourne',
+            country: 'Australia',
+            coordinates: { latitude: -37.8250, longitude: 144.9839 },
+            clubs: ['707']
+        },
+        coordinates: { latitude: -37.8250, longitude: 144.9839 },
+        founded: 2004,
+        colors: ['#001f5c', '#ffffff']
+    },
+    // Bulgarian First League - Rank 42
+    {
+        id: '708',
+        name: 'Ludogorets',
+        normalizedName: 'LUDOGORETS',
+        shortName: 'Ludogorets',
+        country: 'Bulgaria',
+        city: 'Razgrad',
+        stadium: {
+            id: 's708',
+            name: 'Ludogorets Arena',
+            city: 'Razgrad',
+            country: 'Bulgaria',
+            coordinates: { latitude: 43.5328, longitude: 26.5147 },
+            clubs: ['708']
+        },
+        coordinates: { latitude: 43.5328, longitude: 26.5147 },
+        founded: 1945,
+        colors: ['#009a44', '#ffffff']
+    },
+    {
+        id: '709',
+        name: 'CSKA Sofia',
+        normalizedName: 'CSKA SOFIA',
+        shortName: 'CSKA',
+        country: 'Bulgaria',
+        city: 'Sofia',
+        stadium: {
+            id: 's709',
+            name: 'Bulgarian Army Stadium',
+            city: 'Sofia',
+            country: 'Bulgaria',
+            coordinates: { latitude: 42.6550, longitude: 23.3806 },
+            clubs: ['709']
+        },
+        coordinates: { latitude: 42.6550, longitude: 23.3806 },
+        founded: 1948,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    // Peruvian Primera División - Rank 43
+    {
+        id: '710',
+        name: 'Universitario',
+        normalizedName: 'UNIVERSITARIO',
+        shortName: 'Universitario',
+        country: 'Peru',
+        city: 'Lima',
+        stadium: {
+            id: 's710',
+            name: 'Estadio Monumental',
+            city: 'Lima',
+            country: 'Peru',
+            coordinates: { latitude: -12.0686, longitude: -77.0256 },
+            clubs: ['710']
+        },
+        coordinates: { latitude: -12.0686, longitude: -77.0256 },
+        founded: 1924,
+        colors: ['#c8aa7a', '#ed1c24']
+    },
+    {
+        id: '711',
+        name: 'Alianza Lima',
+        normalizedName: 'ALIANZA LIMA',
+        shortName: 'Alianza',
+        country: 'Peru',
+        city: 'Lima',
+        stadium: {
+            id: 's711',
+            name: 'Estadio Alejandro Villanueva',
+            city: 'Lima',
+            country: 'Peru',
+            coordinates: { latitude: -12.0681, longitude: -77.0333 },
+            clubs: ['711']
+        },
+        coordinates: { latitude: -12.0681, longitude: -77.0333 },
+        founded: 1901,
+        colors: ['#0066cc', '#ffffff']
+    },
+    // Portuguese Liga 2 - Rank 44
+    {
+        id: '712',
+        name: 'Vitória Guimarães',
+        normalizedName: 'VITORIA GUIMARAES',
+        shortName: 'Vitória',
+        country: 'Portugal',
+        city: 'Guimarães',
+        stadium: {
+            id: 's712',
+            name: 'Estádio D. Afonso Henriques',
+            city: 'Guimarães',
+            country: 'Portugal',
+            coordinates: { latitude: 41.4456, longitude: -8.3011 },
+            clubs: ['712']
+        },
+        coordinates: { latitude: 41.4456, longitude: -8.3011 },
+        founded: 1922,
+        colors: ['#ffffff', '#000000']
+    },
+    {
+        id: '713',
+        name: 'Rio Ave',
+        normalizedName: 'RIO AVE',
+        shortName: 'Rio Ave',
+        country: 'Portugal',
+        city: 'Vila do Conde',
+        stadium: {
+            id: 's713',
+            name: 'Estádio dos Arcos',
+            city: 'Vila do Conde',
+            country: 'Portugal',
+            coordinates: { latitude: 41.3508, longitude: -8.7414 },
+            clubs: ['713']
+        },
+        coordinates: { latitude: 41.3508, longitude: -8.7414 },
+        founded: 1939,
+        colors: ['#009a44', '#ffffff']
+    },
+    // Serbian SuperLiga - Rank 45
+    {
+        id: '714',
+        name: 'Red Star Belgrade',
+        normalizedName: 'RED STAR BELGRADE',
+        shortName: 'Red Star',
+        country: 'Serbia',
+        city: 'Belgrade',
+        stadium: {
+            id: 's714',
+            name: 'Rajko Mitić Stadium',
+            city: 'Belgrade',
+            country: 'Serbia',
+            coordinates: { latitude: 44.7833, longitude: 20.4672 },
+            clubs: ['714']
+        },
+        coordinates: { latitude: 44.7833, longitude: 20.4672 },
+        founded: 1945,
+        colors: ['#ed1c24', '#ffffff']
+    },
+    {
+        id: '715',
+        name: 'Partizan',
+        normalizedName: 'PARTIZAN',
+        shortName: 'Partizan',
+        country: 'Serbia',
+        city: 'Belgrade',
+        stadium: {
+            id: 's715',
+            name: 'Stadion Partizana',
+            city: 'Belgrade',
+            country: 'Serbia',
+            coordinates: { latitude: 44.7886, longitude: 20.4608 },
+            clubs: ['715']
+        },
+        coordinates: { latitude: 44.7886, longitude: 20.4608 },
+        founded: 1945,
+        colors: ['#000000', '#ffffff']
+    },
+    // Bosnian Premier League - Rank 46
+    {
+        id: '716',
+        name: 'FK Sarajevo',
+        normalizedName: 'FK SARAJEVO',
+        shortName: 'Sarajevo',
+        country: 'Bosnia and Herzegovina',
+        city: 'Sarajevo',
+        stadium: {
+            id: 's716',
+            name: 'Asim Ferhatović Hase Stadium',
+            city: 'Sarajevo',
+            country: 'Bosnia and Herzegovina',
+            coordinates: { latitude: 43.8628, longitude: 18.3928 },
+            clubs: ['716']
+        },
+        coordinates: { latitude: 43.8628, longitude: 18.3928 },
+        founded: 1946,
+        colors: ['#9c1919', '#ffffff']
+    },
+    {
+        id: '717',
+        name: 'Zrinjski Mostar',
+        normalizedName: 'ZRINJSKI MOSTAR',
+        shortName: 'Zrinjski',
+        country: 'Bosnia and Herzegovina',
+        city: 'Mostar',
+        stadium: {
+            id: 's717',
+            name: 'Stadion pod Bijelim Brijegom',
+            city: 'Mostar',
+            country: 'Bosnia and Herzegovina',
+            coordinates: { latitude: 43.3442, longitude: 17.8106 },
+            clubs: ['717']
+        },
+        coordinates: { latitude: 43.3442, longitude: 17.8106 },
+        founded: 1905,
+        colors: ['#ed1c24', '#ffffff']
+    },
 ];
