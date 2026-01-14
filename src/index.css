@@ -242,6 +242,56 @@ body,
     font-weight: 500;
 }
 
+/* Custom Popup Styles */
+.keepsake-popup .maplibregl-popup-content {
+    background-color: rgba(9, 9, 11, 0.95);
+    /* zinc-950 equivalent */
+    color: #fafafa;
+    border: 1px solid #27272a;
+    border-radius: 0.5rem;
+    padding: 0;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.keepsake-popup .maplibregl-popup-tip {
+    border-top-color: rgba(9, 9, 11, 0.95);
+}
+
+.keepsake-popup.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+    border-top-color: rgba(9, 9, 11, 0.95);
+}
+
+.keepsake-popup.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+    border-bottom-color: rgba(9, 9, 11, 0.95);
+}
+
+.keepsake-popup.maplibregl-popup-anchor-left .maplibregl-popup-tip {
+    border-right-color: rgba(9, 9, 11, 0.95);
+}
+
+.keepsake-popup.maplibregl-popup-anchor-right .maplibregl-popup-tip {
+    border-left-color: rgba(9, 9, 11, 0.95);
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #52525b;
+    border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+}
+
 .whitespace-nowrap {
     white-space: nowrap;
 }
@@ -370,7 +420,7 @@ body,
     padding: 1rem;
 }
 
-.space-y-4 > * + * {
+.space-y-4>*+* {
     margin-top: 1rem;
 }
 
