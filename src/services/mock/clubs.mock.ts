@@ -6444,4 +6444,384 @@ export const MOCK_CLUBS: Club[] = [
         founded: 1897,
         colors: ['#0066cc', '#ed1c24']
     },
+    {
+        id: '860',
+        name: 'Bohemians',
+        normalizedName: 'BOHEMIANS',
+        shortName: 'Bohs',
+        country: 'Ireland',
+        city: 'Dublin',
+        stadium: {
+            id: 's860',
+            name: 'Dalymount Park',
+            city: 'Dublin',
+            country: 'Ireland',
+            coordinates: { latitude: 53.3581, longitude: -6.2667 },
+            clubs: ['860']
+        },
+        coordinates: { latitude: 53.3581, longitude: -6.2667 },
+        founded: 1890,
+        colors: ['#d00000', '#000000', '#ffffff']
+    },
+    {
+        id: '861',
+        name: 'Derry City',
+        normalizedName: 'DERRY CITY',
+        shortName: 'Derry',
+        country: 'Ireland',
+        city: 'Derry',
+        stadium: {
+            id: 's861',
+            name: 'Brandywell',
+            city: 'Derry',
+            country: 'Ireland',
+            coordinates: { latitude: 54.9833, longitude: -7.2500 },
+            clubs: ['861']
+        },
+        coordinates: { latitude: 54.9833, longitude: -7.2500 },
+        founded: 1928,
+        colors: ['#c00000', '#ffffff']
+    },
+    {
+        id: '862',
+        name: 'Drogheda United',
+        normalizedName: 'DROGHEDA UNITED',
+        shortName: 'Drogheda',
+        country: 'Ireland',
+        city: 'Drogheda',
+        stadium: {
+            id: 's862',
+            name: 'United Park',
+            city: 'Drogheda',
+            country: 'Ireland',
+            coordinates: { latitude: 53.7167, longitude: -6.3500 },
+            clubs: ['862']
+        },
+        coordinates: { latitude: 53.7167, longitude: -6.3500 },
+        founded: 1919,
+        colors: ['#800000', '#ffffff']
+    },
+    {
+        id: '863',
+        name: 'Dundalk',
+        normalizedName: 'DUNDALK',
+        shortName: 'Dundalk',
+        country: 'Ireland',
+        city: 'Dundalk',
+        stadium: {
+            id: 's863',
+            name: 'Oriel Park',
+            city: 'Dundalk',
+            country: 'Ireland',
+            coordinates: { latitude: 54.0046, longitude: -6.4075 },
+            clubs: ['863']
+        },
+        coordinates: { latitude: 54.0046, longitude: -6.4075 },
+        founded: 1903,
+        colors: ['#ffffff', '#000000']
+    },
+    {
+        id: '864',
+        name: 'Galway United',
+        normalizedName: 'GALWAY UNITED',
+        shortName: 'Galway',
+        country: 'Ireland',
+        city: 'Galway',
+        stadium: {
+            id: 's864',
+            name: 'Eamonn Deacy Park',
+            city: 'Galway',
+            country: 'Ireland',
+            coordinates: { latitude: 53.2667, longitude: -9.0500 },
+            clubs: ['864']
+        },
+        coordinates: { latitude: 53.2667, longitude: -9.0500 },
+        founded: 1937,
+        colors: ['#c41e3a', '#ffffff']
+    },
+    {
+        id: '865',
+        name: 'St Patrick\'s Athletic',
+        normalizedName: 'ST PATRICK\'S ATHLETIC',
+        shortName: 'St Pat\'s',
+        country: 'Ireland',
+        city: 'Dublin',
+        stadium: {
+            id: 's865',
+            name: 'Richmond Park',
+            city: 'Dublin',
+            country: 'Ireland',
+            coordinates: { latitude: 53.3333, longitude: -6.3333 },
+            clubs: ['865']
+        },
+        coordinates: { latitude: 53.3333, longitude: -6.3333 },
+        founded: 1929,
+        colors: ['#ffd700', '#1e3a8a', '#c00000']
+    },
+    {
+        id: '866',
+        name: 'Shamrock Rovers',
+        normalizedName: 'SHAMROCK ROVERS',
+        shortName: 'Rovers',
+        country: 'Ireland',
+        city: 'Dublin',
+        stadium: {
+            id: 's866',
+            name: 'Tallaght Stadium',
+            city: 'Dublin',
+            country: 'Ireland',
+            coordinates: { latitude: 53.2862, longitude: -6.3788 },
+            clubs: ['866']
+        },
+        coordinates: { latitude: 53.2862, longitude: -6.3788 },
+        founded: 1899,
+        colors: ['#228B22', '#ffffff']
+    },
+    {
+        id: '867',
+        name: 'Shelbourne',
+        normalizedName: 'SHELBOURNE',
+        shortName: 'Shelbourne',
+        country: 'Ireland',
+        city: 'Dublin',
+        stadium: {
+            id: 's867',
+            name: 'Tolka Park',
+            city: 'Dublin',
+            country: 'Ireland',
+            coordinates: { latitude: 53.3667, longitude: -6.2500 },
+            clubs: ['867']
+        },
+        coordinates: { latitude: 53.3667, longitude: -6.2500 },
+        founded: 1895,
+        colors: ['#c41e3a', '#ffffff']
+    },
+    {
+        id: '868',
+        name: 'Sligo Rovers',
+        normalizedName: 'SLIGO ROVERS',
+        shortName: 'Sligo',
+        country: 'Ireland',
+        city: 'Sligo',
+        stadium: {
+            id: 's868',
+            name: 'The Showgrounds',
+            city: 'Sligo',
+            country: 'Ireland',
+            coordinates: { latitude: 54.2833, longitude: -8.4667 },
+            clubs: ['868']
+        },
+        coordinates: { latitude: 54.2833, longitude: -8.4667 },
+        founded: 1928,
+        colors: ['#c41e3a', '#ffffff']
+    },
+    {
+        id: '869',
+        name: 'Waterford',
+        normalizedName: 'WATERFORD',
+        shortName: 'Waterford',
+        country: 'Ireland',
+        city: 'Waterford',
+        stadium: {
+            id: 's869',
+            name: 'RSC',
+            city: 'Waterford',
+            country: 'Ireland',
+            coordinates: { latitude: 52.2583, longitude: -7.5667 },
+            clubs: ['869']
+        },
+        coordinates: { latitude: 52.2583, longitude: -7.5667 },
+        founded: 1909,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '870',
+        name: 'Athlone Town',
+        normalizedName: 'ATHLONE TOWN',
+        shortName: 'Athlone',
+        country: 'Ireland',
+        city: 'Athlone',
+        stadium: {
+            id: 's870',
+            name: 'Athlone Town Stadium',
+            city: 'Athlone',
+            country: 'Ireland',
+            coordinates: { latitude: 53.4258, longitude: -7.9419 },
+            clubs: ['870']
+        },
+        coordinates: { latitude: 53.4258, longitude: -7.9419 },
+        founded: 1937,
+        colors: ['#c41e3a', '#ffffff']
+    },
+    {
+        id: '871',
+        name: 'Bray Wanderers',
+        normalizedName: 'BRAY WANDERERS',
+        shortName: 'Bray',
+        country: 'Ireland',
+        city: 'Bray',
+        stadium: {
+            id: 's871',
+            name: 'Carlisle Grounds',
+            city: 'Bray',
+            country: 'Ireland',
+            coordinates: { latitude: 53.2019, longitude: -6.1089 },
+            clubs: ['871']
+        },
+        coordinates: { latitude: 53.2019, longitude: -6.1089 },
+        founded: 1887,
+        colors: ['#0066cc', '#c41e3a']
+    },
+    {
+        id: '872',
+        name: 'Cobh Ramblers',
+        normalizedName: 'COBH RAMBLERS',
+        shortName: 'Cobh',
+        country: 'Ireland',
+        city: 'Cobh',
+        stadium: {
+            id: 's872',
+            name: 'St. Colman\'s Park',
+            city: 'Cobh',
+            country: 'Ireland',
+            coordinates: { latitude: 51.8031, longitude: -8.2964 },
+            clubs: ['872']
+        },
+        coordinates: { latitude: 51.8031, longitude: -8.2964 },
+        founded: 1947,
+        colors: ['#c41e3a', '#ffffff']
+    },
+    {
+        id: '873',
+        name: 'Cork City',
+        normalizedName: 'CORK CITY',
+        shortName: 'Cork',
+        country: 'Ireland',
+        city: 'Cork',
+        stadium: {
+            id: 's873',
+            name: 'Turners Cross',
+            city: 'Cork',
+            country: 'Ireland',
+            coordinates: { latitude: 51.9003, longitude: -8.4789 },
+            clubs: ['873']
+        },
+        coordinates: { latitude: 51.9003, longitude: -8.4789 },
+        founded: 1984,
+        colors: ['#c41e3a', '#ffffff']
+    },
+    {
+        id: '874',
+        name: 'Finn Harps',
+        normalizedName: 'FINN HARPS',
+        shortName: 'Finn Harps',
+        country: 'Ireland',
+        city: 'Ballybofey',
+        stadium: {
+            id: 's874',
+            name: 'Finn Park',
+            city: 'Ballybofey',
+            country: 'Ireland',
+            coordinates: { latitude: 54.8250, longitude: -8.2667 },
+            clubs: ['874']
+        },
+        coordinates: { latitude: 54.8250, longitude: -8.2667 },
+        founded: 1954,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '875',
+        name: 'Kerry',
+        normalizedName: 'KERRY',
+        shortName: 'Kerry',
+        country: 'Ireland',
+        city: 'Tralee',
+        stadium: {
+            id: 's875',
+            name: 'Mounthawk Park',
+            city: 'Tralee',
+            country: 'Ireland',
+            coordinates: { latitude: 52.2667, longitude: -9.7000 },
+            clubs: ['875']
+        },
+        coordinates: { latitude: 52.2667, longitude: -9.7000 },
+        founded: 2021,
+        colors: ['#228B22', '#ffffff']
+    },
+    {
+        id: '876',
+        name: 'Longford Town',
+        normalizedName: 'LONGFORD TOWN',
+        shortName: 'Longford',
+        country: 'Ireland',
+        city: 'Longford',
+        stadium: {
+            id: 's876',
+            name: 'Bishopsgate',
+            city: 'Longford',
+            country: 'Ireland',
+            coordinates: { latitude: 53.7333, longitude: -7.7944 },
+            clubs: ['876']
+        },
+        coordinates: { latitude: 53.7333, longitude: -7.7944 },
+        founded: 1982,
+        colors: ['#1e3a8a', '#ffffff']
+    },
+    {
+        id: '877',
+        name: 'Treaty United',
+        normalizedName: 'TREATY UNITED',
+        shortName: 'Treaty',
+        country: 'Ireland',
+        city: 'Limerick',
+        stadium: {
+            id: 's877',
+            name: 'Markets Field',
+            city: 'Limerick',
+            country: 'Ireland',
+            coordinates: { latitude: 52.6613, longitude: -8.6263 },
+            clubs: ['877']
+        },
+        coordinates: { latitude: 52.6613, longitude: -8.6263 },
+        founded: 2021,
+        colors: ['#0066cc', '#c41e3a']
+    },
+    {
+        id: '878',
+        name: 'UCD',
+        normalizedName: 'UCD',
+        shortName: 'UCD',
+        country: 'Ireland',
+        city: 'Dublin',
+        stadium: {
+            id: 's878',
+            name: 'UCD Bowl',
+            city: 'Dublin',
+            country: 'Ireland',
+            coordinates: { latitude: 53.3081, longitude: -6.2247 },
+            clubs: ['878']
+        },
+        coordinates: { latitude: 53.3081, longitude: -6.2247 },
+        founded: 1992,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '879',
+        name: 'Wexford',
+        normalizedName: 'WEXFORD',
+        shortName: 'Wexford',
+        country: 'Ireland',
+        city: 'Crossabeg',
+        stadium: {
+            id: 's879',
+            name: 'Ferrycarrig Park',
+            city: 'Crossabeg',
+            country: 'Ireland',
+            coordinates: { latitude: 52.4000, longitude: -6.5500 },
+            clubs: ['879']
+        },
+        coordinates: { latitude: 52.4000, longitude: -6.5500 },
+        founded: 1945,
+        colors: ['#7851a9', '#ffd700']
+    },
 ];
