@@ -274,6 +274,63 @@ body,
     border-left-color: rgba(9, 9, 11, 0.95);
 }
 
+/* Map Marker Styles */
+.map-marker-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cluster marker hover glow */
+.cluster-with-keepsakes {
+    filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4));
+}
+
+/* Marker entrance animation */
+@keyframes marker-pop-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.map-marker-container > * {
+    animation: marker-pop-in 0.3s ease-out;
+}
+
+/* Keepsake glow pulse */
+@keyframes keepsake-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 12px rgba(34, 197, 94, 0.8));
+    }
+}
+
+/* Popup entrance animation */
+.keepsake-popup {
+    animation: popup-fade-in 0.2s ease-out;
+}
+
+@keyframes popup-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
