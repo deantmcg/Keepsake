@@ -55,8 +55,8 @@ interface UseSuperclusterReturn {
 }
 
 const defaultOptions: Supercluster.Options<PointProperties, AggregatedProperties> = {
-    radius: 60,
-    maxZoom: 16,
+    radius: 40,      // Cluster radius in pixels - lower = clusters break apart sooner
+    maxZoom: 14,     // Stop clustering at this zoom level
     minZoom: 0,
     // Map function: transform each point for aggregation
     map: (props): AggregatedProperties => ({
