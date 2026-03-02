@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import { X, Trophy, Shirt, Wind, Award } from 'lucide-react';
 import { MOCK_MATCHES, formatMatchForDropdown, getClubById } from '../services/mock/matches.mock';
 import { MOCK_CLUBS } from '../services/mock/clubs.mock';
 import { useKeepsakeStore } from '../stores/keepsakeStore';
@@ -103,6 +103,16 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
         }
     };
 
+    const getIcon = () => {
+        const iconClass = "w-5 h-5 text-emerald-400";
+        switch (type) {
+            case 'match': return <Trophy className={iconClass} />;
+            case 'shirt': return <Shirt className={iconClass} />;
+            case 'scarf': return <Wind className={iconClass} />;
+            case 'badge': return <Award className={iconClass} />;
+        }
+    };
+
     const isFormValid = () => {
         switch (type) {
             case 'match': return selectedMatchId !== '';
@@ -114,22 +124,34 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-            <div className="bg-background border border-border rounded-lg shadow-xl max-w-md w-full">
-                <div className="flex items-center justify-between p-4 border-b border-border">
-                    <h2 className="text-lg font-semibold text-foreground">{getTitle()}</h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md" onClick={onClose}>
+            <div 
+                className="bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-2xl shadow-black/50 max-w-md w-full"
+                onClick={(e) => e.stopPropagation()}
+            >
+                {/* Header */}
+                <div className="flex items-center justify-between px-6 pt-6 pb-4">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 flex items-center justify-center">
+                            {getIcon()}
+                        </div>
+                        <div>
+                            <h2 className="text-lg font-semibold text-white tracking-tight">{getTitle()}</h2>
+                            <p className="text-xs text-slate-400">Add to your collection</p>
+                        </div>
+                    </div>
                     <button
                         onClick={onClose}
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="p-2 rounded-full text-slate-400 hover:text-white hover:bg-white/8 transition-colors duration-150"
                     >
                         <X className="w-5 h-5" />
                     </button>
                 </div>
                 
-                <form onSubmit={handleSubmit} className="p-4 space-y-4">
+                <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-4.5">
                     {type === 'match' && (
                         <div>
-                            <label className="block text-sm font-medium text-foreground mb-2">
+                            <label className="block text-xs font-medium uppercase tracking-wide text-slate-400 mb-2">
                                 Select Match
                             </label>
                             <SearchableSelect
@@ -147,7 +169,7 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                     {type === 'shirt' && (
                         <>
                             <div>
-                                <label className="block text-sm font-medium text-foreground mb-2">
+                                <label className="block text-xs font-medium uppercase tracking-wide text-slate-400 mb-2">
                                     Team
                                 </label>
                                 <SearchableSelect
@@ -162,7 +184,7 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-medium text-foreground mb-2">
+                                <label className="block text-xs font-medium uppercase tracking-wide text-slate-400 mb-2">
                                     Kit Type
                                 </label>
                                 <SearchableSelect
@@ -178,7 +200,7 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-medium text-foreground mb-2">
+                                <label className="block text-xs font-medium uppercase tracking-wide text-slate-400 mb-2">
                                     Season
                                 </label>
                                 <SearchableSelect
@@ -199,7 +221,7 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                     
                     {type === 'scarf' && (
                         <div>
-                            <label className="block text-sm font-medium text-foreground mb-2">
+                            <label className="block text-xs font-medium uppercase tracking-wide text-slate-400 mb-2">
                                 Team
                             </label>
                             <SearchableSelect
@@ -216,7 +238,7 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                     
                     {type === 'badge' && (
                         <div>
-                            <label className="block text-sm font-medium text-foreground mb-2">
+                            <label className="block text-xs font-medium uppercase tracking-wide text-slate-400 mb-2">
                                 Team
                             </label>
                             <SearchableSelect
@@ -235,16 +257,16 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ type, onClos
                         <button
                             type="button"
                             onClick={onClose}
-                            className="flex-1 px-4 py-2 bg-muted text-foreground rounded-md hover:bg-muted/80 transition-colors"
+                            className="flex-1 px-4 py-2.5 rounded-xl bg-white/6 text-slate-200 hover:bg-white/10 transition-colors duration-150 text-sm font-medium"
                         >
                             Cancel
                         </button>
                         <button
                             type="submit"
                             disabled={!isFormValid()}
-                            className="flex-1 px-4 py-2 bg-foreground text-background rounded-md hover:bg-foreground/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex-1 px-4 py-2.5 rounded-xl bg-emerald-500 text-white hover:bg-emerald-400 transition-colors duration-150 text-sm font-semibold disabled:opacity-40 disabled:cursor-not-allowed"
                         >
-                            Add
+                            Add to Collection
                         </button>
                     </div>
                 </form>

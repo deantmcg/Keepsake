@@ -40,19 +40,20 @@ export const FloatingActionButton: React.FC = () => {
 
     return (
         <>
-            <div ref={menuRef} className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+            <div ref={menuRef} className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
                 {isExpanded && (
-                    <div className="flex flex-col gap-2">
-                        {items.map((item) => (
+                    <div className="flex flex-col gap-2 mb-1">
+                        {items.map((item, index) => (
                             <button
                                 key={item.type}
                                 onClick={() => handleItemClick(item.type)}
-                                className="flex items-center justify-between gap-3 bg-background/95 backdrop-blur-md border border-border rounded-full px-4 py-3 shadow-lg hover:bg-muted transition-colors group cursor-pointer"
+                                className="flex items-center gap-3 bg-black/55 backdrop-blur-md rounded-full pl-4.5 pr-3.5 py-2.5 shadow-md shadow-black/30 hover:bg-black/70 transition-colors duration-150 group cursor-pointer"
+                                style={{ animationDelay: `${index * 50}ms` }}
                             >
-                                <span className="text-sm font-medium text-foreground whitespace-nowrap">
+                                <span className="text-sm font-medium text-slate-100 whitespace-nowrap group-hover:text-white transition-colors">
                                     {item.label}
                                 </span>
-                                <item.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                                <item.icon className="w-4 h-4 text-slate-400 group-hover:text-emerald-400 transition-colors" />
                             </button>
                         ))}
                     </div>
@@ -60,7 +61,7 @@ export const FloatingActionButton: React.FC = () => {
 
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    className="w-14 h-14 rounded-full bg-foreground hover:bg-foreground/90 text-background shadow-lg transition-all flex items-center justify-center cursor-pointer"
+                    className="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl shadow-emerald-500/30 transition-all duration-150 flex items-center justify-center cursor-pointer active:scale-95"
                     aria-label={isExpanded ? 'Close menu' : 'Add keepsake'}
                 >
                     {isExpanded ? (

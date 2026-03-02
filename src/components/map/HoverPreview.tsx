@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Trophy, Shirt, Wind, Award, MapPin } from 'lucide-react';
+import { Trophy, Shirt, Wind, Award, MapPin, Sparkles } from 'lucide-react';
 import type { PointFeature, ClusterProperties } from '../../hooks/useSupercluster';
 import type { Club } from '../../types/domain';
 import { ItemType } from '../../types/domain';
@@ -73,17 +73,25 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         const { point_count, keepsakeCount } = clusterProps;
         
         return (
-            <div className="flex items-center gap-3 mb-3 pb-2 border-b border-border">
-                <div className="flex items-center gap-1.5 text-sm">
-                    <MapPin className="w-4 h-4 text-muted-foreground" />
-                    <span className="font-semibold">{point_count}</span>
-                    <span className="text-muted-foreground">locations</span>
+            <div className="flex items-center gap-4 mb-4 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-slate-700/50 flex items-center justify-center">
+                        <MapPin className="w-4 h-4 text-slate-300" />
+                    </div>
+                    <div>
+                        <span className="text-lg font-bold text-white">{point_count}</span>
+                        <span className="text-xs text-slate-400 ml-1">locations</span>
+                    </div>
                 </div>
                 {keepsakeCount > 0 && (
-                    <div className="flex items-center gap-1 text-sm text-green-400">
-                        <Trophy className="w-3.5 h-3.5" />
-                        <span className="font-medium">{keepsakeCount}</span>
-                        <span className="text-muted-foreground">keepsakes</span>
+                    <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                            <Sparkles className="w-4 h-4 text-emerald-400" />
+                        </div>
+                        <div>
+                            <span className="text-lg font-bold text-emerald-400">{keepsakeCount}</span>
+                            <span className="text-xs text-slate-400 ml-1">collected</span>
+                        </div>
                     </div>
                 )}
             </div>
@@ -96,26 +104,26 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
     const remainingCount = groupedItems.length - displayLimit;
 
     return (
-        <div className="p-3 min-w-[220px] max-w-[320px] font-sans">
+        <div className="p-4 min-w-[240px] max-w-[340px] font-sans">
             {renderClusterHeader()}
             
-            <div className="space-y-2.5 max-h-[280px] overflow-y-auto pr-1 custom-scrollbar">
+            <div className="space-y-3 max-h-[280px] overflow-y-auto pr-1 custom-scrollbar">
                 {displayedGroups.map((group) => (
                     <div 
                         key={group.club.id} 
-                        className="flex items-start gap-2.5 group"
+                        className="flex items-start gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors duration-150 -mx-2"
                     >
                         {/* Club color badge */}
                         <div 
-                            className="w-8 h-8 rounded-md flex items-center justify-center shrink-0 shadow-sm"
+                            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg ring-1 ring-inset ring-white/20"
                             style={{ 
                                 background: `linear-gradient(135deg, ${group.club.colors[0] || '#666'}, ${group.club.colors[1] || group.club.colors[0] || '#666'})` 
                             }}
                         >
                             {group.keepsakes.length > 0 ? (
-                                <Trophy className="w-4 h-4 text-white drop-shadow" />
+                                <Trophy className="w-5 h-5 text-white drop-shadow-lg" />
                             ) : (
-                                <span className="text-white text-xs font-bold">
+                                <span className="text-white text-sm font-bold drop-shadow">
                                     {group.club.shortName?.charAt(0) || group.club.name.charAt(0)}
                                 </span>
                             )}
@@ -123,19 +131,19 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                         
                         {/* Club info */}
                         <div className="flex-1 min-w-0">
-                            <p className="font-medium text-sm text-foreground truncate">
+                            <p className="font-semibold text-sm text-white truncate">
                                 {group.club.name}
                             </p>
                             
                             {group.keepsakes.length > 0 ? (
-                                <div className="flex flex-wrap gap-1 mt-1">
+                                <div className="flex flex-wrap gap-1.5 mt-1.5">
                                     {group.keepsakes.slice(0, 4).map((k, idx) => (
                                         <span
                                             key={idx}
-                                            className="inline-flex items-center gap-0.5 text-[10px] bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded"
+                                            className="inline-flex items-center gap-1 text-[10px] bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 text-emerald-400 px-2 py-1 rounded-md border border-emerald-500/20"
                                         >
                                             {getItemIcon(k.properties.pointType === 'keepsake' ? k.properties.itemType : '')}
-                                            <span className="capitalize">
+                                            <span className="capitalize font-medium">
                                                 {k.properties.pointType === 'keepsake' 
                                                     ? k.properties.itemType.toLowerCase() 
                                                     : 'item'}
@@ -143,13 +151,14 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                                         </span>
                                     ))}
                                     {group.keepsakes.length > 4 && (
-                                        <span className="text-[10px] text-muted-foreground">
-                                            +{group.keepsakes.length - 4} more
+                                        <span className="text-[10px] text-slate-400 flex items-center">
+                                            +{group.keepsakes.length - 4}
                                         </span>
                                     )}
                                 </div>
                             ) : (
-                                <p className="text-xs text-muted-foreground mt-0.5">
+                                <p className="text-xs text-slate-400 mt-0.5 flex items-center gap-1">
+                                    <MapPin className="w-3 h-3" />
                                     {group.club.city}, {group.club.country}
                                 </p>
                             )}
@@ -158,16 +167,18 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                 ))}
                 
                 {remainingCount > 0 && (
-                    <p className="text-xs text-muted-foreground text-center pt-2 border-t border-border">
-                        +{remainingCount} more clubs...
-                    </p>
+                    <div className="text-xs text-slate-400 text-center pt-3 mt-2 border-t border-white/10">
+                        <span className="bg-slate-700/50 px-3 py-1 rounded-full">
+                            +{remainingCount} more clubs
+                        </span>
+                    </div>
                 )}
             </div>
             
             {/* Click hint for clusters */}
             {isCluster && (
-                <p className="text-[10px] text-muted-foreground mt-2 text-center opacity-70">
-                    Click to zoom in
+                <p className="text-[11px] text-slate-500 mt-3 text-center">
+                    Click cluster to zoom
                 </p>
             )}
         </div>

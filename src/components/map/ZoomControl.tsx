@@ -19,28 +19,27 @@ export const ZoomControl: React.FC<ZoomControlProps> = ({
 
     return (
         <div 
-            className="z-50 bg-slate-950 border-2 border-green-500 rounded-lg shadow-2xl p-4 flex flex-col gap-3 pointer-events-auto"
+            className="z-50 pointer-events-auto"
             style={{
                 position: 'absolute',
-                bottom: '1rem',
+                bottom: '1.5rem',
                 left: '1rem'
             }}
         >
-            {/* Zoom buttons */}
-            <div className="flex gap-2">
-                <button
-                    onClick={handleZoomOut}
-                    className="p-2 hover:bg-muted rounded-md transition-colors"
-                    title="Zoom out"
-                >
-                    <ZoomOut className="w-4 h-4" />
-                </button>
+            <div className="flex flex-col gap-2">
                 <button
                     onClick={handleZoomIn}
-                    className="p-2 hover:bg-muted rounded-md transition-colors"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-black/45 backdrop-blur-md text-slate-200 hover:text-white hover:bg-black/60 transition-all duration-150 shadow-md shadow-black/30"
                     title="Zoom in"
                 >
                     <ZoomIn className="w-4 h-4" />
+                </button>
+                <button
+                    onClick={handleZoomOut}
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-black/45 backdrop-blur-md text-slate-200 hover:text-white hover:bg-black/60 transition-all duration-150 shadow-md shadow-black/30"
+                    title="Zoom out"
+                >
+                    <ZoomOut className="w-4 h-4" />
                 </button>
             </div>
         </div>
