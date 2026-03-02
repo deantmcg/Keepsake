@@ -9,6 +9,7 @@ import { FloatingActionButton } from '../../FloatingActionButton';
 import { ClusterMarker } from '../ClusterMarker';
 import { ClubMarker, KeepsakeMarker } from '../ClubMarker';
 import { HoverPreview } from '../HoverPreview';
+import { ZoomControl } from '../ZoomControl';
 import { 
     useSupercluster, 
     isCluster, 
@@ -182,6 +183,12 @@ export const MapView: React.FC = () => {
         }
     }, []);
 
+    // Handle zoom change from control
+    const handleZoomChange = useCallback((newZoom: number) => {
+        if (!map.current) return;
+        map.current.easeTo({ zoom: newZoom, duration: 300 });
+    }, []);
+
     // Update bounds when map moves
     const updateBounds = useCallback(() => {
         if (!map.current) return;
@@ -323,6 +330,7 @@ export const MapView: React.FC = () => {
 
     return (
         <div ref={mapContainer} className="w-full h-full bg-background relative">
+            <ZoomControl zoom={currentZoom} onZoomChange={handleZoomChange} />
             <FloatingActionButton />
         </div>
     );
