@@ -726,3 +726,8 @@ body,
 .font-medium {
     font-weight: 500;
 }
+
+/* SearchBox input placeholder */
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.28);
+}

@@ -1,4 +1,5 @@
 import { MapView } from './components/map/MapView/MapView';
+import { SearchBox } from './components/map/SearchBox';
 import { Trophy } from 'lucide-react';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           </div>
         </div>
       </header>
+      <SearchBox />
       <MapView />
     </div>
   );

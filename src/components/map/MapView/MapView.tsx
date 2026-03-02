@@ -35,7 +35,7 @@ export const MapView: React.FC = () => {
     const popupRef = useRef<maplibregl.Popup | null>(null);
     const popupRootRef = useRef<Root | null>(null);
     
-    const { center, zoom, setViewport } = useMapStore();
+    const { center, zoom, setViewport, flyToTarget } = useMapStore();
     const keepsakes = useKeepsakeStore(state => state.keepsakes);
     
     // Track map bounds for clustering
@@ -201,6 +201,16 @@ export const MapView: React.FC = () => {
         ]);
         setCurrentZoom(map.current.getZoom());
     }, []);
+
+    // React to flyTo requests from the store (e.g. from SearchBox)
+    useEffect(() => {
+        if (!flyToTarget || !map.current) return;
+        map.current.flyTo({
+            center: [flyToTarget.center.longitude, flyToTarget.center.latitude],
+            zoom: flyToTarget.zoom,
+            duration: 1200,
+        });
+    }, [flyToTarget]);
 
     // Initialize map
     useEffect(() => {
