@@ -5,7 +5,6 @@ import { createRoot, type Root } from 'react-dom/client';
 import { useMapStore } from '../../../stores/mapStore';
 import { useKeepsakeStore } from '../../../stores/keepsakeStore';
 import { MOCK_CLUBS } from '../../../services/mock/clubs.mock';
-import { FloatingActionButton } from '../../FloatingActionButton';
 import { ClusterMarker } from '../ClusterMarker';
 import { ClubMarker, KeepsakeMarker } from '../ClubMarker';
 import { HoverPreview } from '../HoverPreview';
@@ -331,7 +330,6 @@ export const MapView: React.FC = () => {
     return (
         <div ref={mapContainer} className="w-full h-full bg-background relative">
             <ZoomControl zoom={currentZoom} onZoomChange={handleZoomChange} />
-            <FloatingActionButton />
         </div>
     );
 };
