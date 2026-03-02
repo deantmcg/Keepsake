@@ -6824,4 +6824,99 @@ export const MOCK_CLUBS: Club[] = [
         founded: 1945,
         colors: ['#7851a9', '#ffd700']
     },
+    {
+        id: '880',
+        name: 'Sunderland',
+        normalizedName: 'SUNDERLAND',
+        shortName: 'Sunderland',
+        country: 'England',
+        city: 'Sunderland',
+        stadium: {
+            id: 's880',
+            name: 'Stadium of Light',
+            city: 'Sunderland',
+            country: 'England',
+            coordinates: { latitude: 54.9154, longitude: -1.3881 },
+            clubs: ['880']
+        },
+        coordinates: { latitude: 54.9154, longitude: -1.3881 },
+        founded: 1879,
+        colors: ['#eb3e32', '#ffffff', '#000000']
+    },
+    {
+        id: '881',
+        name: 'Fulham',
+        normalizedName: 'FULHAM',
+        shortName: 'Fulham',
+        country: 'England',
+        city: 'London',
+        stadium: {
+            id: 's881',
+            name: 'Craven Cottage',
+            city: 'London',
+            country: 'England',
+            coordinates: { latitude: 51.4755, longitude: -0.2225 },
+            clubs: ['881']
+        },
+        coordinates: { latitude: 51.4755, longitude: -0.2225 },
+        founded: 1879,
+        colors: ['#000000', '#ffffff']
+    },
+    {
+        id: '882',
+        name: 'Ipswich Town',
+        normalizedName: 'IPSWICH TOWN',
+        shortName: 'Ipswich',
+        country: 'England',
+        city: 'Ipswich',
+        stadium: {
+            id: 's882',
+            name: 'Portman Road',
+            city: 'Ipswich',
+            country: 'England',
+            coordinates: { latitude: 52.0569, longitude: 1.1438 },
+            clubs: ['882']
+        },
+        coordinates: { latitude: 52.0569, longitude: 1.1438 },
+        founded: 1878,
+        colors: ['#0066cc', '#ffffff']
+    },
+    {
+        id: '883',
+        name: 'Brentford',
+        normalizedName: 'BRENTFORD',
+        shortName: 'Brentford',
+        country: 'England',
+        city: 'London',
+        stadium: {
+            id: 's883',
+            name: 'Gtech Community Stadium',
+            city: 'London',
+            country: 'England',
+            coordinates: { latitude: 51.4933, longitude: -0.2910 },
+            clubs: ['883']
+        },
+        coordinates: { latitude: 51.4933, longitude: -0.2910 },
+        founded: 1889,
+        colors: ['#e41e2a', '#ffffff', '#000000']
+    },
+    {
+        id: '884',
+        name: 'Reading',
+        normalizedName: 'READING',
+        shortName: 'Reading',
+        country: 'England',
+        city: 'Reading',
+        stadium: {
+            id: 's884',
+            name: 'Madejski Stadium',
+            city: 'Reading',
+            country: 'England',
+            coordinates: { latitude: 51.4218, longitude: -0.9739 },
+            clubs: ['884']
+        },
+        coordinates: { latitude: 51.4218, longitude: -0.9739 },
+        founded: 1871,
+        colors: ['#004da6', '#ffffff']
+    }
 ];
