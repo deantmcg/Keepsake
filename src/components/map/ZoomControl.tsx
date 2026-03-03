@@ -1,5 +1,5 @@
 import React from 'react';
-import { ZoomIn, ZoomOut, Globe } from 'lucide-react';
+import { ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 
 interface ZoomControlProps {
     zoom: number;
@@ -84,7 +84,7 @@ export const ZoomControl: React.FC<ZoomControlProps> = ({
                     style={btnStyle}
                     title="Reset to world view"
                 >
-                    <Globe style={{ width: '15px', height: '15px' }} />
+                    <RotateCcw style={{ width: '15px', height: '15px' }} />
                 </button>
             )}
         </div>

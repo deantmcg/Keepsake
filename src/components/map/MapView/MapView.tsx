@@ -188,10 +188,10 @@ export const MapView: React.FC = () => {
         map.current.easeTo({ zoom: newZoom, duration: 300 });
     }, []);
 
-    // Reset map to default world view
+    // Reset zoom to default without changing center position
     const handleZoomReset = useCallback(() => {
         if (!map.current) return;
-        map.current.flyTo({ center: [0, 20], zoom: 2, duration: 800 });
+        map.current.easeTo({ zoom: 2, duration: 600 });
     }, []);
 
     // Update bounds when map moves
