@@ -74,23 +74,19 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         
         return (
             <div className="flex items-center gap-4 mb-4 pb-3 border-b border-white/10">
-                <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-slate-700/50 flex items-center justify-center">
-                        <MapPin className="w-4 h-4 text-slate-300" />
-                    </div>
-                    <div>
-                        <span className="text-lg font-bold text-white">{point_count}</span>
-                        <span className="text-xs text-slate-400 ml-1">locations</span>
-                    </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <MapPin style={{ width: '14px', height: '14px', color: 'rgba(255,255,255,0.45)', flexShrink: 0 }} />
+                    <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{point_count}</span>
+                    <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>clubs</span>
                 </div>
                 {keepsakeCount > 0 && (
                     <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
                             <Sparkles className="w-4 h-4 text-emerald-400" />
                         </div>
-                        <div>
-                            <span className="text-lg font-bold text-emerald-400">{keepsakeCount}</span>
-                            <span className="text-xs text-slate-400 ml-1">collected</span>
+                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
+                            <span style={{ fontSize: '15px', fontWeight: 700, color: '#34d399' }}>{keepsakeCount}</span>
+                            <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>collected</span>
                         </div>
                     </div>
                 )}
