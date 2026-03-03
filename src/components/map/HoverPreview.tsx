@@ -73,7 +73,7 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         const { point_count, keepsakeCount } = clusterProps;
         
         return (
-            <div className="flex items-center gap-4 mb-4 pb-3 border-b border-white/10">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <MapPin style={{ width: '14px', height: '14px', color: 'rgba(255,255,255,0.45)', flexShrink: 0 }} />
                     <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{point_count}</span>
