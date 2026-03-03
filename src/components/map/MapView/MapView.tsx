@@ -188,6 +188,12 @@ export const MapView: React.FC = () => {
         map.current.easeTo({ zoom: newZoom, duration: 300 });
     }, []);
 
+    // Reset map to default world view
+    const handleZoomReset = useCallback(() => {
+        if (!map.current) return;
+        map.current.flyTo({ center: [0, 20], zoom: 2, duration: 800 });
+    }, []);
+
     // Update bounds when map moves
     const updateBounds = useCallback(() => {
         if (!map.current) return;
@@ -339,7 +345,7 @@ export const MapView: React.FC = () => {
 
     return (
         <div ref={mapContainer} className="w-full h-full bg-background relative">
-            <ZoomControl zoom={currentZoom} onZoomChange={handleZoomChange} />
+            <ZoomControl zoom={currentZoom} onZoomChange={handleZoomChange} onReset={handleZoomReset} />
         </div>
     );
 };
