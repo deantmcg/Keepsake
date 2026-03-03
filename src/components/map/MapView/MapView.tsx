@@ -10,6 +10,7 @@ import { ClusterMarker } from '../ClusterMarker';
 import { ClubMarker, KeepsakeMarker } from '../ClubMarker';
 import { HoverPreview } from '../HoverPreview';
 import { ZoomControl } from '../ZoomControl';
+import { LogoBar } from '../../layout/LogoBar';
 import { 
     useSupercluster, 
     isCluster, 
@@ -351,6 +352,7 @@ export const MapView: React.FC = () => {
 
     return (
         <div ref={mapContainer} className="w-full h-full bg-background relative">
+            <LogoBar />
             <ZoomControl zoom={currentZoom} onZoomChange={handleZoomChange} onReset={handleZoomReset} />
         </div>
     );
