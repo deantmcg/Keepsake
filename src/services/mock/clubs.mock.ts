@@ -1030,10 +1030,10 @@ export const MOCK_CLUBS: Club[] = [
         stadium: {
             id: 'saf-005',
             name: 'Stade Hammadi Agrebi',
-            city: 'Tunis',
+            city: 'Radès',
             country: 'Tunisia',
             coordinates: { latitude: 36.7456, longitude: 10.2708 },
-            clubs: ['af-005']
+            clubs: ['af-005', 'af-041']
         },
         coordinates: { latitude: 36.7456, longitude: 10.2708 },
         founded: 1919,
@@ -1166,7 +1166,7 @@ export const MOCK_CLUBS: Club[] = [
             city: 'Algiers',
             country: 'Algeria',
             coordinates: { latitude: 36.7525, longitude: 2.9967 },
-            clubs: ['af-012']
+            clubs: ['af-012', 'af-031']
         },
         coordinates: { latitude: 36.7525, longitude: 2.9967 },
         founded: 1921,
@@ -1204,7 +1204,7 @@ export const MOCK_CLUBS: Club[] = [
             city: 'Luanda',
             country: 'Angola',
             coordinates: { latitude: -8.9767, longitude: 13.2842 },
-            clubs: ['af-014']
+            clubs: ['af-014', 'af-015']
         },
         coordinates: { latitude: -8.9767, longitude: 13.2842 },
         founded: 1980,
@@ -1223,7 +1223,7 @@ export const MOCK_CLUBS: Club[] = [
             city: 'Luanda',
             country: 'Angola',
             coordinates: { latitude: -8.9767, longitude: 13.2842 },
-            clubs: ['af-015']
+            clubs: ['af-014', 'af-015']
         },
         coordinates: { latitude: -8.9767, longitude: 13.2842 },
         founded: 1977,
@@ -1527,7 +1527,7 @@ export const MOCK_CLUBS: Club[] = [
             city: 'Algiers',
             country: 'Algeria',
             coordinates: { latitude: 36.7525, longitude: 2.9967 },
-            clubs: ['af-031']
+            clubs: ['af-012', 'af-031']
         },
         coordinates: { latitude: 36.7525, longitude: 2.9967 },
         founded: 1994,
@@ -4714,12 +4714,12 @@ export const MOCK_CLUBS: Club[] = [
         country: 'Italy',
         city: 'Turin',
         stadium: {
-            id: 's274',
+            id: 's231',
             name: 'Stadio Olimpico Grande Torino',
             city: 'Turin',
             country: 'Italy',
             coordinates: { latitude: 45.0619, longitude: 7.6414 },
-            clubs: ['274', '280']
+            clubs: ['231']
         },
         coordinates: { latitude: 45.0619, longitude: 7.6414 },
         founded: 1906,
