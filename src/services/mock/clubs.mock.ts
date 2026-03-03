@@ -1,6 +1,873 @@
 import type { Club } from '../../types/domain';
 
 export const MOCK_CLUBS: Club[] = [
+    // NIFL Premiership (Northern Ireland)
+    {
+        id: 'ni-001',
+        name: 'Linfield',
+        normalizedName: 'LINFIELD',
+        shortName: 'Linfield',
+        country: 'Northern Ireland',
+        city: 'Belfast',
+        stadium: {
+            id: 'sni-001',
+            name: 'Windsor Park',
+            city: 'Belfast',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.5828, longitude: -5.9553 },
+            clubs: ['ni-001']
+        },
+        coordinates: { latitude: 54.5828, longitude: -5.9553 },
+        founded: 1886,
+        colors: ['#005ea2', '#ffffff', '#e30613']
+    },
+    {
+        id: 'ni-002',
+        name: 'Glentoran',
+        normalizedName: 'GLENTORAN',
+        shortName: 'Glens',
+        country: 'Northern Ireland',
+        city: 'Belfast',
+        stadium: {
+            id: 'sni-002',
+            name: 'The Oval',
+            city: 'Belfast',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.6025, longitude: -5.8881 },
+            clubs: ['ni-002']
+        },
+        coordinates: { latitude: 54.6025, longitude: -5.8881 },
+        founded: 1882,
+        colors: ['#009640', '#e30613', '#000000']
+    },
+    {
+        id: 'ni-003',
+        name: 'Larne',
+        normalizedName: 'LARNE',
+        shortName: 'Larne',
+        country: 'Northern Ireland',
+        city: 'Larne',
+        stadium: {
+            id: 'sni-003',
+            name: 'Inver Park',
+            city: 'Larne',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.8481, longitude: -5.8197 },
+            clubs: ['ni-003']
+        },
+        coordinates: { latitude: 54.8481, longitude: -5.8197 },
+        founded: 1889,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: 'ni-004',
+        name: 'Cliftonville',
+        normalizedName: 'CLIFTONVILLE',
+        shortName: 'Cliftonville',
+        country: 'Northern Ireland',
+        city: 'Belfast',
+        stadium: {
+            id: 'sni-004',
+            name: 'Solitude',
+            city: 'Belfast',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.6197, longitude: -5.9458 },
+            clubs: ['ni-004']
+        },
+        coordinates: { latitude: 54.6197, longitude: -5.9458 },
+        founded: 1879,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: 'ni-005',
+        name: 'Crusaders',
+        normalizedName: 'CRUSADERS',
+        shortName: 'Crues',
+        country: 'Northern Ireland',
+        city: 'Belfast',
+        stadium: {
+            id: 'sni-005',
+            name: 'Seaview',
+            city: 'Belfast',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.6217, longitude: -5.9225 },
+            clubs: ['ni-005']
+        },
+        coordinates: { latitude: 54.6217, longitude: -5.9225 },
+        founded: 1898,
+        colors: ['#e30613', '#000000']
+    },
+    {
+        id: 'ni-006',
+        name: 'Coleraine',
+        normalizedName: 'COLERAINE',
+        shortName: 'Coleraine',
+        country: 'Northern Ireland',
+        city: 'Coleraine',
+        stadium: {
+            id: 'sni-006',
+            name: 'The Showgrounds',
+            city: 'Coleraine',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 55.1306, longitude: -6.6669 },
+            clubs: ['ni-006']
+        },
+        coordinates: { latitude: 55.1306, longitude: -6.6669 },
+        founded: 1927,
+        colors: ['#005ea2', '#ffffff']
+    },
+    {
+        id: 'ni-007',
+        name: 'Ballymena United',
+        normalizedName: 'BALLYMENA UNITED',
+        shortName: 'Ballymena',
+        country: 'Northern Ireland',
+        city: 'Ballymena',
+        stadium: {
+            id: 'sni-007',
+            name: 'Ballymena Showgrounds',
+            city: 'Ballymena',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.8683, longitude: -6.2625 },
+            clubs: ['ni-007']
+        },
+        coordinates: { latitude: 54.8683, longitude: -6.2625 },
+        founded: 1928,
+        colors: ['#87d8f7', '#ffffff']
+    },
+    {
+        id: 'ni-008',
+        name: 'Portadown',
+        normalizedName: 'PORTADOWN',
+        shortName: 'Portadown',
+        country: 'Northern Ireland',
+        city: 'Portadown',
+        stadium: {
+            id: 'sni-008',
+            name: 'Shamrock Park',
+            city: 'Portadown',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.4267, longitude: -6.4428 },
+            clubs: ['ni-008']
+        },
+        coordinates: { latitude: 54.4267, longitude: -6.4428 },
+        founded: 1887,
+        colors: ['#e30613', '#ffffff']
+    },
+    // NIFL Championship (Northern Ireland)
+    {
+        id: 'ni-009',
+        name: 'Dundela',
+        normalizedName: 'DUNDELA',
+        shortName: 'Dundela',
+        country: 'Northern Ireland',
+        city: 'Belfast',
+        stadium: {
+            id: 'sni-009',
+            name: 'Wilgar Park',
+            city: 'Belfast',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.5969, longitude: -5.8792 },
+            clubs: ['ni-009']
+        },
+        coordinates: { latitude: 54.5969, longitude: -5.8792 },
+        founded: 1895,
+        colors: ['#009640', '#ffffff']
+    },
+    {
+        id: 'ni-010',
+        name: 'Bangor',
+        normalizedName: 'BANGOR',
+        shortName: 'Bangor',
+        country: 'Northern Ireland',
+        city: 'Bangor',
+        stadium: {
+            id: 'sni-010',
+            name: 'Clandeboye Park',
+            city: 'Bangor',
+            country: 'Northern Ireland',
+            coordinates: { latitude: 54.6433, longitude: -5.6783 },
+            clubs: ['ni-010']
+        },
+        coordinates: { latitude: 54.6433, longitude: -5.6783 },
+        founded: 1918,
+        colors: ['#fff200', '#005ea2']
+    },
+    // Norway (Eliteserien)
+    {
+        id: 'no-001',
+        name: 'Bodø/Glimt',
+        normalizedName: 'BODO/GLIMT',
+        shortName: 'Glimt',
+        country: 'Norway',
+        city: 'Bodø',
+        stadium: {
+            id: 'sno-001',
+            name: 'Aspmyra Stadion',
+            city: 'Bodø',
+            country: 'Norway',
+            coordinates: { latitude: 67.2775, longitude: 14.3919 },
+            clubs: ['no-001']
+        },
+        coordinates: { latitude: 67.2775, longitude: 14.3919 },
+        founded: 1916,
+        colors: ['#ffed00', '#000000']
+    },
+    {
+        id: 'no-002',
+        name: 'Molde',
+        normalizedName: 'MOLDE',
+        shortName: 'Molde',
+        country: 'Norway',
+        city: 'Molde',
+        stadium: {
+            id: 'sno-002',
+            name: 'Aker Stadion',
+            city: 'Molde',
+            country: 'Norway',
+            coordinates: { latitude: 62.7333, longitude: 7.1478 },
+            clubs: ['no-002']
+        },
+        coordinates: { latitude: 62.7333, longitude: 7.1478 },
+        founded: 1911,
+        colors: ['#005ea2', '#ffffff']
+    },
+    {
+        id: 'no-003',
+        name: 'Rosenborg',
+        normalizedName: 'ROSENBORG',
+        shortName: 'RBK',
+        country: 'Norway',
+        city: 'Trondheim',
+        stadium: {
+            id: 'sno-003',
+            name: 'Lerkendal Stadion',
+            city: 'Trondheim',
+            country: 'Norway',
+            coordinates: { latitude: 63.4128, longitude: 10.4047 },
+            clubs: ['no-003']
+        },
+        coordinates: { latitude: 63.4128, longitude: 10.4047 },
+        founded: 1917,
+        colors: ['#ffffff', '#000000', '#ffed00']
+    },
+    {
+        id: 'no-004',
+        name: 'Viking',
+        normalizedName: 'VIKING',
+        shortName: 'Viking',
+        country: 'Norway',
+        city: 'Stavanger',
+        stadium: {
+            id: 'sno-004',
+            name: 'SR-Bank Arena',
+            city: 'Stavanger',
+            country: 'Norway',
+            coordinates: { latitude: 58.9147, longitude: 5.7297 },
+            clubs: ['no-004']
+        },
+        coordinates: { latitude: 58.9147, longitude: 5.7297 },
+        founded: 1899,
+        colors: ['#000033', '#ffffff']
+    },
+    {
+        id: 'no-005',
+        name: 'Brann',
+        normalizedName: 'BRANN',
+        shortName: 'Brann',
+        country: 'Norway',
+        city: 'Bergen',
+        stadium: {
+            id: 'sno-005',
+            name: 'Brann Stadion',
+            city: 'Bergen',
+            country: 'Norway',
+            coordinates: { latitude: 60.3669, longitude: 5.3575 },
+            clubs: ['no-005']
+        },
+        coordinates: { latitude: 60.3669, longitude: 5.3575 },
+        founded: 1908,
+        colors: ['#e30613', '#ffffff']
+    },
+    // Finland (Veikkausliiga)
+    {
+        id: 'fi-001',
+        name: 'HJK Helsinki',
+        normalizedName: 'HJK HELSINKI',
+        shortName: 'HJK',
+        country: 'Finland',
+        city: 'Helsinki',
+        stadium: {
+            id: 'sfi-001',
+            name: 'Bolt Arena',
+            city: 'Helsinki',
+            country: 'Finland',
+            coordinates: { latitude: 60.1872, longitude: 24.9258 },
+            clubs: ['fi-001']
+        },
+        coordinates: { latitude: 60.1872, longitude: 24.9258 },
+        founded: 1907,
+        colors: ['#005ea2', '#ffffff']
+    },
+    {
+        id: 'fi-002',
+        name: 'KuPS',
+        normalizedName: 'KUPS',
+        shortName: 'KuPS',
+        country: 'Finland',
+        city: 'Kuopio',
+        stadium: {
+            id: 'sfi-002',
+            name: 'Kuopio Football Stadium',
+            city: 'Kuopio',
+            country: 'Finland',
+            coordinates: { latitude: 62.8925, longitude: 27.6908 },
+            clubs: ['fi-002']
+        },
+        coordinates: { latitude: 62.8925, longitude: 27.6908 },
+        founded: 1923,
+        colors: ['#fff200', '#000000']
+    },
+    // Iceland (Besta deild karla)
+    {
+        id: 'is-001',
+        name: 'Víkingur Reykjavík',
+        normalizedName: 'VIKINGUR REYKJAVIK',
+        shortName: 'Víkingur',
+        country: 'Iceland',
+        city: 'Reykjavík',
+        stadium: {
+            id: 'sis-001',
+            name: 'Víkingsvöllur',
+            city: 'Reykjavík',
+            country: 'Iceland',
+            coordinates: { latitude: 64.1208, longitude: -21.8592 },
+            clubs: ['is-001']
+        },
+        coordinates: { latitude: 64.1208, longitude: -21.8592 },
+        founded: 1908,
+        colors: ['#000000', '#e30613']
+    },
+    {
+        id: 'is-002',
+        name: 'Valur',
+        normalizedName: 'VALUR',
+        shortName: 'Valur',
+        country: 'Iceland',
+        city: 'Reykjavík',
+        stadium: {
+            id: 'sis-002',
+            name: 'Hlíðarendi',
+            city: 'Reykjavík',
+            country: 'Iceland',
+            coordinates: { latitude: 64.1311, longitude: -21.9283 },
+            clubs: ['is-002']
+        },
+        coordinates: { latitude: 64.1311, longitude: -21.9283 },
+        founded: 1911,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: 'is-003',
+        name: 'KR Reykjavík',
+        normalizedName: 'KR REYKJAVIK',
+        shortName: 'KR',
+        country: 'Iceland',
+        city: 'Reykjavík',
+        stadium: {
+            id: 'sis-003',
+            name: 'KR-völlur',
+            city: 'Reykjavík',
+            country: 'Iceland',
+            coordinates: { latitude: 64.1489, longitude: -21.9619 },
+            clubs: ['is-003']
+        },
+        coordinates: { latitude: 64.1489, longitude: -21.9619 },
+        founded: 1899,
+        colors: ['#000000', '#ffffff']
+    },
+    // Russia (Premier League)
+    {
+        id: 'ru-001',
+        name: 'Zenit Saint Petersburg',
+        normalizedName: 'ZENIT SAINT PETERSBURG',
+        shortName: 'Zenit',
+        country: 'Russia',
+        city: 'Saint Petersburg',
+        stadium: {
+            id: 'sru-001',
+            name: 'Krestovsky Stadium',
+            city: 'Saint Petersburg',
+            country: 'Russia',
+            coordinates: { latitude: 59.9728, longitude: 30.2214 },
+            clubs: ['ru-001']
+        },
+        coordinates: { latitude: 59.9728, longitude: 30.2214 },
+        founded: 1925,
+        colors: ['#00bfff', '#ffffff', '#00008b']
+    },
+    {
+        id: 'ru-002',
+        name: 'Spartak Moscow',
+        normalizedName: 'SPARTAK MOSCOW',
+        shortName: 'Spartak',
+        country: 'Russia',
+        city: 'Moscow',
+        stadium: {
+            id: 'sru-002',
+            name: 'Otkritie Arena',
+            city: 'Moscow',
+            country: 'Russia',
+            coordinates: { latitude: 55.8181, longitude: 37.4403 },
+            clubs: ['ru-002']
+        },
+        coordinates: { latitude: 55.8181, longitude: 37.4403 },
+        founded: 1922,
+        colors: ['#e30613', '#ffffff']
+    },
+    // Ukraine (Premier League)
+    {
+        id: 'ua-001',
+        name: 'Shakhtar Donetsk',
+        normalizedName: 'SHAKHTAR DONETSK',
+        shortName: 'Shakhtar',
+        country: 'Ukraine',
+        city: 'Donetsk',
+        stadium: {
+            id: 'sua-001',
+            name: 'Donbass Arena',
+            city: 'Donetsk',
+            country: 'Ukraine',
+            coordinates: { latitude: 48.0211, longitude: 37.8103 },
+            clubs: ['ua-001']
+        },
+        coordinates: { latitude: 48.0211, longitude: 37.8103 },
+        founded: 1936,
+        colors: ['#ff6600', '#000000']
+    },
+    {
+        id: 'ua-002',
+        name: 'Dynamo Kyiv',
+        normalizedName: 'DYNAMO KYIV',
+        shortName: 'Dynamo',
+        country: 'Ukraine',
+        city: 'Kyiv',
+        stadium: {
+            id: 'sua-002',
+            name: 'NSC Olimpiyskiy',
+            city: 'Kyiv',
+            country: 'Ukraine',
+            coordinates: { latitude: 50.4333, longitude: 30.5167 },
+            clubs: ['ua-002']
+        },
+        coordinates: { latitude: 50.4333, longitude: 30.5167 },
+        founded: 1927,
+        colors: ['#ffffff', '#0000ff']
+    },
+    // Romania (SuperLiga)
+    {
+        id: 'ro-001',
+        name: 'FCSB',
+        normalizedName: 'FCSB',
+        shortName: 'FCSB',
+        country: 'Romania',
+        city: 'Bucharest',
+        stadium: {
+            id: 'sro-001',
+            name: 'Arena Națională',
+            city: 'Bucharest',
+            country: 'Romania',
+            coordinates: { latitude: 44.4372, longitude: 26.1525 },
+            clubs: ['ro-001']
+        },
+        coordinates: { latitude: 44.4372, longitude: 26.1525 },
+        founded: 1947,
+        colors: ['#e30613', '#005ea2']
+    },
+    {
+        id: 'ro-002',
+        name: 'CFR Cluj',
+        normalizedName: 'CFR CLUJ',
+        shortName: 'CFR',
+        country: 'Romania',
+        city: 'Cluj-Napoca',
+        stadium: {
+            id: 'sro-002',
+            name: 'Stadionul Dr. Constantin Rădulescu',
+            city: 'Cluj-Napoca',
+            country: 'Romania',
+            coordinates: { latitude: 46.7794, longitude: 23.5778 },
+            clubs: ['ro-002']
+        },
+        coordinates: { latitude: 46.7794, longitude: 23.5778 },
+        founded: 1907,
+        colors: ['#8b1d41', '#ffffff']
+    },
+    // Bulgaria (First League)
+    {
+        id: 'bg-001',
+        name: 'Ludogorets Razgrad',
+        normalizedName: 'LUDOGORETS RAZGRAD',
+        shortName: 'Ludogorets',
+        country: 'Bulgaria',
+        city: 'Razgrad',
+        stadium: {
+            id: 'sbg-001',
+            name: 'Huvepharma Arena',
+            city: 'Razgrad',
+            country: 'Bulgaria',
+            coordinates: { latitude: 43.5189, longitude: 26.5247 },
+            clubs: ['bg-001']
+        },
+        coordinates: { latitude: 43.5189, longitude: 26.5247 },
+        founded: 1945,
+        colors: ['#009640', '#ffffff']
+    },
+    {
+        id: 'bg-002',
+        name: 'CSKA Sofia',
+        normalizedName: 'CSKA SOFIA',
+        shortName: 'CSKA',
+        country: 'Bulgaria',
+        city: 'Sofia',
+        stadium: {
+            id: 'sbg-002',
+            name: 'Balgarska Armiya Stadium',
+            city: 'Sofia',
+            country: 'Bulgaria',
+            coordinates: { latitude: 42.6844, longitude: 23.3403 },
+            clubs: ['bg-002']
+        },
+        coordinates: { latitude: 42.6844, longitude: 23.3403 },
+        founded: 1948,
+        colors: ['#e30613', '#ffffff']
+    },
+    // Hungary (Nemzeti Bajnokság I)
+    {
+        id: 'hu-001',
+        name: 'Ferencváros',
+        normalizedName: 'FERENCVAROS',
+        shortName: 'Fradi',
+        country: 'Hungary',
+        city: 'Budapest',
+        stadium: {
+            id: 'shu-001',
+            name: 'Groupama Arena',
+            city: 'Budapest',
+            country: 'Hungary',
+            coordinates: { latitude: 47.4747, longitude: 19.0986 },
+            clubs: ['hu-001']
+        },
+        coordinates: { latitude: 47.4747, longitude: 19.0986 },
+        founded: 1899,
+        colors: ['#009640', '#ffffff']
+    },
+    {
+        id: 'hu-002',
+        name: 'MOL Fehérvár',
+        normalizedName: 'MOL FEHERVAR',
+        shortName: 'Fehérvár',
+        country: 'Hungary',
+        city: 'Székesfehérvár',
+        stadium: {
+            id: 'shu-002',
+            name: 'MOL Aréna Sóstó',
+            city: 'Székesfehérvár',
+            country: 'Hungary',
+            coordinates: { latitude: 47.1692, longitude: 18.4239 },
+            clubs: ['hu-002']
+        },
+        coordinates: { latitude: 47.1692, longitude: 18.4239 },
+        founded: 1941,
+        colors: ['#e30613', '#005ea2']
+    },
+    // Greece (Super League)
+    {
+        id: 'gr-001',
+        name: 'Olympiacos',
+        normalizedName: 'OLYMPIACOS',
+        shortName: 'Olympiacos',
+        country: 'Greece',
+        city: 'Piraeus',
+        stadium: {
+            id: 'sgr-001',
+            name: 'Karaiskakis Stadium',
+            city: 'Piraeus',
+            country: 'Greece',
+            coordinates: { latitude: 37.9464, longitude: 23.6644 },
+            clubs: ['gr-001']
+        },
+        coordinates: { latitude: 37.9464, longitude: 23.6644 },
+        founded: 1925,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: 'gr-002',
+        name: 'Panathinaikos',
+        normalizedName: 'PANATHINAIKOS',
+        shortName: 'Panathinaikos',
+        country: 'Greece',
+        city: 'Athens',
+        stadium: {
+            id: 'sgr-002',
+            name: 'Apostolos Nikolaidis Stadium',
+            city: 'Athens',
+            country: 'Greece',
+            coordinates: { latitude: 37.9869, longitude: 23.7547 },
+            clubs: ['gr-002']
+        },
+        coordinates: { latitude: 37.9869, longitude: 23.7547 },
+        founded: 1908,
+        colors: ['#009640', '#ffffff']
+    },
+    {
+        id: 'gr-003',
+        name: 'AEK Athens',
+        normalizedName: 'AEK ATHENS',
+        shortName: 'AEK',
+        country: 'Greece',
+        city: 'Athens',
+        stadium: {
+            id: 'sgr-003',
+            name: 'Agia Sophia Stadium',
+            city: 'Athens',
+            country: 'Greece',
+            coordinates: { latitude: 38.04, longitude: 23.7431 },
+            clubs: ['gr-003']
+        },
+        coordinates: { latitude: 38.04, longitude: 23.7431 },
+        founded: 1924,
+        colors: ['#fff200', '#000000']
+    },
+    {
+        id: 'gr-004',
+        name: 'PAOK',
+        normalizedName: 'PAOK',
+        shortName: 'PAOK',
+        country: 'Greece',
+        city: 'Thessaloniki',
+        stadium: {
+            id: 'sgr-004',
+            name: 'Toumba Stadium',
+            city: 'Thessaloniki',
+            country: 'Greece',
+            coordinates: { latitude: 40.6136, longitude: 22.9722 },
+            clubs: ['gr-004']
+        },
+        coordinates: { latitude: 40.6136, longitude: 22.9722 },
+        founded: 1926,
+        colors: ['#000000', '#ffffff']
+    },
+    {
+        id: 'gr-005',
+        name: 'Aris Thessaloniki',
+        normalizedName: 'ARIS THESSALONIKI',
+        shortName: 'Aris',
+        country: 'Greece',
+        city: 'Thessaloniki',
+        stadium: {
+            id: 'sgr-005',
+            name: 'Kleanthis Vikelidis Stadium',
+            city: 'Thessaloniki',
+            country: 'Greece',
+            coordinates: { latitude: 40.5997, longitude: 22.9692 },
+            clubs: ['gr-005']
+        },
+        coordinates: { latitude: 40.5997, longitude: 22.9692 },
+        founded: 1914,
+        colors: ['#fff200', '#000000']
+    },
+    // Africa (CAF)
+    {
+        id: 'af-001',
+        name: 'Al Ahly',
+        normalizedName: 'AL AHLY',
+        shortName: 'Al Ahly',
+        country: 'Egypt',
+        city: 'Cairo',
+        stadium: {
+            id: 'saf-001',
+            name: 'Cairo International Stadium',
+            city: 'Cairo',
+            country: 'Egypt',
+            coordinates: { latitude: 30.0692, longitude: 31.2622 },
+            clubs: ['af-001', 'af-002']
+        },
+        coordinates: { latitude: 30.0692, longitude: 31.2622 },
+        founded: 1907,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: 'af-002',
+        name: 'Zamalek',
+        normalizedName: 'ZAMALEK',
+        shortName: 'Zamalek',
+        country: 'Egypt',
+        city: 'Cairo',
+        stadium: {
+            id: 'saf-001',
+            name: 'Cairo International Stadium',
+            city: 'Cairo',
+            country: 'Egypt',
+            coordinates: { latitude: 30.0692, longitude: 31.2622 },
+            clubs: ['af-001', 'af-002']
+        },
+        coordinates: { latitude: 30.0692, longitude: 31.2622 },
+        founded: 1911,
+        colors: ['#ffffff', '#e30613']
+    },
+    {
+        id: 'af-003',
+        name: 'Wydad AC',
+        normalizedName: 'WYDAD AC',
+        shortName: 'Wydad',
+        country: 'Morocco',
+        city: 'Casablanca',
+        stadium: {
+            id: 'saf-003',
+            name: 'Stade Mohammed V',
+            city: 'Casablanca',
+            country: 'Morocco',
+            coordinates: { latitude: 33.5828, longitude: -7.6475 },
+            clubs: ['af-003', 'af-004']
+        },
+        coordinates: { latitude: 33.5828, longitude: -7.6475 },
+        founded: 1937,
+        colors: ['#e30613', '#ffffff']
+    },
+    {
+        id: 'af-004',
+        name: 'Raja SC',
+        normalizedName: 'RAJA SC',
+        shortName: 'Raja',
+        country: 'Morocco',
+        city: 'Casablanca',
+        stadium: {
+            id: 'saf-003',
+            name: 'Stade Mohammed V',
+            city: 'Casablanca',
+            country: 'Morocco',
+            coordinates: { latitude: 33.5828, longitude: -7.6475 },
+            clubs: ['af-003', 'af-004']
+        },
+        coordinates: { latitude: 33.5828, longitude: -7.6475 },
+        founded: 1949,
+        colors: ['#009640', '#ffffff']
+    },
+    {
+        id: 'af-005',
+        name: 'Esperance de Tunis',
+        normalizedName: 'ESPERANCE DE TUNIS',
+        shortName: 'EST',
+        country: 'Tunisia',
+        city: 'Tunis',
+        stadium: {
+            id: 'saf-005',
+            name: 'Stade Hammadi Agrebi',
+            city: 'Tunis',
+            country: 'Tunisia',
+            coordinates: { latitude: 36.7456, longitude: 10.2708 },
+            clubs: ['af-005']
+        },
+        coordinates: { latitude: 36.7456, longitude: 10.2708 },
+        founded: 1919,
+        colors: ['#e30613', '#fff200']
+    },
+    {
+        id: 'af-006',
+        name: 'TP Mazembe',
+        normalizedName: 'TP MAZEMBE',
+        shortName: 'Mazembe',
+        country: 'DR Congo',
+        city: 'Lubumbashi',
+        stadium: {
+            id: 'saf-006',
+            name: 'Stade TP Mazembe',
+            city: 'Lubumbashi',
+            country: 'DR Congo',
+            coordinates: { latitude: -11.6661, longitude: 27.4697 },
+            clubs: ['af-006']
+        },
+        coordinates: { latitude: -11.6661, longitude: 27.4697 },
+        founded: 1939,
+        colors: ['#000000', '#ffffff']
+    },
+    {
+        id: 'af-007',
+        name: 'Mamelodi Sundowns',
+        normalizedName: 'MAMELODI SUNDOWNS',
+        shortName: 'Sundowns',
+        country: 'South Africa',
+        city: 'Pretoria',
+        stadium: {
+            id: 'saf-007',
+            name: 'Loftus Versfeld Stadium',
+            city: 'Pretoria',
+            country: 'South Africa',
+            coordinates: { latitude: -25.7533, longitude: 28.2228 },
+            clubs: ['af-007']
+        },
+        coordinates: { latitude: -25.7533, longitude: 28.2228 },
+        founded: 1970,
+        colors: ['#fff200', '#009640', '#005ea2']
+    },
+    {
+        id: 'af-008',
+        name: 'JS Kabylie',
+        normalizedName: 'JS KABYLIE',
+        shortName: 'JSK',
+        country: 'Algeria',
+        city: 'Tizi Ouzou',
+        stadium: {
+            id: 'saf-008',
+            name: 'November 1, 1954 Stadium',
+            city: 'Tizi Ouzou',
+            country: 'Algeria',
+            coordinates: { latitude: 36.7039, longitude: 4.0533 },
+            clubs: ['af-008']
+        },
+        coordinates: { latitude: 36.7039, longitude: 4.0533 },
+        founded: 1946,
+        colors: ['#fff200', '#009640']
+    },
+    {
+        id: 'af-009',
+        name: 'Hearts of Oak',
+        normalizedName: 'HEARTS OF OAK',
+        shortName: 'Hearts',
+        country: 'Ghana',
+        city: 'Accra',
+        stadium: {
+            id: 'saf-009',
+            name: 'Accra Sports Stadium',
+            city: 'Accra',
+            country: 'Ghana',
+            coordinates: { latitude: 5.5522, longitude: -0.1919 },
+            clubs: ['af-009']
+        },
+        coordinates: { latitude: 5.5522, longitude: -0.1919 },
+        founded: 1911,
+        colors: ['#e30613', '#fff200', '#005ea2']
+    },
+    {
+        id: 'af-010',
+        name: 'Enyimba FC',
+        normalizedName: 'ENYIMBA FC',
+        shortName: 'Enyimba',
+        country: 'Nigeria',
+        city: 'Aba',
+        stadium: {
+            id: 'saf-010',
+            name: 'Enyimba International Stadium',
+            city: 'Aba',
+            country: 'Nigeria',
+            coordinates: { latitude: 5.1017, longitude: 7.3592 },
+            clubs: ['af-010']
+        },
+        coordinates: { latitude: 5.1017, longitude: 7.3592 },
+        founded: 1976,
+        colors: ['#005ea2', '#ffffff']
+    },
     {
         id: '1',
         name: 'Crystal Palace',
@@ -1256,25 +2123,6 @@ export const MOCK_CLUBS: Club[] = [
         colors: ['#00914d', '#ffffff']
     },
     {
-        id: '257',
-        name: 'Lyon',
-        normalizedName: 'LYON',
-        shortName: 'Lyon',
-        country: 'France',
-        city: 'Lyon',
-        stadium: {
-            id: 's257',
-            name: 'Parc Olympique Lyonnais',
-            city: 'Lyon',
-            country: 'France',
-            coordinates: { latitude: 45.7653, longitude: 4.982 },
-            clubs: ['257']
-        },
-        coordinates: { latitude: 45.7653, longitude: 4.982 },
-        founded: 1950,
-        colors: ['#004ea2', '#e30613', '#ffffff']
-    },
-    {
         id: '266',
         name: 'Fiorentina',
         normalizedName: 'FIORENTINA',
@@ -1579,25 +2427,6 @@ export const MOCK_CLUBS: Club[] = [
         colors: ['#1a2f48', '#a71e31']
     },
     {
-        id: '295',
-        name: 'Mainz 05',
-        normalizedName: 'MAINZ 05',
-        shortName: 'Mainz',
-        country: 'Germany',
-        city: 'Mainz',
-        stadium: {
-            id: 's295',
-            name: 'Mewa Arena',
-            city: 'Mainz',
-            country: 'Germany',
-            coordinates: { latitude: 49.9844, longitude: 8.2242 },
-            clubs: ['295']
-        },
-        coordinates: { latitude: 49.9844, longitude: 8.2242 },
-        founded: 1905,
-        colors: ['#ed1c24', '#ffffff']
-    },
-    {
         id: '303',
         name: 'Sampdoria',
         normalizedName: 'SAMPDORIA',
@@ -1655,63 +2484,6 @@ export const MOCK_CLUBS: Club[] = [
         colors: ['#ffffff', '#000000', '#21a03c']
     },
     {
-        id: '474',
-        name: 'Union Berlin',
-        normalizedName: 'UNION BERLIN',
-        shortName: 'Union Berlin',
-        country: 'Germany',
-        city: 'Berlin',
-        stadium: {
-            id: 's474',
-            name: 'An der Alten Försterei',
-            city: 'Berlin',
-            country: 'Germany',
-            coordinates: { latitude: 52.4572, longitude: 13.5683 },
-            clubs: ['474']
-        },
-        coordinates: { latitude: 52.4572, longitude: 13.5683 },
-        founded: 1966,
-        colors: ['#e30613', '#ffffff']
-    },
-    {
-        id: '488',
-        name: 'Monaco',
-        normalizedName: 'MONACO',
-        shortName: 'Monaco',
-        country: 'France',
-        city: 'Monaco',
-        stadium: {
-            id: 's488',
-            name: 'Stade Louis II',
-            city: 'Monaco',
-            country: 'France',
-            coordinates: { latitude: 43.7278, longitude: 7.4156 },
-            clubs: ['488']
-        },
-        coordinates: { latitude: 43.7278, longitude: 7.4156 },
-        founded: 1924,
-        colors: ['#e30613', '#ffffff']
-    },
-    {
-        id: '489',
-        name: 'Marseille',
-        normalizedName: 'MARSEILLE',
-        shortName: 'Marseille',
-        country: 'France',
-        city: 'Marseille',
-        stadium: {
-            id: 's489',
-            name: 'Stade Vélodrome',
-            city: 'Marseille',
-            country: 'France',
-            coordinates: { latitude: 43.2698, longitude: 5.3956 },
-            clubs: ['489']
-        },
-        coordinates: { latitude: 43.2698, longitude: 5.3956 },
-        founded: 1899,
-        colors: ['#00a7e1', '#ffffff']
-    },
-    {
         id: '490',
         name: 'Reims',
         normalizedName: 'REIMS',
@@ -1729,25 +2501,6 @@ export const MOCK_CLUBS: Club[] = [
         coordinates: { latitude: 49.2469, longitude: 4.0247 },
         founded: 1931,
         colors: ['#f0161e', '#ffffff']
-    },
-    {
-        id: '491',
-        name: 'Nice',
-        normalizedName: 'NICE',
-        shortName: 'Nice',
-        country: 'France',
-        city: 'Nice',
-        stadium: {
-            id: 's491',
-            name: 'Allianz Riviera',
-            city: 'Nice',
-            country: 'France',
-            coordinates: { latitude: 43.7053, longitude: 7.1925 },
-            clubs: ['491']
-        },
-        coordinates: { latitude: 43.7053, longitude: 7.1925 },
-        founded: 1904,
-        colors: ['#e10613', '#000000']
     },
     {
         id: '492',
@@ -2848,45 +3601,6 @@ export const MOCK_CLUBS: Club[] = [
         founded: 1893,
         colors: ['#ed1c24', '#0066cc']
     },
-    // Norwegian Eliteserien - Rank 22
-    {
-        id: '666',
-        name: 'Rosenborg',
-        normalizedName: 'ROSENBORG',
-        shortName: 'Rosenborg',
-        country: 'Norway',
-        city: 'Trondheim',
-        stadium: {
-            id: 's666',
-            name: 'Lerkendal Stadion',
-            city: 'Trondheim',
-            country: 'Norway',
-            coordinates: { latitude: 63.4128, longitude: 10.4053 },
-            clubs: ['666']
-        },
-        coordinates: { latitude: 63.4128, longitude: 10.4053 },
-        founded: 1917,
-        colors: ['#ffffff', '#000000']
-    },
-    {
-        id: '667',
-        name: 'Molde',
-        normalizedName: 'MOLDE',
-        shortName: 'Molde',
-        country: 'Norway',
-        city: 'Molde',
-        stadium: {
-            id: 's667',
-            name: 'Aker Stadion',
-            city: 'Molde',
-            country: 'Norway',
-            coordinates: { latitude: 62.7411, longitude: 7.2164 },
-            clubs: ['667']
-        },
-        coordinates: { latitude: 62.7411, longitude: 7.2164 },
-        founded: 1911,
-        colors: ['#0066cc', '#ffffff']
-    },
     // Polish Ekstraklasa - Rank 16
     {
         id: '668',
@@ -3003,84 +3717,6 @@ export const MOCK_CLUBS: Club[] = [
         coordinates: { latitude: 50.0997, longitude: 14.4164 },
         founded: 1893,
         colors: ['#9c1919', '#ffed00']
-    },
-    // Ukrainian Premier League - Rank 39
-    {
-        id: '674',
-        name: 'Dynamo Kyiv',
-        normalizedName: 'DYNAMO KYIV',
-        shortName: 'Dynamo',
-        country: 'Ukraine',
-        city: 'Kyiv',
-        stadium: {
-            id: 's674',
-            name: 'NSC Olimpiyskiy',
-            city: 'Kyiv',
-            country: 'Ukraine',
-            coordinates: { latitude: 50.4339, longitude: 30.5217 },
-            clubs: ['674']
-        },
-        coordinates: { latitude: 50.4339, longitude: 30.5217 },
-        founded: 1927,
-        colors: ['#ffffff', '#0066cc']
-    },
-    {
-        id: '675',
-        name: 'Shakhtar Donetsk',
-        normalizedName: 'SHAKHTAR DONETSK',
-        shortName: 'Shakhtar',
-        country: 'Ukraine',
-        city: 'Donetsk',
-        stadium: {
-            id: 's675',
-            name: 'Donbass Arena',
-            city: 'Donetsk',
-            country: 'Ukraine',
-            coordinates: { latitude: 48.0161, longitude: 37.8047 },
-            clubs: ['675']
-        },
-        coordinates: { latitude: 48.0161, longitude: 37.8047 },
-        founded: 1936,
-        colors: ['#ff6600', '#000000']
-    },
-    // Russian Premier League - Rank 19
-    {
-        id: '676',
-        name: 'Zenit St Petersburg',
-        normalizedName: 'ZENIT ST PETERSBURG',
-        shortName: 'Zenit',
-        country: 'Russia',
-        city: 'St Petersburg',
-        stadium: {
-            id: 's676',
-            name: 'Gazprom Arena',
-            city: 'St Petersburg',
-            country: 'Russia',
-            coordinates: { latitude: 59.9729, longitude: 30.2217 },
-            clubs: ['676']
-        },
-        coordinates: { latitude: 59.9729, longitude: 30.2217 },
-        founded: 1925,
-        colors: ['#0066cc', '#ffffff']
-    },
-    {
-        id: '677',
-        name: 'Spartak Moscow',
-        normalizedName: 'SPARTAK MOSCOW',
-        shortName: 'Spartak',
-        country: 'Russia',
-        city: 'Moscow',
-        stadium: {
-            id: 's677',
-            name: 'Otkritie Arena',
-            city: 'Moscow',
-            country: 'Russia',
-            coordinates: { latitude: 55.8181, longitude: 37.4406 },
-            clubs: ['677']
-        },
-        coordinates: { latitude: 55.8181, longitude: 37.4406 },
-        founded: 1922,
-        colors: ['#ed1c24', '#ffffff']
     },
     // Liga Pro (Ecuador) - Rank 24
     {
@@ -3668,44 +4304,6 @@ export const MOCK_CLUBS: Club[] = [
         colors: ['#001f5c', '#ffffff']
     },
     // Bulgarian First League - Rank 42
-    {
-        id: '708',
-        name: 'Ludogorets',
-        normalizedName: 'LUDOGORETS',
-        shortName: 'Ludogorets',
-        country: 'Bulgaria',
-        city: 'Razgrad',
-        stadium: {
-            id: 's708',
-            name: 'Ludogorets Arena',
-            city: 'Razgrad',
-            country: 'Bulgaria',
-            coordinates: { latitude: 43.5328, longitude: 26.5147 },
-            clubs: ['708']
-        },
-        coordinates: { latitude: 43.5328, longitude: 26.5147 },
-        founded: 1945,
-        colors: ['#009a44', '#ffffff']
-    },
-    {
-        id: '709',
-        name: 'CSKA Sofia',
-        normalizedName: 'CSKA SOFIA',
-        shortName: 'CSKA',
-        country: 'Bulgaria',
-        city: 'Sofia',
-        stadium: {
-            id: 's709',
-            name: 'Bulgarian Army Stadium',
-            city: 'Sofia',
-            country: 'Bulgaria',
-            coordinates: { latitude: 42.6550, longitude: 23.3806 },
-            clubs: ['709']
-        },
-        coordinates: { latitude: 42.6550, longitude: 23.3806 },
-        founded: 1948,
-        colors: ['#ed1c24', '#ffffff']
-    },
     // Peruvian Primera División - Rank 43
     {
         id: '710',
