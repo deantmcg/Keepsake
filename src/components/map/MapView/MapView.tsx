@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useMemo, useCallback, useState } from 'react'
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { createRoot, type Root } from 'react-dom/client';
+import { flushSync } from 'react-dom';
 import { useMapStore } from '../../../stores/mapStore';
 import { useKeepsakeStore } from '../../../stores/keepsakeStore';
 import { MOCK_CLUBS } from '../../../services/mock/clubs.mock';
@@ -151,24 +152,33 @@ export const MapView: React.FC = () => {
             features = [feature];
         }
 
-        // Create popup element
+        // Determine anchor: flip to 'top' (popup below marker) when near top of viewport
+        const screenPoint = map.current.project(coordinates);
+        const mapHeight = map.current.getContainer().clientHeight;
+        const anchor = screenPoint.y < mapHeight * 0.45 ? 'top' : 'bottom';
+
+        // Create popup element and render synchronously so popup is
+        // sized correctly before MapLibre positions it (prevents top-left flash)
         const popupElement = document.createElement('div');
         popupRootRef.current = createRoot(popupElement);
-        popupRootRef.current.render(
-            <HoverPreview 
-                features={features}
-                clubsMap={clubsMap}
-                isCluster={isCluster(feature)}
-                clusterProps={clusterProps}
-            />
-        );
+        flushSync(() => {
+            popupRootRef.current!.render(
+                <HoverPreview 
+                    features={features}
+                    clubsMap={clubsMap}
+                    isCluster={isCluster(feature)}
+                    clusterProps={clusterProps}
+                />
+            );
+        });
 
         popupRef.current = new maplibregl.Popup({
             closeButton: false,
             closeOnClick: false,
             className: 'keepsake-popup',
             maxWidth: '340px',
-            offset: 15
+            offset: 15,
+            anchor,
         })
             .setLngLat(coordinates)
             .setDOMContent(popupElement)
