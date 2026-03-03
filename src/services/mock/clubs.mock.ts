@@ -417,7 +417,83 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 50.6119, longitude: 3.1304 },
         founded: 1944,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#00326e', '#d20a11', '#ffffff']
+    },
+    {
+        id: '34',
+        name: 'Monaco',
+        normalizedName: 'MONACO',
+        shortName: 'Monaco',
+        country: 'France',
+        city: 'Monaco',
+        stadium: {
+            id: 's34',
+            name: 'Stade Louis II',
+            city: 'Monaco',
+            country: 'Monaco',
+            coordinates: { latitude: 43.7276, longitude: 7.4156 },
+            clubs: ['34']
+        },
+        coordinates: { latitude: 43.7276, longitude: 7.4156 },
+        founded: 1924,
+        colors: ['#ed1c24', '#ffffff', '#ffcc00']
+    },
+    {
+        id: '35',
+        name: 'Lyon',
+        normalizedName: 'LYON',
+        shortName: 'Lyon',
+        country: 'France',
+        city: 'Lyon',
+        stadium: {
+            id: 's35',
+            name: 'Groupama Stadium',
+            city: 'Lyon',
+            country: 'France',
+            coordinates: { latitude: 45.7653, longitude: 4.9819 },
+            clubs: ['35']
+        },
+        coordinates: { latitude: 45.7653, longitude: 4.9819 },
+        founded: 1950,
+        colors: ['#004ea2', '#e30613', '#ffffff']
+    },
+    {
+        id: '36',
+        name: 'Marseille',
+        normalizedName: 'MARSEILLE',
+        shortName: 'OM',
+        country: 'France',
+        city: 'Marseille',
+        stadium: {
+            id: 's36',
+            name: 'Orange Vélodrome',
+            city: 'Marseille',
+            country: 'France',
+            coordinates: { latitude: 43.2698, longitude: 5.3959 },
+            clubs: ['36']
+        },
+        coordinates: { latitude: 43.2698, longitude: 5.3959 },
+        founded: 1899,
+        colors: ['#00a7e1', '#ffffff', '#e3a82b']
+    },
+    {
+        id: '37',
+        name: 'Nice',
+        normalizedName: 'NICE',
+        shortName: 'Nice',
+        country: 'France',
+        city: 'Nice',
+        stadium: {
+            id: 's37',
+            name: 'Allianz Riviera',
+            city: 'Nice',
+            country: 'France',
+            coordinates: { latitude: 43.7052, longitude: 7.1928 },
+            clubs: ['37']
+        },
+        coordinates: { latitude: 43.7052, longitude: 7.1928 },
+        founded: 1904,
+        colors: ['#da251d', '#000000', '#ffffff']
     },
     {
         id: '38',
@@ -515,6 +591,63 @@ export const MOCK_CLUBS: Club[] = [
         colors: ['#ffffff', '#dd0741', '#001f47']
     },
     {
+        id: '80',
+        name: 'Mainz 05',
+        normalizedName: 'MAINZ 05',
+        shortName: 'Mainz',
+        country: 'Germany',
+        city: 'Mainz',
+        stadium: {
+            id: 's80',
+            name: 'MEWA Arena',
+            city: 'Mainz',
+            country: 'Germany',
+            coordinates: { latitude: 49.9841, longitude: 8.2241 },
+            clubs: ['80']
+        },
+        coordinates: { latitude: 49.9841, longitude: 8.2241 },
+        founded: 1905,
+        colors: ['#c4122e', '#ffffff']
+    },
+    {
+        id: '81',
+        name: 'Stuttgart',
+        normalizedName: 'STUTTGART',
+        shortName: 'Stuttgart',
+        country: 'Germany',
+        city: 'Stuttgart',
+        stadium: {
+            id: 's81',
+            name: 'MHPArena',
+            city: 'Stuttgart',
+            country: 'Germany',
+            coordinates: { latitude: 48.7922, longitude: 9.232 },
+            clubs: ['81']
+        },
+        coordinates: { latitude: 48.7922, longitude: 9.232 },
+        founded: 1893,
+        colors: ['#e32221', '#ffffff']
+    },
+    {
+        id: '82',
+        name: 'Union Berlin',
+        normalizedName: 'UNION BERLIN',
+        shortName: 'Union Berlin',
+        country: 'Germany',
+        city: 'Berlin',
+        stadium: {
+            id: 's82',
+            name: 'Stadion An der Alten Försterei',
+            city: 'Berlin',
+            country: 'Germany',
+            coordinates: { latitude: 52.4572, longitude: 13.5681 },
+            clubs: ['82']
+        },
+        coordinates: { latitude: 52.4572, longitude: 13.5681 },
+        founded: 1966,
+        colors: ['#e30613', '#ffffff', '#ffed00']
+    },
+    {
         id: '98',
         name: 'Leganés',
         normalizedName: 'LEGANES',
@@ -531,7 +664,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 40.3403, longitude: -3.7683 },
         founded: 1928,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#0055a4', '#ffffff']
     },
     {
         id: '99',
@@ -607,7 +740,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 39.5903, longitude: 2.63 },
         founded: 1916,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#e41b11', '#000000', '#ffffff']
     },
     {
         id: '103',
@@ -626,7 +759,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 37.3837, longitude: -5.9706 },
         founded: 1890,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#d40c1d', '#ffffff']
     },
     {
         id: '104',
@@ -645,7 +778,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 41.3479, longitude: 2.075 },
         founded: 1900,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#0079bc', '#ffffff']
     },
     {
         id: '105',
@@ -664,7 +797,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 43.1864, longitude: -2.4714 },
         founded: 1940,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#8c0334', '#004787']
     },
     {
         id: '106',
@@ -683,7 +816,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 43.2641, longitude: -2.9493 },
         founded: 1898,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#ee2523', '#ffffff', '#000000']
     },
     {
         id: '107',
@@ -702,7 +835,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 40.453, longitude: -3.6883 },
         founded: 1902,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#ffffff', '#00529f', '#f9a12e']
     },
     {
         id: '114',
@@ -721,7 +854,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 48.8414, longitude: 2.253 },
         founded: 1970,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#004170', '#da291c', '#ffffff']
     },
     {
         id: '125',
@@ -740,7 +873,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 50.0686, longitude: 8.6452 },
         founded: 1899,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#e1000f', '#000000', '#ffffff']
     },
     {
         id: '126',
@@ -759,7 +892,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 53.0664, longitude: 8.8376 },
         founded: 1899,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#1d903d', '#ffffff']
     },
     {
         id: '127',
@@ -778,7 +911,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 51.5545, longitude: 7.0676 },
         founded: 1904,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#004d9e', '#ffffff']
     },
     {
         id: '128',
@@ -797,7 +930,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 51.0378, longitude: 6.9868 },
         founded: 1904,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#e32221', '#000000']
     },
     {
         id: '129',
@@ -816,7 +949,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 52.4319, longitude: 10.8037 },
         founded: 1945,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#65b32e', '#ffffff']
     },
     {
         id: '130',
@@ -835,7 +968,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 47.9889, longitude: 7.8933 },
         founded: 1904,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#e1000f', '#ffffff', '#000000']
     },
     {
         id: '131',
@@ -854,7 +987,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 52.5147, longitude: 13.2395 },
         founded: 1892,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#004d9e', '#ffffff']
     },
     {
         id: '132',
@@ -873,7 +1006,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 50.9336, longitude: 6.8753 },
         founded: 1948,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#ed1c24', '#ffffff']
     },
     {
         id: '133',
@@ -892,7 +1025,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 51.7315, longitude: 8.711 },
         founded: 1907,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#004e95', '#000000', '#ffffff']
     },
     {
         id: '134',
@@ -911,7 +1044,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 49.2394, longitude: 8.8867 },
         founded: 1899,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#1961ab', '#ffffff']
     },
     {
         id: '135',
@@ -930,7 +1063,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 51.2611, longitude: 6.7326 },
         founded: 1895,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#e41b12', '#ffffff']
     },
     {
         id: '136',
@@ -968,7 +1101,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 48.3233, longitude: 10.8828 },
         founded: 1907,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#ba3733', '#008e5a', '#ffffff']
     },
     {
         id: '231',
@@ -987,7 +1120,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 45.0619, longitude: 7.6414 },
         founded: 1906,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#8b161c', '#ffffff']
     },
     {
         id: '248',
@@ -1006,7 +1139,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 42.8397, longitude: -2.6867 },
         founded: 1921,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#005999', '#ffffff']
     },
     {
         id: '249',
@@ -1025,7 +1158,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 39.4764, longitude: -0.3592 },
         founded: 1909,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#004ea2', '#e30613']
     },
     {
         id: '250',
@@ -1044,7 +1177,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 43.3014, longitude: -1.9731 },
         founded: 1909,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#0067b1', '#ffffff']
     },
     {
         id: '251',
@@ -1063,7 +1196,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 42.7967, longitude: -1.6372 },
         founded: 1920,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#c4122e', '#00264e']
     },
     {
         id: '252',
@@ -1082,7 +1215,7 @@ export const MOCK_CLUBS: Club[] = [
         },
         coordinates: { latitude: 37.1542, longitude: -3.605 },
         founded: 1931,
-        colors: ['#000000', '#FFFFFF']
+        colors: ['#c4122e', '#ffffff']
     },
     {
         id: '253',
