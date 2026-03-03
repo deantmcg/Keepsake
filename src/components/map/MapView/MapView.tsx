@@ -241,11 +241,6 @@ export const MapView: React.FC = () => {
             attributionControl: false,
         });
 
-        map.current.addControl(
-            new maplibregl.AttributionControl({ compact: true }), 
-            'bottom-right'
-        );
-
         map.current.on('load', () => {
             updateBounds();
         });
