@@ -73,21 +73,17 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         const { point_count, keepsakeCount } = clusterProps;
         
         return (
-            <div className="flex items-center gap-4 mb-4 pb-3">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px', paddingBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <MapPin style={{ width: '14px', height: '14px', color: 'rgba(255,255,255,0.45)', flexShrink: 0 }} />
                     <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{point_count}</span>
                     <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>clubs</span>
                 </div>
                 {keepsakeCount > 0 && (
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                            <Sparkles className="w-4 h-4 text-emerald-400" />
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                            <span style={{ fontSize: '15px', fontWeight: 700, color: '#34d399' }}>{keepsakeCount}</span>
-                            <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>collected</span>
-                        </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <Sparkles style={{ width: '14px', height: '14px', color: '#34d399', flexShrink: 0 }} />
+                        <span style={{ fontSize: '15px', fontWeight: 700, color: '#34d399' }}>{keepsakeCount}</span>
+                        <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>collected</span>
                     </div>
                 )}
             </div>
@@ -95,7 +91,7 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
     };
 
     // Limit displayed clubs for large clusters
-    const displayLimit = isCluster ? 5 : 10;
+    const displayLimit = isCluster ? 8 : 10;
     const displayedGroups = groupedItems.slice(0, displayLimit);
     const remainingCount = groupedItems.length - displayLimit;
 
@@ -103,77 +99,60 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         <div className="p-4 min-w-[240px] max-w-[340px] font-sans">
             {renderClusterHeader()}
             
-            <div className="space-y-3 max-h-[280px] overflow-y-auto pr-1 custom-scrollbar">
+            <div className="hide-scrollbar" style={{ display: 'flex', flexDirection: 'column', gap: '3px', maxHeight: '300px', overflowY: 'auto', paddingRight: '4px', scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}>
                 {displayedGroups.map((group) => (
                     <div 
                         key={group.club.id} 
-                        className="flex items-start gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors duration-150 -mx-2"
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            padding: '3px 4px',
+                            borderRadius: '8px',
+                            margin: '0 -4px'
+                        }}
                     >
                         {/* Club color badge */}
                         <div 
-                            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg ring-1 ring-inset ring-white/20"
                             style={{ 
-                                background: `linear-gradient(135deg, ${group.club.colors[0] || '#666'}, ${group.club.colors[1] || group.club.colors[0] || '#666'})` 
+                                width: '24px',
+                                height: '24px',
+                                borderRadius: '6px',
+                                flexShrink: 0,
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.2)',
+                                background: `linear-gradient(135deg, ${group.club.colors[0] || '#666'}, ${group.club.colors[1] || group.club.colors[0] || '#666'})`,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
                             }}
                         >
-                            {group.keepsakes.length > 0 ? (
-                                <Trophy className="w-5 h-5 text-white drop-shadow-lg" />
-                            ) : (
-                                <span className="text-white text-sm font-bold drop-shadow">
-                                    {group.club.shortName?.charAt(0) || group.club.name.charAt(0)}
-                                </span>
+                            {group.keepsakes.length > 0 && (
+                                <Trophy style={{ width: '12px', height: '12px', color: '#fff', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.4))' }} />
                             )}
                         </div>
                         
                         {/* Club info */}
-                        <div className="flex-1 min-w-0">
-                            <p className="font-semibold text-sm text-white truncate">
+                        <div style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                            <span style={{ fontSize: '12px', fontWeight: 600, color: '#fff', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                                 {group.club.name}
-                            </p>
-                            
-                            {group.keepsakes.length > 0 ? (
-                                <div className="flex flex-wrap gap-1.5 mt-1.5">
-                                    {group.keepsakes.slice(0, 4).map((k, idx) => (
-                                        <span
-                                            key={idx}
-                                            className="inline-flex items-center gap-1 text-[10px] bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 text-emerald-400 px-2 py-1 rounded-md border border-emerald-500/20"
-                                        >
-                                            {getItemIcon(k.properties.pointType === 'keepsake' ? k.properties.itemType : '')}
-                                            <span className="capitalize font-medium">
-                                                {k.properties.pointType === 'keepsake' 
-                                                    ? k.properties.itemType.toLowerCase() 
-                                                    : 'item'}
-                                            </span>
-                                        </span>
-                                    ))}
-                                    {group.keepsakes.length > 4 && (
-                                        <span className="text-[10px] text-slate-400 flex items-center">
-                                            +{group.keepsakes.length - 4}
-                                        </span>
-                                    )}
-                                </div>
-                            ) : (
-                                <p className="text-xs text-slate-400 mt-0.5 flex items-center gap-1">
-                                    <MapPin className="w-3 h-3" />
-                                    {group.club.city}, {group.club.country}
-                                </p>
-                            )}
+                            </span>
+                            <span style={{ fontSize: '10px', color: 'rgba(148,163,184,0.6)', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                {group.club.city}, {group.club.country}
+                            </span>
                         </div>
                     </div>
                 ))}
                 
                 {remainingCount > 0 && (
-                    <div className="text-xs text-slate-400 text-center pt-3 mt-2 border-t border-white/10">
-                        <span className="bg-slate-700/50 px-3 py-1 rounded-full">
-                            +{remainingCount} more clubs
-                        </span>
+                    <div style={{ fontSize: '11px', color: 'rgba(148,163,184,0.7)', textAlign: 'center', paddingTop: '6px', marginTop: '2px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                        +{remainingCount} more clubs
                     </div>
                 )}
             </div>
             
             {/* Click hint for clusters */}
             {isCluster && (
-                <p className="text-[11px] text-slate-500 mt-3 text-center">
+                <p style={{ fontSize: '11px', color: 'rgba(148,163,184,0.5)', textAlign: 'center', marginTop: '10px' }}>
                     Click cluster to zoom
                 </p>
             )}

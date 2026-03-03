@@ -349,6 +349,11 @@ body,
     background: #3f3f46;
 }
 
+/* Hide scrollbar completely */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 .whitespace-nowrap {
     white-space: nowrap;
 }
