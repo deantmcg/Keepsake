@@ -24,7 +24,8 @@ export const ClubMarker: React.FC<ClubMarkerProps> = ({
     onMouseEnter,
     onMouseLeave,
 }) => {
-    const { color, hasKeepsakes, clubName } = properties;
+    const { color, color2, hasKeepsakes, clubName } = properties;
+    const gradId = `cg-${properties.clubId}`;
     
     return (
         <div
@@ -44,10 +45,16 @@ export const ClubMarker: React.FC<ClubMarkerProps> = ({
                 viewBox="0 0 24 28" 
                 className="drop-shadow-md"
             >
+                <defs>
+                    <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor={color} />
+                        <stop offset="100%" stopColor={color2 ?? color} />
+                    </linearGradient>
+                </defs>
                 {/* Shield shape */}
                 <path
                     d="M12 2 L22 6 L22 14 C22 20 12 26 12 26 C12 26 2 20 2 14 L2 6 L12 2 Z"
-                    fill={color}
+                    fill={`url(#${gradId})`}
                     stroke="white"
                     strokeWidth="1.5"
                 />

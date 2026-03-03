@@ -71,6 +71,7 @@ export const MapView: React.FC = () => {
                     clubId: club.id,
                     clubName: club.name,
                     color: club.colors[0] || '#888',
+                    color2: club.colors[1] || club.colors[0] || '#888',
                     hasKeepsakes,
                 } as ClubPointProperties
             });

@@ -8,6 +8,7 @@ export interface ClubPointProperties {
     clubId: string;
     clubName: string;
     color: string;
+    color2: string;
     hasKeepsakes: boolean;
 }
 

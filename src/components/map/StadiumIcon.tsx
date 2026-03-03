@@ -6,16 +6,6 @@ interface StadiumIconProps {
     style?: React.CSSProperties;
 }
 
-/**
- * 3D perspective stadium bowl, viewed from a slight elevation at the front.
- * Layers (back → front):
- *   1. Outer top rim ellipse (widest silhouette)
- *   2. Outer side walls + front base arc  → the exterior shell
- *   3. Inner stand rim ellipse            → top edge of the seating bowl
- *   4. Inner stand walls + inner base arc → the stand bowl
- *   5. Pitch ellipse deep in the bowl
- *   6. Halfway line + centre circle + spot
- */
 export const StadiumIcon: React.FC<StadiumIconProps> = ({
     size = 14,
     color = 'currentColor',
