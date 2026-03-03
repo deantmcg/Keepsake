@@ -1781,6 +1781,1830 @@ export const MOCK_CLUBS: Club[] = [
         colors: ['#ffff00', '#0000ff']
     },
     {
+        id: 'af-045',
+        name: 'Abia Warriors F.C.',
+        normalizedName: 'ABIA WARRIORS F.C.',
+        shortName: 'Abia',
+        country: 'Nigeria',
+        city: 'Umuahia',
+        stadium: {
+            id: 'saf-045',
+            name: 'Umuahia Stadium',
+            city: 'Umuahia',
+            country: 'Nigeria',
+            coordinates: { latitude: 5.5244, longitude: 7.4951 },
+            clubs: ['af-045']
+        },
+        coordinates: { latitude: 5.5244, longitude: 7.4951 },
+        founded: 1920,
+        colors: ["#ffcc00", "#000000"]
+    },
+    {
+        id: 'af-046',
+        name: 'Akwa United F.C.',
+        normalizedName: 'AKWA UNITED F.C.',
+        shortName: 'Akwa',
+        country: 'Nigeria',
+        city: 'Uyo',
+        stadium: {
+            id: 'saf-046',
+            name: 'Uyo Stadium',
+            city: 'Uyo',
+            country: 'Nigeria',
+            coordinates: { latitude: 5.0333, longitude: 7.9167 },
+            clubs: ['af-046']
+        },
+        coordinates: { latitude: 5.0333, longitude: 7.9167 },
+        founded: 1920,
+        colors: ["#006600", "#ffffff"]
+    },
+    {
+        id: 'af-047',
+        name: 'Bayelsa United F.C.',
+        normalizedName: 'BAYELSA UNITED F.C.',
+        shortName: 'Bayelsa',
+        country: 'Nigeria',
+        city: 'Yenegoa',
+        stadium: {
+            id: 'saf-047',
+            name: 'Yenegoa Stadium',
+            city: 'Yenegoa',
+            country: 'Nigeria',
+            coordinates: { latitude: 5.2667, longitude: 6.2667 },
+            clubs: ['af-047']
+        },
+        coordinates: { latitude: 5.2667, longitude: 6.2667 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-048',
+        name: 'Bendel Insurance',
+        normalizedName: 'BENDEL INSURANCE',
+        shortName: 'Bendel',
+        country: 'Nigeria',
+        city: 'Benin City',
+        stadium: {
+            id: 'saf-048',
+            name: 'Benin City Stadium',
+            city: 'Benin City',
+            country: 'Nigeria',
+            coordinates: { latitude: 6.3333, longitude: 5.6333 },
+            clubs: ['af-048']
+        },
+        coordinates: { latitude: 6.3333, longitude: 5.6333 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-049',
+        name: 'El-Kanemi Warriors F.C.',
+        normalizedName: 'EL-KANEMI WARRIORS F.C.',
+        shortName: 'El-Kanemi',
+        country: 'Nigeria',
+        city: 'Maiduguri',
+        stadium: {
+            id: 'saf-049',
+            name: 'Maiduguri Stadium',
+            city: 'Maiduguri',
+            country: 'Nigeria',
+            coordinates: { latitude: 11.85, longitude: 13.1667 },
+            clubs: ['af-049']
+        },
+        coordinates: { latitude: 11.85, longitude: 13.1667 },
+        founded: 1920,
+        colors: ["#ffcc00", "#000000"]
+    },
+    {
+        id: 'af-050',
+        name: 'Enugu Rangers',
+        normalizedName: 'ENUGU RANGERS',
+        shortName: 'Enugu',
+        country: 'Nigeria',
+        city: 'Enugu',
+        stadium: {
+            id: 'saf-050',
+            name: 'Enugu Stadium',
+            city: 'Enugu',
+            country: 'Nigeria',
+            coordinates: { latitude: 6.4667, longitude: 7.5167 },
+            clubs: ['af-050']
+        },
+        coordinates: { latitude: 6.4667, longitude: 7.5167 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-051',
+        name: 'Enyimba',
+        normalizedName: 'ENYIMBA',
+        shortName: 'Enyimba',
+        country: 'Nigeria',
+        city: 'Aba',
+        stadium: {
+            id: 'saf-051',
+            name: 'Aba Stadium',
+            city: 'Aba',
+            country: 'Nigeria',
+            coordinates: { latitude: 5.1067, longitude: 7.3667 },
+            clubs: ['af-051']
+        },
+        coordinates: { latitude: 5.1067, longitude: 7.3667 },
+        founded: 1920,
+        colors: ["#006600", "#ffffff"]
+    },
+    {
+        id: 'af-052',
+        name: 'Heartland F.C.',
+        normalizedName: 'HEARTLAND F.C.',
+        shortName: 'Heartland',
+        country: 'Nigeria',
+        city: 'Owerri',
+        stadium: {
+            id: 'saf-052',
+            name: 'Owerri Stadium',
+            city: 'Owerri',
+            country: 'Nigeria',
+            coordinates: { latitude: 5.4833, longitude: 7.0167 },
+            clubs: ['af-052']
+        },
+        coordinates: { latitude: 5.4833, longitude: 7.0167 },
+        founded: 1920,
+        colors: ["#006600", "#ffffff"]
+    },
+    {
+        id: 'af-053',
+        name: 'Ikorodu City',
+        normalizedName: 'IKORODU CITY',
+        shortName: 'Ikorodu',
+        country: 'Nigeria',
+        city: 'Ikorodu',
+        stadium: {
+            id: 'saf-053',
+            name: 'Ikorodu Stadium',
+            city: 'Ikorodu',
+            country: 'Nigeria',
+            coordinates: { latitude: 6.6, longitude: 3.5 },
+            clubs: ['af-053']
+        },
+        coordinates: { latitude: 6.6, longitude: 3.5 },
+        founded: 1920,
+        colors: ["#ffcc00", "#000000"]
+    },
+    {
+        id: 'af-054',
+        name: 'Kano Pillars F.C.',
+        normalizedName: 'KANO PILLARS F.C.',
+        shortName: 'Kano',
+        country: 'Nigeria',
+        city: 'Kano',
+        stadium: {
+            id: 'saf-054',
+            name: 'Kano Stadium',
+            city: 'Kano',
+            country: 'Nigeria',
+            coordinates: { latitude: 11.9833, longitude: 8.5167 },
+            clubs: ['af-054']
+        },
+        coordinates: { latitude: 11.9833, longitude: 8.5167 },
+        founded: 1920,
+        colors: ["#006600", "#ffffff"]
+    },
+    {
+        id: 'af-055',
+        name: 'Katsina United',
+        normalizedName: 'KATSINA UNITED',
+        shortName: 'Katsina',
+        country: 'Nigeria',
+        city: 'Katsina',
+        stadium: {
+            id: 'saf-055',
+            name: 'Katsina Stadium',
+            city: 'Katsina',
+            country: 'Nigeria',
+            coordinates: { latitude: 13.1333, longitude: 7.6333 },
+            clubs: ['af-055']
+        },
+        coordinates: { latitude: 13.1333, longitude: 7.6333 },
+        founded: 1920,
+        colors: ["#006600", "#ffffff"]
+    },
+    {
+        id: 'af-056',
+        name: 'Kwara United',
+        normalizedName: 'KWARA UNITED',
+        shortName: 'Kwara',
+        country: 'Nigeria',
+        city: 'Ilorin',
+        stadium: {
+            id: 'saf-056',
+            name: 'Ilorin Stadium',
+            city: 'Ilorin',
+            country: 'Nigeria',
+            coordinates: { latitude: 8.4833, longitude: 4.5667 },
+            clubs: ['af-056']
+        },
+        coordinates: { latitude: 8.4833, longitude: 4.5667 },
+        founded: 1920,
+        colors: ["#ffcc00", "#000000"]
+    },
+    {
+        id: 'af-057',
+        name: 'Lobi Stars F.C.',
+        normalizedName: 'LOBI STARS F.C.',
+        shortName: 'Lobi',
+        country: 'Nigeria',
+        city: 'Makurdi',
+        stadium: {
+            id: 'saf-057',
+            name: 'Makurdi Stadium',
+            city: 'Makurdi',
+            country: 'Nigeria',
+            coordinates: { latitude: 7.7397, longitude: 8.7405 },
+            clubs: ['af-057']
+        },
+        coordinates: { latitude: 7.7397, longitude: 8.7405 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-058',
+        name: 'Nasarawa United F.C.',
+        normalizedName: 'NASARAWA UNITED F.C.',
+        shortName: 'Nasarawa',
+        country: 'Nigeria',
+        city: 'Lafia',
+        stadium: {
+            id: 'saf-058',
+            name: 'Lafia Stadium',
+            city: 'Lafia',
+            country: 'Nigeria',
+            coordinates: { latitude: 8.5, longitude: 8.5167 },
+            clubs: ['af-058']
+        },
+        coordinates: { latitude: 8.5, longitude: 8.5167 },
+        founded: 1920,
+        colors: ["#006600", "#ffffff"]
+    },
+    {
+        id: 'af-059',
+        name: 'Niger Tornadoes',
+        normalizedName: 'NIGER TORNADOES',
+        shortName: 'Niger',
+        country: 'Nigeria',
+        city: 'Minna',
+        stadium: {
+            id: 'saf-059',
+            name: 'Minna Stadium',
+            city: 'Minna',
+            country: 'Nigeria',
+            coordinates: { latitude: 9.6, longitude: 6.5333 },
+            clubs: ['af-059']
+        },
+        coordinates: { latitude: 9.6, longitude: 6.5333 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-060',
+        name: 'Plateau United',
+        normalizedName: 'PLATEAU UNITED',
+        shortName: 'Plateau',
+        country: 'Nigeria',
+        city: 'Jos',
+        stadium: {
+            id: 'saf-060',
+            name: 'Jos Stadium',
+            city: 'Jos',
+            country: 'Nigeria',
+            coordinates: { latitude: 9.9167, longitude: 8.8833 },
+            clubs: ['af-060']
+        },
+        coordinates: { latitude: 9.9167, longitude: 8.8833 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-061',
+        name: 'Remo Stars',
+        normalizedName: 'REMO STARS',
+        shortName: 'Remo',
+        country: 'Nigeria',
+        city: 'Ikenne',
+        stadium: {
+            id: 'saf-061',
+            name: 'Ikenne Stadium',
+            city: 'Ikenne',
+            country: 'Nigeria',
+            coordinates: { latitude: 6.8333, longitude: 3.7 },
+            clubs: ['af-061']
+        },
+        coordinates: { latitude: 6.8333, longitude: 3.7 },
+        founded: 1920,
+        colors: ["#ffcc00", "#000000"]
+    },
+    {
+        id: 'af-062',
+        name: 'Rivers United',
+        normalizedName: 'RIVERS UNITED',
+        shortName: 'Rivers',
+        country: 'Nigeria',
+        city: 'Port Harcourt',
+        stadium: {
+            id: 'saf-062',
+            name: 'Port Harcourt Stadium',
+            city: 'Port Harcourt',
+            country: 'Nigeria',
+            coordinates: { latitude: 4.7667, longitude: 7.0167 },
+            clubs: ['af-062']
+        },
+        coordinates: { latitude: 4.7667, longitude: 7.0167 },
+        founded: 1920,
+        colors: ["#ffcc00", "#000000"]
+    },
+    {
+        id: 'af-063',
+        name: 'Shooting Stars',
+        normalizedName: 'SHOOTING STARS',
+        shortName: 'Shooting',
+        country: 'Nigeria',
+        city: 'Ibadan',
+        stadium: {
+            id: 'saf-063',
+            name: 'Ibadan Stadium',
+            city: 'Ibadan',
+            country: 'Nigeria',
+            coordinates: { latitude: 7.3775, longitude: 3.947 },
+            clubs: ['af-063']
+        },
+        coordinates: { latitude: 7.3775, longitude: 3.947 },
+        founded: 1920,
+        colors: ["#ffcc00", "#000000"]
+    },
+    {
+        id: 'af-064',
+        name: 'Sunshine Stars F.C.',
+        normalizedName: 'SUNSHINE STARS F.C.',
+        shortName: 'Sunshine',
+        country: 'Nigeria',
+        city: 'Akure',
+        stadium: {
+            id: 'saf-064',
+            name: 'Akure Stadium',
+            city: 'Akure',
+            country: 'Nigeria',
+            coordinates: { latitude: 7.2522, longitude: 5.1945 },
+            clubs: ['af-064']
+        },
+        coordinates: { latitude: 7.2522, longitude: 5.1945 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-065',
+        name: 'Accra Lions',
+        normalizedName: 'ACCRA LIONS',
+        shortName: 'Accra',
+        country: 'Ghana',
+        city: 'Accra',
+        stadium: {
+            id: 'saf-065',
+            name: 'Accra Stadium',
+            city: 'Accra',
+            country: 'Ghana',
+            coordinates: { latitude: 5.5528, longitude: -0.2075 },
+            clubs: ['af-065']
+        },
+        coordinates: { latitude: 5.5528, longitude: -0.2075 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-066',
+        name: 'Aduana FC',
+        normalizedName: 'ADUANA FC',
+        shortName: 'Aduana',
+        country: 'Ghana',
+        city: 'Dormaa Ahenkro',
+        stadium: {
+            id: 'saf-066',
+            name: 'Dormaa Ahenkro Stadium',
+            city: 'Dormaa Ahenkro',
+            country: 'Ghana',
+            coordinates: { latitude: 6.7311, longitude: -2.2658 },
+            clubs: ['af-066']
+        },
+        coordinates: { latitude: 6.7311, longitude: -2.2658 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-067',
+        name: 'Basake Holy Stars',
+        normalizedName: 'BASAKE HOLY STARS',
+        shortName: 'Basake',
+        country: 'Ghana',
+        city: 'Ainyinase',
+        stadium: {
+            id: 'saf-067',
+            name: 'Ainyinase Stadium',
+            city: 'Ainyinase',
+            country: 'Ghana',
+            coordinates: { latitude: 5.5, longitude: -0.5 },
+            clubs: ['af-067']
+        },
+        coordinates: { latitude: 5.5, longitude: -0.5 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-068',
+        name: 'Bechem United FC',
+        normalizedName: 'BECHEM UNITED FC',
+        shortName: 'Bechem',
+        country: 'Ghana',
+        city: 'Bechem',
+        stadium: {
+            id: 'saf-068',
+            name: 'Bechem Stadium',
+            city: 'Bechem',
+            country: 'Ghana',
+            coordinates: { latitude: 6.4167, longitude: -2.6667 },
+            clubs: ['af-068']
+        },
+        coordinates: { latitude: 6.4167, longitude: -2.6667 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-069',
+        name: 'Berekum Chelsea F.C.',
+        normalizedName: 'BEREKUM CHELSEA F.C.',
+        shortName: 'Berekum',
+        country: 'Ghana',
+        city: 'Berekum',
+        stadium: {
+            id: 'saf-069',
+            name: 'Berekum Stadium',
+            city: 'Berekum',
+            country: 'Ghana',
+            coordinates: { latitude: 6.4333, longitude: -2.6 },
+            clubs: ['af-069']
+        },
+        coordinates: { latitude: 6.4333, longitude: -2.6 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-070',
+        name: 'Dreams',
+        normalizedName: 'DREAMS',
+        shortName: 'Dreams',
+        country: 'Ghana',
+        city: 'Dawu',
+        stadium: {
+            id: 'saf-070',
+            name: 'Dawu Stadium',
+            city: 'Dawu',
+            country: 'Ghana',
+            coordinates: { latitude: 6.5, longitude: -0.2 },
+            clubs: ['af-070']
+        },
+        coordinates: { latitude: 6.5, longitude: -0.2 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-071',
+        name: 'Heart of Lions F.C.',
+        normalizedName: 'HEART OF LIONS F.C.',
+        shortName: 'Heart',
+        country: 'Ghana',
+        city: 'Kpandu',
+        stadium: {
+            id: 'saf-071',
+            name: 'Kpandu Stadium',
+            city: 'Kpandu',
+            country: 'Ghana',
+            coordinates: { latitude: 6.95, longitude: 0.1833 },
+            clubs: ['af-071']
+        },
+        coordinates: { latitude: 6.95, longitude: 0.1833 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-072',
+        name: 'Hearts of Oak SC',
+        normalizedName: 'HEARTS OF OAK SC',
+        shortName: 'Hearts',
+        country: 'Ghana',
+        city: 'Accra',
+        stadium: {
+            id: 'saf-072',
+            name: 'Accra Stadium',
+            city: 'Accra',
+            country: 'Ghana',
+            coordinates: { latitude: 5.5528, longitude: -0.2075 },
+            clubs: ['af-072']
+        },
+        coordinates: { latitude: 5.5528, longitude: -0.2075 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-073',
+        name: 'Karela United',
+        normalizedName: 'KARELA UNITED',
+        shortName: 'Karela',
+        country: 'Ghana',
+        city: 'Nalerigu',
+        stadium: {
+            id: 'saf-073',
+            name: 'Nalerigu Stadium',
+            city: 'Nalerigu',
+            country: 'Ghana',
+            coordinates: { latitude: 0, longitude: 0 },
+            clubs: ['af-073']
+        },
+        coordinates: { latitude: 0, longitude: 0 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-074',
+        name: 'Legon Cities FC',
+        normalizedName: 'LEGON CITIES FC',
+        shortName: 'Legon',
+        country: 'Ghana',
+        city: 'Accra',
+        stadium: {
+            id: 'saf-074',
+            name: 'Accra Stadium',
+            city: 'Accra',
+            country: 'Ghana',
+            coordinates: { latitude: 5.5528, longitude: -0.2075 },
+            clubs: ['af-074']
+        },
+        coordinates: { latitude: 5.5528, longitude: -0.2075 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-075',
+        name: 'Medeama SC',
+        normalizedName: 'MEDEAMA SC',
+        shortName: 'Medeama',
+        country: 'Ghana',
+        city: 'Tarkwa',
+        stadium: {
+            id: 'saf-075',
+            name: 'Tarkwa Stadium',
+            city: 'Tarkwa',
+            country: 'Ghana',
+            coordinates: { latitude: 5.2833, longitude: -1.9833 },
+            clubs: ['af-075']
+        },
+        coordinates: { latitude: 5.2833, longitude: -1.9833 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-076',
+        name: 'Nations FC',
+        normalizedName: 'NATIONS FC',
+        shortName: 'Nations',
+        country: 'Ghana',
+        city: 'Kumasi',
+        stadium: {
+            id: 'saf-076',
+            name: 'Kumasi Stadium',
+            city: 'Kumasi',
+            country: 'Ghana',
+            coordinates: { latitude: 6.6667, longitude: -1.6167 },
+            clubs: ['af-076']
+        },
+        coordinates: { latitude: 6.6667, longitude: -1.6167 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-077',
+        name: 'Nsoatreman',
+        normalizedName: 'NSOATREMAN',
+        shortName: 'Nsoatreman',
+        country: 'Ghana',
+        city: 'Nsuatre',
+        stadium: {
+            id: 'saf-077',
+            name: 'Nsuatre Stadium',
+            city: 'Nsuatre',
+            country: 'Ghana',
+            coordinates: { latitude: 6.65, longitude: -0.8667 },
+            clubs: ['af-077']
+        },
+        coordinates: { latitude: 6.65, longitude: -0.8667 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-078',
+        name: 'Samartex',
+        normalizedName: 'SAMARTEX',
+        shortName: 'Samartex',
+        country: 'Ghana',
+        city: 'Samreboi',
+        stadium: {
+            id: 'saf-078',
+            name: 'Samreboi Stadium',
+            city: 'Samreboi',
+            country: 'Ghana',
+            coordinates: { latitude: 5.9333, longitude: -2.15 },
+            clubs: ['af-078']
+        },
+        coordinates: { latitude: 5.9333, longitude: -2.15 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-079',
+        name: 'Vision FC',
+        normalizedName: 'VISION FC',
+        shortName: 'Vision',
+        country: 'Ghana',
+        city: 'Tema',
+        stadium: {
+            id: 'saf-079',
+            name: 'Tema Stadium',
+            city: 'Tema',
+            country: 'Ghana',
+            coordinates: { latitude: 5.6667, longitude: -0.0167 },
+            clubs: ['af-079']
+        },
+        coordinates: { latitude: 5.6667, longitude: -0.0167 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-080',
+        name: 'Young Apostles FC',
+        normalizedName: 'YOUNG APOSTLES FC',
+        shortName: 'Young',
+        country: 'Ghana',
+        city: 'Wenchi',
+        stadium: {
+            id: 'saf-080',
+            name: 'Wenchi Stadium',
+            city: 'Wenchi',
+            country: 'Ghana',
+            coordinates: { latitude: 7.1167, longitude: -1.9167 },
+            clubs: ['af-080']
+        },
+        coordinates: { latitude: 7.1167, longitude: -1.9167 },
+        founded: 1920,
+        colors: ["#ffd700", "#000000"]
+    },
+    {
+        id: 'af-081',
+        name: 'AmaZulu F.C.',
+        normalizedName: 'AMAZULU F.C.',
+        shortName: 'AmaZulu',
+        country: 'South Africa',
+        city: 'Durban',
+        stadium: {
+            id: 'saf-081',
+            name: 'Durban Stadium',
+            city: 'Durban',
+            country: 'South Africa',
+            coordinates: { latitude: -29.8581, longitude: 31.0292 },
+            clubs: ['af-081']
+        },
+        coordinates: { latitude: -29.8581, longitude: 31.0292 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-082',
+        name: 'Chippa United',
+        normalizedName: 'CHIPPA UNITED',
+        shortName: 'Chippa',
+        country: 'South Africa',
+        city: 'East London',
+        stadium: {
+            id: 'saf-082',
+            name: 'East London Stadium',
+            city: 'East London',
+            country: 'South Africa',
+            coordinates: { latitude: -33.0156, longitude: 27.9116 },
+            clubs: ['af-082']
+        },
+        coordinates: { latitude: -33.0156, longitude: 27.9116 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-083',
+        name: 'Durban City',
+        normalizedName: 'DURBAN CITY',
+        shortName: 'Durban',
+        country: 'South Africa',
+        city: 'Durban',
+        stadium: {
+            id: 'saf-083',
+            name: 'Durban Stadium',
+            city: 'Durban',
+            country: 'South Africa',
+            coordinates: { latitude: -29.8581, longitude: 31.0292 },
+            clubs: ['af-083']
+        },
+        coordinates: { latitude: -29.8581, longitude: 31.0292 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-084',
+        name: 'Lamontville Golden Arrows',
+        normalizedName: 'LAMONTVILLE GOLDEN ARROWS',
+        shortName: 'Lamontville',
+        country: 'South Africa',
+        city: 'Umlazi',
+        stadium: {
+            id: 'saf-084',
+            name: 'Umlazi Stadium',
+            city: 'Umlazi',
+            country: 'South Africa',
+            coordinates: { latitude: -30.0, longitude: 30.85 },
+            clubs: ['af-084']
+        },
+        coordinates: { latitude: -30.0, longitude: 30.85 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-085',
+        name: 'Magesi',
+        normalizedName: 'MAGESI',
+        shortName: 'Magesi',
+        country: 'South Africa',
+        city: 'Moletjie',
+        stadium: {
+            id: 'saf-085',
+            name: 'Moletjie Stadium',
+            city: 'Moletjie',
+            country: 'South Africa',
+            coordinates: { latitude: -24.37, longitude: 28.63 },
+            clubs: ['af-085']
+        },
+        coordinates: { latitude: -24.37, longitude: 28.63 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-086',
+        name: 'Marumo Gallants',
+        normalizedName: 'MARUMO GALLANTS',
+        shortName: 'Marumo',
+        country: 'South Africa',
+        city: 'Bloemfontein',
+        stadium: {
+            id: 'saf-086',
+            name: 'Bloemfontein Stadium',
+            city: 'Bloemfontein',
+            country: 'South Africa',
+            coordinates: { latitude: -29.1167, longitude: 25.5167 },
+            clubs: ['af-086']
+        },
+        coordinates: { latitude: -29.1167, longitude: 25.5167 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-087',
+        name: 'Polokwane City',
+        normalizedName: 'POLOKWANE CITY',
+        shortName: 'Polokwane',
+        country: 'South Africa',
+        city: 'Polokwane',
+        stadium: {
+            id: 'saf-087',
+            name: 'Polokwane Stadium',
+            city: 'Polokwane',
+            country: 'South Africa',
+            coordinates: { latitude: -23.9, longitude: 29.4167 },
+            clubs: ['af-087']
+        },
+        coordinates: { latitude: -23.9, longitude: 29.4167 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-088',
+        name: 'Richards Bay',
+        normalizedName: 'RICHARDS BAY',
+        shortName: 'Richards',
+        country: 'South Africa',
+        city: 'Richards Bay',
+        stadium: {
+            id: 'saf-088',
+            name: 'Richards Bay Stadium',
+            city: 'Richards Bay',
+            country: 'South Africa',
+            coordinates: { latitude: -28.7833, longitude: 32.0833 },
+            clubs: ['af-088']
+        },
+        coordinates: { latitude: -28.7833, longitude: 32.0833 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-089',
+        name: 'Orbit College F.C.',
+        normalizedName: 'ORBIT COLLEGE F.C.',
+        shortName: 'Orbit',
+        country: 'South Africa',
+        city: 'Rustenburg',
+        stadium: {
+            id: 'saf-089',
+            name: 'Rustenburg Stadium',
+            city: 'Rustenburg',
+            country: 'South Africa',
+            coordinates: { latitude: -25.6667, longitude: 27.2 },
+            clubs: ['af-089']
+        },
+        coordinates: { latitude: -25.6667, longitude: 27.2 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-090',
+        name: 'Sekhukhune United',
+        normalizedName: 'SEKHUKHUNE UNITED',
+        shortName: 'Sekhukhune',
+        country: 'South Africa',
+        city: 'Polokwane',
+        stadium: {
+            id: 'saf-090',
+            name: 'Polokwane Stadium',
+            city: 'Polokwane',
+            country: 'South Africa',
+            coordinates: { latitude: -23.9, longitude: 29.4167 },
+            clubs: ['af-090']
+        },
+        coordinates: { latitude: -23.9, longitude: 29.4167 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-091',
+        name: 'Siwelele',
+        normalizedName: 'SIWELELE',
+        shortName: 'Siwelele',
+        country: 'South Africa',
+        city: 'Bloemfontein',
+        stadium: {
+            id: 'saf-091',
+            name: 'Bloemfontein Stadium',
+            city: 'Bloemfontein',
+            country: 'South Africa',
+            coordinates: { latitude: -29.1167, longitude: 25.5167 },
+            clubs: ['af-091']
+        },
+        coordinates: { latitude: -29.1167, longitude: 25.5167 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-092',
+        name: 'Stellenbosch',
+        normalizedName: 'STELLENBOSCH',
+        shortName: 'Stellenbosch',
+        country: 'South Africa',
+        city: 'Stellenbosch',
+        stadium: {
+            id: 'saf-092',
+            name: 'Stellenbosch Stadium',
+            city: 'Stellenbosch',
+            country: 'South Africa',
+            coordinates: { latitude: -33.9358, longitude: 18.8606 },
+            clubs: ['af-092']
+        },
+        coordinates: { latitude: -33.9358, longitude: 18.8606 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-093',
+        name: 'TS Galaxy F.C.',
+        normalizedName: 'TS GALAXY F.C.',
+        shortName: 'TS',
+        country: 'South Africa',
+        city: 'Mbombela',
+        stadium: {
+            id: 'saf-093',
+            name: 'Mbombela Stadium',
+            city: 'Mbombela',
+            country: 'South Africa',
+            coordinates: { latitude: -25.4833, longitude: 30.9667 },
+            clubs: ['af-093']
+        },
+        coordinates: { latitude: -25.4833, longitude: 30.9667 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-094',
+        name: 'Azam F.C.',
+        normalizedName: 'AZAM F.C.',
+        shortName: 'Azam',
+        country: 'Tanzania',
+        city: 'Dar es Salaam',
+        stadium: {
+            id: 'saf-094',
+            name: 'Dar es Salaam Stadium',
+            city: 'Dar es Salaam',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.8, longitude: 39.2833 },
+            clubs: ['af-094']
+        },
+        coordinates: { latitude: -6.8, longitude: 39.2833 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-095',
+        name: 'Coastal Union F.C.',
+        normalizedName: 'COASTAL UNION F.C.',
+        shortName: 'Coastal',
+        country: 'Tanzania',
+        city: 'Tanga',
+        stadium: {
+            id: 'saf-095',
+            name: 'Tanga Stadium',
+            city: 'Tanga',
+            country: 'Tanzania',
+            coordinates: { latitude: -5.0667, longitude: 39.2 },
+            clubs: ['af-095']
+        },
+        coordinates: { latitude: -5.0667, longitude: 39.2 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-096',
+        name: 'Dodoma Jiji',
+        normalizedName: 'DODOMA JIJI',
+        shortName: 'Dodoma',
+        country: 'Tanzania',
+        city: 'Dodoma City',
+        stadium: {
+            id: 'saf-096',
+            name: 'Dodoma City Stadium',
+            city: 'Dodoma City',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.1719, longitude: 35.7395 },
+            clubs: ['af-096']
+        },
+        coordinates: { latitude: -6.1719, longitude: 35.7395 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-097',
+        name: 'JKT Tanzania',
+        normalizedName: 'JKT TANZANIA',
+        shortName: 'JKT',
+        country: 'Tanzania',
+        city: 'Dar es Salaam',
+        stadium: {
+            id: 'saf-097',
+            name: 'Dar es Salaam Stadium',
+            city: 'Dar es Salaam',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.8, longitude: 39.2833 },
+            clubs: ['af-097']
+        },
+        coordinates: { latitude: -6.8, longitude: 39.2833 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-098',
+        name: 'Kagera Sugar F.C.',
+        normalizedName: 'KAGERA SUGAR F.C.',
+        shortName: 'Kagera',
+        country: 'Tanzania',
+        city: 'Bukoba',
+        stadium: {
+            id: 'saf-098',
+            name: 'Bukoba Stadium',
+            city: 'Bukoba',
+            country: 'Tanzania',
+            coordinates: { latitude: -1.85, longitude: 31.8333 },
+            clubs: ['af-098']
+        },
+        coordinates: { latitude: -1.85, longitude: 31.8333 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-099',
+        name: 'KenGold',
+        normalizedName: 'KENGOLD',
+        shortName: 'KenGold',
+        country: 'Tanzania',
+        city: 'Chunya',
+        stadium: {
+            id: 'saf-099',
+            name: 'Chunya Stadium',
+            city: 'Chunya',
+            country: 'Tanzania',
+            coordinates: { latitude: -8.5167, longitude: 32.0167 },
+            clubs: ['af-099']
+        },
+        coordinates: { latitude: -8.5167, longitude: 32.0167 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-100',
+        name: 'Kinondoni MC',
+        normalizedName: 'KINONDONI MC',
+        shortName: 'Kinondoni',
+        country: 'Tanzania',
+        city: 'Kinondoni',
+        stadium: {
+            id: 'saf-100',
+            name: 'Kinondoni Stadium',
+            city: 'Kinondoni',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.8333, longitude: 39.2167 },
+            clubs: ['af-100']
+        },
+        coordinates: { latitude: -6.8333, longitude: 39.2167 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-101',
+        name: 'Mashujaa',
+        normalizedName: 'MASHUJAA',
+        shortName: 'Mashujaa',
+        country: 'Tanzania',
+        city: 'Kigoma',
+        stadium: {
+            id: 'saf-101',
+            name: 'Kigoma Stadium',
+            city: 'Kigoma',
+            country: 'Tanzania',
+            coordinates: { latitude: -4.8717, longitude: 29.6267 },
+            clubs: ['af-101']
+        },
+        coordinates: { latitude: -4.8717, longitude: 29.6267 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-102',
+        name: 'Namungo',
+        normalizedName: 'NAMUNGO',
+        shortName: 'Namungo',
+        country: 'Tanzania',
+        city: 'Lindi',
+        stadium: {
+            id: 'saf-102',
+            name: 'Lindi Stadium',
+            city: 'Lindi',
+            country: 'Tanzania',
+            coordinates: { latitude: -9.3, longitude: 39.7333 },
+            clubs: ['af-102']
+        },
+        coordinates: { latitude: -9.3, longitude: 39.7333 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-103',
+        name: 'Pamba Jiji',
+        normalizedName: 'PAMBA JIJI',
+        shortName: 'Pamba',
+        country: 'Tanzania',
+        city: 'Mwanza',
+        stadium: {
+            id: 'saf-103',
+            name: 'Mwanza Stadium',
+            city: 'Mwanza',
+            country: 'Tanzania',
+            coordinates: { latitude: -2.5167, longitude: 32.9167 },
+            clubs: ['af-103']
+        },
+        coordinates: { latitude: -2.5167, longitude: 32.9167 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-104',
+        name: 'Prisons',
+        normalizedName: 'PRISONS',
+        shortName: 'Prisons',
+        country: 'Tanzania',
+        city: 'Mbeya',
+        stadium: {
+            id: 'saf-104',
+            name: 'Mbeya Stadium',
+            city: 'Mbeya',
+            country: 'Tanzania',
+            coordinates: { latitude: -8.9, longitude: 33.45 },
+            clubs: ['af-104']
+        },
+        coordinates: { latitude: -8.9, longitude: 33.45 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-105',
+        name: 'Singida Black Stars',
+        normalizedName: 'SINGIDA BLACK STARS',
+        shortName: 'Singida',
+        country: 'Tanzania',
+        city: 'Singida',
+        stadium: {
+            id: 'saf-105',
+            name: 'Singida Stadium',
+            city: 'Singida',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.8167, longitude: 34.7167 },
+            clubs: ['af-105']
+        },
+        coordinates: { latitude: -6.8167, longitude: 34.7167 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-106',
+        name: 'Singida Fountain Gate',
+        normalizedName: 'SINGIDA FOUNTAIN GATE',
+        shortName: 'Singida',
+        country: 'Tanzania',
+        city: 'Singida',
+        stadium: {
+            id: 'saf-106',
+            name: 'Singida Stadium',
+            city: 'Singida',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.8167, longitude: 34.7167 },
+            clubs: ['af-106']
+        },
+        coordinates: { latitude: -6.8167, longitude: 34.7167 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-107',
+        name: 'Tabora United',
+        normalizedName: 'TABORA UNITED',
+        shortName: 'Tabora',
+        country: 'Tanzania',
+        city: 'Tabora',
+        stadium: {
+            id: 'saf-107',
+            name: 'Tabora Stadium',
+            city: 'Tabora',
+            country: 'Tanzania',
+            coordinates: { latitude: -5.0167, longitude: 32.7833 },
+            clubs: ['af-107']
+        },
+        coordinates: { latitude: -5.0167, longitude: 32.7833 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-108',
+        name: 'AFC Leopards',
+        normalizedName: 'AFC LEOPARDS',
+        shortName: 'AFC',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-108',
+            name: 'Nairobi Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.2833, longitude: 36.8167 },
+            clubs: ['af-108']
+        },
+        coordinates: { latitude: -1.2833, longitude: 36.8167 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-109',
+        name: 'APS Bomet',
+        normalizedName: 'APS BOMET',
+        shortName: 'APS',
+        country: 'Kenya',
+        city: 'Bomet',
+        stadium: {
+            id: 'saf-109',
+            name: 'Bomet Stadium',
+            city: 'Bomet',
+            country: 'Kenya',
+            coordinates: { latitude: -0.7833, longitude: 35.3667 },
+            clubs: ['af-109']
+        },
+        coordinates: { latitude: -0.7833, longitude: 35.3667 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-110',
+        name: 'Bandari F.C.',
+        normalizedName: 'BANDARI F.C.',
+        shortName: 'Bandari',
+        country: 'Kenya',
+        city: 'Mombasa',
+        stadium: {
+            id: 'saf-110',
+            name: 'Mombasa Stadium',
+            city: 'Mombasa',
+            country: 'Kenya',
+            coordinates: { latitude: -4.0383, longitude: 39.6682 },
+            clubs: ['af-110']
+        },
+        coordinates: { latitude: -4.0383, longitude: 39.6682 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-111',
+        name: 'Bidco United',
+        normalizedName: 'BIDCO UNITED',
+        shortName: 'Bidco',
+        country: 'Kenya',
+        city: 'Thika',
+        stadium: {
+            id: 'saf-111',
+            name: 'Thika Stadium',
+            city: 'Thika',
+            country: 'Kenya',
+            coordinates: { latitude: -1.0333, longitude: 37.0833 },
+            clubs: ['af-111']
+        },
+        coordinates: { latitude: -1.0333, longitude: 37.0833 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-112',
+        name: 'Kakamega Homeboyz',
+        normalizedName: 'KAKAMEGA HOMEBOYZ',
+        shortName: 'Kakamega',
+        country: 'Kenya',
+        city: 'Kakamega',
+        stadium: {
+            id: 'saf-112',
+            name: 'Kakamega Stadium',
+            city: 'Kakamega',
+            country: 'Kenya',
+            coordinates: { latitude: 0.2833, longitude: 34.75 },
+            clubs: ['af-112']
+        },
+        coordinates: { latitude: 0.2833, longitude: 34.75 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-113',
+        name: 'Kariobangi Sharks',
+        normalizedName: 'KARIOBANGI SHARKS',
+        shortName: 'Kariobangi',
+        country: 'Kenya',
+        city: 'Machakos',
+        stadium: {
+            id: 'saf-113',
+            name: 'Machakos Stadium',
+            city: 'Machakos',
+            country: 'Kenya',
+            coordinates: { latitude: -2.7167, longitude: 37.2667 },
+            clubs: ['af-113']
+        },
+        coordinates: { latitude: -2.7167, longitude: 37.2667 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-114',
+        name: 'KCB',
+        normalizedName: 'KCB',
+        shortName: 'KCB',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-114',
+            name: 'Nairobi Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.2833, longitude: 36.8167 },
+            clubs: ['af-114']
+        },
+        coordinates: { latitude: -1.2833, longitude: 36.8167 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-115',
+        name: 'Kenya Police',
+        normalizedName: 'KENYA POLICE',
+        shortName: 'Kenya',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-115',
+            name: 'Nairobi Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.2833, longitude: 36.8167 },
+            clubs: ['af-115']
+        },
+        coordinates: { latitude: -1.2833, longitude: 36.8167 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-116',
+        name: 'Mara Sugar',
+        normalizedName: 'MARA SUGAR',
+        shortName: 'Mara',
+        country: 'Kenya',
+        city: 'Awendo',
+        stadium: {
+            id: 'saf-116',
+            name: 'Awendo Stadium',
+            city: 'Awendo',
+            country: 'Kenya',
+            coordinates: { latitude: -0.6833, longitude: 34.4333 },
+            clubs: ['af-116']
+        },
+        coordinates: { latitude: -0.6833, longitude: 34.4333 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-117',
+        name: 'Mathare United',
+        normalizedName: 'MATHARE UNITED',
+        shortName: 'Mathare',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-117',
+            name: 'Nairobi Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.2833, longitude: 36.8167 },
+            clubs: ['af-117']
+        },
+        coordinates: { latitude: -1.2833, longitude: 36.8167 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-118',
+        name: 'Murang\'a SEAL',
+        normalizedName: 'MURANG\'A SEAL',
+        shortName: 'Murang\'a',
+        country: 'Kenya',
+        city: 'Murang\'a',
+        stadium: {
+            id: 'saf-118',
+            name: 'Murang\'a Stadium',
+            city: 'Murang\'a',
+            country: 'Kenya',
+            coordinates: { latitude: -0.6833, longitude: 37.15 },
+            clubs: ['af-118']
+        },
+        coordinates: { latitude: -0.6833, longitude: 37.15 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-119',
+        name: 'Nairobi United',
+        normalizedName: 'NAIROBI UNITED',
+        shortName: 'Nairobi',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-119',
+            name: 'Nairobi Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.2833, longitude: 36.8167 },
+            clubs: ['af-119']
+        },
+        coordinates: { latitude: -1.2833, longitude: 36.8167 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-120',
+        name: 'Posta Rangers',
+        normalizedName: 'POSTA RANGERS',
+        shortName: 'Posta',
+        country: 'Kenya',
+        city: 'Eldoret',
+        stadium: {
+            id: 'saf-120',
+            name: 'Eldoret Stadium',
+            city: 'Eldoret',
+            country: 'Kenya',
+            coordinates: { latitude: 0.5, longitude: 35.2667 },
+            clubs: ['af-120']
+        },
+        coordinates: { latitude: 0.5, longitude: 35.2667 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-121',
+        name: 'Shabana',
+        normalizedName: 'SHABANA',
+        shortName: 'Shabana',
+        country: 'Kenya',
+        city: 'Kisii',
+        stadium: {
+            id: 'saf-121',
+            name: 'Kisii Stadium',
+            city: 'Kisii',
+            country: 'Kenya',
+            coordinates: { latitude: -0.6833, longitude: 34.7833 },
+            clubs: ['af-121']
+        },
+        coordinates: { latitude: -0.6833, longitude: 34.7833 },
+        founded: 1920,
+        colors: ["#0066cc", "#ffffff"]
+    },
+    {
+        id: 'af-122',
+        name: 'Sofapaka F.C.',
+        normalizedName: 'SOFAPAKA F.C.',
+        shortName: 'Sofapaka',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-122',
+            name: 'Nairobi Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.2833, longitude: 36.8167 },
+            clubs: ['af-122']
+        },
+        coordinates: { latitude: -1.2833, longitude: 36.8167 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-123',
+        name: 'Tusker F.C.',
+        normalizedName: 'TUSKER F.C.',
+        shortName: 'Tusker',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-123',
+            name: 'Nairobi Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.2833, longitude: 36.8167 },
+            clubs: ['af-123']
+        },
+        coordinates: { latitude: -1.2833, longitude: 36.8167 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-124',
+        name: 'Ulinzi Stars F.C.',
+        normalizedName: 'ULINZI STARS F.C.',
+        shortName: 'Ulinzi',
+        country: 'Kenya',
+        city: 'Nakuru',
+        stadium: {
+            id: 'saf-124',
+            name: 'Nakuru Stadium',
+            city: 'Nakuru',
+            country: 'Kenya',
+            coordinates: { latitude: -0.3, longitude: 36.0667 },
+            clubs: ['af-124']
+        },
+        coordinates: { latitude: -0.3, longitude: 36.0667 },
+        founded: 1920,
+        colors: ["#000000", "#ffff00"]
+    },
+    {
+        id: 'af-125',
+        name: 'Aigle Royal Menoua',
+        normalizedName: 'AIGLE ROYAL MENOUA',
+        shortName: 'Aigle',
+        country: 'Cameroon',
+        city: 'Dschang',
+        stadium: {
+            id: 'saf-125',
+            name: 'Dschang Stadium',
+            city: 'Dschang',
+            country: 'Cameroon',
+            coordinates: { latitude: 5.4333, longitude: 10.4 },
+            clubs: ['af-125']
+        },
+        coordinates: { latitude: 5.4333, longitude: 10.4 },
+        founded: 1920,
+        colors: ["#006600", "#ffff00"]
+    },
+    {
+        id: 'af-126',
+        name: 'Bamboutos',
+        normalizedName: 'BAMBOUTOS',
+        shortName: 'Bamboutos',
+        country: 'Cameroon',
+        city: 'Mbouda',
+        stadium: {
+            id: 'saf-126',
+            name: 'Mbouda Stadium',
+            city: 'Mbouda',
+            country: 'Cameroon',
+            coordinates: { latitude: 5.6, longitude: 10.2667 },
+            clubs: ['af-126']
+        },
+        coordinates: { latitude: 5.6, longitude: 10.2667 },
+        founded: 1920,
+        colors: ["#000000", "#ffffff"]
+    },
+    {
+        id: 'af-127',
+        name: 'Canon Yaounde',
+        normalizedName: 'CANON YAOUNDE',
+        shortName: 'Canon',
+        country: 'Cameroon',
+        city: 'Yaounde',
+        stadium: {
+            id: 'saf-127',
+            name: 'Yaounde Stadium',
+            city: 'Yaounde',
+            country: 'Cameroon',
+            coordinates: { latitude: 3.8667, longitude: 11.5167 },
+            clubs: ['af-127']
+        },
+        coordinates: { latitude: 3.8667, longitude: 11.5167 },
+        founded: 1920,
+        colors: ["#000000", "#ffffff"]
+    },
+    {
+        id: 'af-128',
+        name: 'Colombe Sportive',
+        normalizedName: 'COLOMBE SPORTIVE',
+        shortName: 'Colombe',
+        country: 'Cameroon',
+        city: 'Yaounde',
+        stadium: {
+            id: 'saf-128',
+            name: 'Yaounde Stadium',
+            city: 'Yaounde',
+            country: 'Cameroon',
+            coordinates: { latitude: 3.8667, longitude: 11.5167 },
+            clubs: ['af-128']
+        },
+        coordinates: { latitude: 3.8667, longitude: 11.5167 },
+        founded: 1920,
+        colors: ["#000000", "#ffffff"]
+    },
+    {
+        id: 'af-129',
+        name: 'Coton Sport FC',
+        normalizedName: 'COTON SPORT FC',
+        shortName: 'Coton',
+        country: 'Cameroon',
+        city: 'Garoua',
+        stadium: {
+            id: 'saf-129',
+            name: 'Garoua Stadium',
+            city: 'Garoua',
+            country: 'Cameroon',
+            coordinates: { latitude: 9.3, longitude: 13.4 },
+            clubs: ['af-129']
+        },
+        coordinates: { latitude: 9.3, longitude: 13.4 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-130',
+        name: 'Dynamo de Douala',
+        normalizedName: 'DYNAMO DE DOUALA',
+        shortName: 'Dynamo',
+        country: 'Cameroon',
+        city: 'Douala',
+        stadium: {
+            id: 'saf-130',
+            name: 'Douala Stadium',
+            city: 'Douala',
+            country: 'Cameroon',
+            coordinates: { latitude: 4.0511, longitude: 9.7679 },
+            clubs: ['af-130']
+        },
+        coordinates: { latitude: 4.0511, longitude: 9.7679 },
+        founded: 1920,
+        colors: ["#000000", "#ffffff"]
+    },
+    {
+        id: 'af-131',
+        name: 'Fauve Azur Elite',
+        normalizedName: 'FAUVE AZUR ELITE',
+        shortName: 'Fauve',
+        country: 'Cameroon',
+        city: 'Yaounde',
+        stadium: {
+            id: 'saf-131',
+            name: 'Yaounde Stadium',
+            city: 'Yaounde',
+            country: 'Cameroon',
+            coordinates: { latitude: 3.8667, longitude: 11.5167 },
+            clubs: ['af-131']
+        },
+        coordinates: { latitude: 3.8667, longitude: 11.5167 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-132',
+        name: 'Fortuna',
+        normalizedName: 'FORTUNA',
+        shortName: 'Fortuna',
+        country: 'Cameroon',
+        city: 'Yaounde',
+        stadium: {
+            id: 'saf-132',
+            name: 'Yaounde Stadium',
+            city: 'Yaounde',
+            country: 'Cameroon',
+            coordinates: { latitude: 3.8667, longitude: 11.5167 },
+            clubs: ['af-132']
+        },
+        coordinates: { latitude: 3.8667, longitude: 11.5167 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-133',
+        name: 'Gazelle',
+        normalizedName: 'GAZELLE',
+        shortName: 'Gazelle',
+        country: 'Cameroon',
+        city: 'Garoua',
+        stadium: {
+            id: 'saf-133',
+            name: 'Garoua Stadium',
+            city: 'Garoua',
+            country: 'Cameroon',
+            coordinates: { latitude: 9.3, longitude: 13.4 },
+            clubs: ['af-133']
+        },
+        coordinates: { latitude: 9.3, longitude: 13.4 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-134',
+        name: 'Les Astres FC',
+        normalizedName: 'LES ASTRES FC',
+        shortName: 'Les',
+        country: 'Cameroon',
+        city: 'Douala',
+        stadium: {
+            id: 'saf-134',
+            name: 'Douala Stadium',
+            city: 'Douala',
+            country: 'Cameroon',
+            coordinates: { latitude: 4.0511, longitude: 9.7679 },
+            clubs: ['af-134']
+        },
+        coordinates: { latitude: 4.0511, longitude: 9.7679 },
+        founded: 1920,
+        colors: ["#006600", "#ffff00"]
+    },
+    {
+        id: 'af-135',
+        name: 'Panthere du Nde',
+        normalizedName: 'PANTHERE DU NDE',
+        shortName: 'Panthere',
+        country: 'Cameroon',
+        city: 'Bangante',
+        stadium: {
+            id: 'saf-135',
+            name: 'Bangante Stadium',
+            city: 'Bangante',
+            country: 'Cameroon',
+            coordinates: { latitude: 5.6667, longitude: 10.1667 },
+            clubs: ['af-135']
+        },
+        coordinates: { latitude: 5.6667, longitude: 10.1667 },
+        founded: 1920,
+        colors: ["#006600", "#ffff00"]
+    },
+    {
+        id: 'af-136',
+        name: 'PWD Bamenda',
+        normalizedName: 'PWD BAMENDA',
+        shortName: 'PWD',
+        country: 'Cameroon',
+        city: 'Bamenda',
+        stadium: {
+            id: 'saf-136',
+            name: 'Bamenda Stadium',
+            city: 'Bamenda',
+            country: 'Cameroon',
+            coordinates: { latitude: 5.9633, longitude: 10.1597 },
+            clubs: ['af-136']
+        },
+        coordinates: { latitude: 5.9633, longitude: 10.1597 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
+        id: 'af-137',
+        name: 'Stade Renard de Melong',
+        normalizedName: 'STADE RENARD DE MELONG',
+        shortName: 'Stade',
+        country: 'Cameroon',
+        city: 'Melong',
+        stadium: {
+            id: 'saf-137',
+            name: 'Melong Stadium',
+            city: 'Melong',
+            country: 'Cameroon',
+            coordinates: { latitude: 5.8, longitude: 10.0167 },
+            clubs: ['af-137']
+        },
+        coordinates: { latitude: 5.8, longitude: 10.0167 },
+        founded: 1920,
+        colors: ["#000000", "#ffffff"]
+    },
+    {
+        id: 'af-138',
+        name: 'US Douala',
+        normalizedName: 'US DOUALA',
+        shortName: 'US',
+        country: 'Cameroon',
+        city: 'Douala',
+        stadium: {
+            id: 'saf-138',
+            name: 'Douala Stadium',
+            city: 'Douala',
+            country: 'Cameroon',
+            coordinates: { latitude: 4.0511, longitude: 9.7679 },
+            clubs: ['af-138']
+        },
+        coordinates: { latitude: 4.0511, longitude: 9.7679 },
+        founded: 1920,
+        colors: ["#006600", "#ffff00"]
+    },
+    {
+        id: 'af-139',
+        name: 'Victoria United',
+        normalizedName: 'VICTORIA UNITED',
+        shortName: 'Victoria',
+        country: 'Cameroon',
+        city: 'Limbe',
+        stadium: {
+            id: 'saf-139',
+            name: 'Limbe Stadium',
+            city: 'Limbe',
+            country: 'Cameroon',
+            coordinates: { latitude: 4.0167, longitude: 9.25 },
+            clubs: ['af-139']
+        },
+        coordinates: { latitude: 4.0167, longitude: 9.25 },
+        founded: 1920,
+        colors: ["#000000", "#ffffff"]
+    },
+    {
+        id: 'af-140',
+        name: 'YOSA',
+        normalizedName: 'YOSA',
+        shortName: 'YOSA',
+        country: 'Cameroon',
+        city: 'Bamenda',
+        stadium: {
+            id: 'saf-140',
+            name: 'Bamenda Stadium',
+            city: 'Bamenda',
+            country: 'Cameroon',
+            coordinates: { latitude: 5.9633, longitude: 10.1597 },
+            clubs: ['af-140']
+        },
+        coordinates: { latitude: 5.9633, longitude: 10.1597 },
+        founded: 1920,
+        colors: ["#ff0000", "#ffffff"]
+    },
+    {
         id: '1',
         name: 'Crystal Palace',
         normalizedName: 'CRYSTAL PALACE',
@@ -8789,5 +10613,5 @@ export const MOCK_CLUBS: Club[] = [
         coordinates: { latitude: 45.4283, longitude: 12.3558 },
         founded: 1907,
         colors: ['#000000', '#006633', '#ff6600']
-    }
+    },
 ];
