@@ -1135,6 +1135,652 @@ export const MOCK_CLUBS: Club[] = [
         colors: ['#005ea2', '#ffffff']
     },
     {
+        id: 'af-011',
+        name: 'USM Alger',
+        normalizedName: 'USM ALGER',
+        shortName: 'USMA',
+        country: 'Algeria',
+        city: 'Algiers',
+        stadium: {
+            id: 'saf-011',
+            name: 'Stade Omar Hamadi',
+            city: 'Algiers',
+            country: 'Algeria',
+            coordinates: { latitude: 36.7936, longitude: 3.05 },
+            clubs: ['af-011']
+        },
+        coordinates: { latitude: 36.7936, longitude: 3.05 },
+        founded: 1937,
+        colors: ['#ff0000', '#000000']
+    },
+    {
+        id: 'af-012',
+        name: 'MC Alger',
+        normalizedName: 'MC ALGER',
+        shortName: 'MCA',
+        country: 'Algeria',
+        city: 'Algiers',
+        stadium: {
+            id: 'saf-012',
+            name: 'Stade du 5 Juillet',
+            city: 'Algiers',
+            country: 'Algeria',
+            coordinates: { latitude: 36.7525, longitude: 2.9967 },
+            clubs: ['af-012']
+        },
+        coordinates: { latitude: 36.7525, longitude: 2.9967 },
+        founded: 1921,
+        colors: ['#008000', '#ff0000']
+    },
+    {
+        id: 'af-013',
+        name: 'ASO Chlef',
+        normalizedName: 'ASO CHLEF',
+        shortName: 'ASO',
+        country: 'Algeria',
+        city: 'Chlef',
+        stadium: {
+            id: 'saf-013',
+            name: 'Stade Mohamed Boumezrag',
+            city: 'Chlef',
+            country: 'Algeria',
+            coordinates: { latitude: 36.15, longitude: 1.3333 },
+            clubs: ['af-013']
+        },
+        coordinates: { latitude: 36.15, longitude: 1.3333 },
+        founded: 1947,
+        colors: ['#ff0000', '#ffffff']
+    },
+    {
+        id: 'af-014',
+        name: 'Petro de Luanda',
+        normalizedName: 'PETRO DE LUANDA',
+        shortName: 'Petro',
+        country: 'Angola',
+        city: 'Luanda',
+        stadium: {
+            id: 'saf-014',
+            name: 'Estádio 11 de Novembro',
+            city: 'Luanda',
+            country: 'Angola',
+            coordinates: { latitude: -8.9767, longitude: 13.2842 },
+            clubs: ['af-014']
+        },
+        coordinates: { latitude: -8.9767, longitude: 13.2842 },
+        founded: 1980,
+        colors: ['#ffff00', '#0000ff', '#ff0000']
+    },
+    {
+        id: 'af-015',
+        name: 'Primeiro de Agosto',
+        normalizedName: 'PRIMEIRO DE AGOSTO',
+        shortName: '1º de Agosto',
+        country: 'Angola',
+        city: 'Luanda',
+        stadium: {
+            id: 'saf-014',
+            name: 'Estádio 11 de Novembro',
+            city: 'Luanda',
+            country: 'Angola',
+            coordinates: { latitude: -8.9767, longitude: 13.2842 },
+            clubs: ['af-015']
+        },
+        coordinates: { latitude: -8.9767, longitude: 13.2842 },
+        founded: 1977,
+        colors: ['#ff0000', '#000000']
+    },
+    {
+        id: 'af-016',
+        name: 'ASEC Mimosas',
+        normalizedName: 'ASEC MIMOSAS',
+        shortName: 'ASEC',
+        country: 'Ivory Coast',
+        city: 'Abidjan',
+        stadium: {
+            id: 'saf-016',
+            name: 'Stade Félix Houphouët-Boigny',
+            city: 'Abidjan',
+            country: 'Ivory Coast',
+            coordinates: { latitude: 5.3283, longitude: -4.0189 },
+            clubs: ['af-016']
+        },
+        coordinates: { latitude: 5.3283, longitude: -4.0189 },
+        founded: 1948,
+        colors: ['#ffff00', '#000000']
+    },
+    {
+        id: 'af-017',
+        name: 'Pyramids FC',
+        normalizedName: 'PYRAMIDS FC',
+        shortName: 'Pyramids',
+        country: 'Egypt',
+        city: 'Cairo',
+        stadium: {
+            id: 'saf-017',
+            name: '30 June Stadium',
+            city: 'Cairo',
+            country: 'Egypt',
+            coordinates: { latitude: 29.9922, longitude: 31.4278 },
+            clubs: ['af-017']
+        },
+        coordinates: { latitude: 29.9922, longitude: 31.4278 },
+        founded: 2008,
+        colors: ['#00008b', '#ffffff']
+    },
+    {
+        id: 'af-018',
+        name: 'Al-Hilal Omdurman',
+        normalizedName: 'AL-HILAL OMDURMAN',
+        shortName: 'Al-Hilal',
+        country: 'Sudan',
+        city: 'Omdurman',
+        stadium: {
+            id: 'saf-018',
+            name: 'Al-Hilal Stadium',
+            city: 'Omdurman',
+            country: 'Sudan',
+            coordinates: { latitude: 15.6447, longitude: 32.4803 },
+            clubs: ['af-018']
+        },
+        coordinates: { latitude: 15.6447, longitude: 32.4803 },
+        founded: 1930,
+        colors: ['#0000ff', '#ffffff']
+    },
+    {
+        id: 'af-019',
+        name: 'Al-Merreikh SC',
+        normalizedName: 'AL-MERREIKH SC',
+        shortName: 'Al-Merreikh',
+        country: 'Sudan',
+        city: 'Omdurman',
+        stadium: {
+            id: 'saf-019',
+            name: 'Al-Merreikh Stadium',
+            city: 'Omdurman',
+            country: 'Sudan',
+            coordinates: { latitude: 15.6456, longitude: 32.4792 },
+            clubs: ['af-019']
+        },
+        coordinates: { latitude: 15.6456, longitude: 32.4792 },
+        founded: 1908,
+        colors: ['#ff0000', '#ffff00']
+    },
+    {
+        id: 'af-020',
+        name: 'Young Africans SC',
+        normalizedName: 'YOUNG AFRICANS SC',
+        shortName: 'Yanga',
+        country: 'Tanzania',
+        city: 'Dar es Salaam',
+        stadium: {
+            id: 'saf-020',
+            name: 'Benjamin Mkapa Stadium',
+            city: 'Dar es Salaam',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.8528, longitude: 39.2939 },
+            clubs: ['af-020', 'af-021']
+        },
+        coordinates: { latitude: -6.8528, longitude: 39.2939 },
+        founded: 1935,
+        colors: ['#ffff00', '#008000']
+    },
+    {
+        id: 'af-021',
+        name: 'Simba SC',
+        normalizedName: 'SIMBA SC',
+        shortName: 'Simba',
+        country: 'Tanzania',
+        city: 'Dar es Salaam',
+        stadium: {
+            id: 'saf-020',
+            name: 'Benjamin Mkapa Stadium',
+            city: 'Dar es Salaam',
+            country: 'Tanzania',
+            coordinates: { latitude: -6.8528, longitude: 39.2939 },
+            clubs: ['af-020', 'af-021']
+        },
+        coordinates: { latitude: -6.8528, longitude: 39.2939 },
+        founded: 1936,
+        colors: ['#ff0000', '#ffffff']
+    },
+    {
+        id: 'af-022',
+        name: 'Asante Kotoko',
+        normalizedName: 'ASANTE KOTOKO',
+        shortName: 'Kotoko',
+        country: 'Ghana',
+        city: 'Kumasi',
+        stadium: {
+            id: 'saf-022',
+            name: 'Baba Yara Stadium',
+            city: 'Kumasi',
+            country: 'Ghana',
+            coordinates: { latitude: 6.6806, longitude: -1.6056 },
+            clubs: ['af-022']
+        },
+        coordinates: { latitude: 6.6806, longitude: -1.6056 },
+        founded: 1935,
+        colors: ['#ff0000', '#ffffff']
+    },
+    {
+        id: 'af-023',
+        name: 'Gor Mahia',
+        normalizedName: 'GOR MAHIA',
+        shortName: 'Gor',
+        country: 'Kenya',
+        city: 'Nairobi',
+        stadium: {
+            id: 'saf-023',
+            name: 'Nyayo National Stadium',
+            city: 'Nairobi',
+            country: 'Kenya',
+            coordinates: { latitude: -1.3039, longitude: 36.8225 },
+            clubs: ['af-023']
+        },
+        coordinates: { latitude: -1.3039, longitude: 36.8225 },
+        founded: 1968,
+        colors: ['#008000', '#ffffff']
+    },
+    {
+        id: 'af-024',
+        name: 'FC Nouadhibou',
+        normalizedName: 'FC NOUADHIBOU',
+        shortName: 'Nouadhibou',
+        country: 'Mauritania',
+        city: 'Nouadhibou',
+        stadium: {
+            id: 'saf-024',
+            name: 'Stade Municipal de Nouadhibou',
+            city: 'Nouadhibou',
+            country: 'Mauritania',
+            coordinates: { latitude: 20.9419, longitude: -17.0425 },
+            clubs: ['af-024']
+        },
+        coordinates: { latitude: 20.9419, longitude: -17.0425 },
+        founded: 1999,
+        colors: ['#ffa500', '#000000']
+    },
+    {
+        id: 'af-025',
+        name: 'ZESCO United',
+        normalizedName: 'ZESCO UNITED',
+        shortName: 'ZESCO',
+        country: 'Zambia',
+        city: 'Ndola',
+        stadium: {
+            id: 'saf-025',
+            name: 'Levy Mwanawasa Stadium',
+            city: 'Ndola',
+            country: 'Zambia',
+            coordinates: { latitude: -12.9739, longitude: 28.6047 },
+            clubs: ['af-025']
+        },
+        coordinates: { latitude: -12.9739, longitude: 28.6047 },
+        founded: 1974,
+        colors: ['#00ff00', '#FFA500']
+    },
+    {
+        id: 'af-026',
+        name: 'CR Belouizdad',
+        normalizedName: 'CR BELOUIZDAD',
+        shortName: 'CRB',
+        country: 'Algeria',
+        city: 'Algiers',
+        stadium: {
+            id: 'saf-026',
+            name: 'Stade du 20 Août 1955',
+            city: 'Algiers',
+            country: 'Algeria',
+            coordinates: { latitude: 36.7461, longitude: 3.065 },
+            clubs: ['af-026']
+        },
+        coordinates: { latitude: 36.7461, longitude: 3.065 },
+        founded: 1962,
+        colors: ['#ff0000', '#ffffff']
+    },
+    {
+        id: 'af-027',
+        name: 'Dynamos FC',
+        normalizedName: 'DYNAMOS FC',
+        shortName: 'Dynamos',
+        country: 'Zimbabwe',
+        city: 'Harare',
+        stadium: {
+            id: 'saf-027',
+            name: 'Rufaro Stadium',
+            city: 'Harare',
+            country: 'Zimbabwe',
+            coordinates: { latitude: -17.8544, longitude: 31.0422 },
+            clubs: ['af-027']
+        },
+        coordinates: { latitude: -17.8544, longitude: 31.0422 },
+        founded: 1963,
+        colors: ['#0000ff', '#ffffff']
+    },
+    {
+        id: 'af-028',
+        name: 'USM Khenchela',
+        normalizedName: 'USM KHENCHELA',
+        shortName: 'USMK',
+        country: 'Algeria',
+        city: 'Khenchela',
+        stadium: {
+            id: 'saf-028',
+            name: 'Stade Amar Hamam',
+            city: 'Khenchela',
+            country: 'Algeria',
+            coordinates: { latitude: 35.4333, longitude: 7.15 },
+            clubs: ['af-028']
+        },
+        coordinates: { latitude: 35.4333, longitude: 7.15 },
+        founded: 1943,
+        colors: ['#ffffff', '#000000']
+    },
+    {
+        id: 'af-029',
+        name: 'JS Saoura',
+        normalizedName: 'JS SAOURA',
+        shortName: 'JSS',
+        country: 'Algeria',
+        city: 'Béchar',
+        stadium: {
+            id: 'saf-029',
+            name: 'Stade 20 Août 1955',
+            city: 'Béchar',
+            country: 'Algeria',
+            coordinates: { latitude: 31.6167, longitude: -2.2167 },
+            clubs: ['af-029']
+        },
+        coordinates: { latitude: 31.6167, longitude: -2.2167 },
+        founded: 2008,
+        colors: ['#ffff00', '#008000']
+    },
+    {
+        id: 'af-030',
+        name: 'ES Sétif',
+        normalizedName: 'ES SETIF',
+        shortName: 'ESS',
+        country: 'Algeria',
+        city: 'Sétif',
+        stadium: {
+            id: 'saf-030',
+            name: 'Stade 8 Mai 1945',
+            city: 'Sétif',
+            country: 'Algeria',
+            coordinates: { latitude: 36.1833, longitude: 5.4 },
+            clubs: ['af-030']
+        },
+        coordinates: { latitude: 36.1833, longitude: 5.4 },
+        founded: 1958,
+        colors: ['#000000', '#ffffff']
+    },
+    {
+        id: 'af-031',
+        name: 'Paradou AC',
+        normalizedName: 'PARADOU AC',
+        shortName: 'PAC',
+        country: 'Algeria',
+        city: 'Algiers',
+        stadium: {
+            id: 'saf-012',
+            name: 'Stade du 5 Juillet',
+            city: 'Algiers',
+            country: 'Algeria',
+            coordinates: { latitude: 36.7525, longitude: 2.9967 },
+            clubs: ['af-031']
+        },
+        coordinates: { latitude: 36.7525, longitude: 2.9967 },
+        founded: 1994,
+        colors: ['#ffff00', '#0000ff']
+    },
+    {
+        id: 'af-032',
+        name: 'CS Constantine',
+        normalizedName: 'CS CONSTANTINE',
+        shortName: 'CSC',
+        country: 'Algeria',
+        city: 'Constantine',
+        stadium: {
+            id: 'saf-032',
+            name: 'Stade Mohamed Hamlaoui',
+            city: 'Constantine',
+            country: 'Algeria',
+            coordinates: { latitude: 36.35, longitude: 6.6167 },
+            clubs: ['af-032']
+        },
+        coordinates: { latitude: 36.35, longitude: 6.6167 },
+        founded: 1898,
+        colors: ['#008000', '#000000']
+    },
+    {
+        id: 'af-033',
+        name: 'Mouloudia d\'Oujda',
+        normalizedName: 'MOULOUDIA DOUJDA',
+        shortName: 'MCO',
+        country: 'Morocco',
+        city: 'Oujda',
+        stadium: {
+            id: 'saf-033',
+            name: 'Stade d\'Honneur d\'Oujda',
+            city: 'Oujda',
+            country: 'Morocco',
+            coordinates: { latitude: 34.6833, longitude: -1.9167 },
+            clubs: ['af-033']
+        },
+        coordinates: { latitude: 34.6833, longitude: -1.9167 },
+        founded: 1946,
+        colors: ['#008000', '#ffffff']
+    },
+    {
+        id: 'af-034',
+        name: 'Renaissance de Berkane',
+        normalizedName: 'RENAISSANCE DE BERKANE',
+        shortName: 'RSB',
+        country: 'Morocco',
+        city: 'Berkane',
+        stadium: {
+            id: 'saf-034',
+            name: 'Stade Municipal de Berkane',
+            city: 'Berkane',
+            country: 'Morocco',
+            coordinates: { latitude: 34.9333, longitude: -2.3167 },
+            clubs: ['af-034']
+        },
+        coordinates: { latitude: 34.9333, longitude: -2.3167 },
+        founded: 1938,
+        colors: ['#ffa500', '#000000']
+    },
+    {
+        id: 'af-035',
+        name: 'Fath Union Sport',
+        normalizedName: 'FATH UNION SPORT',
+        shortName: 'FUS',
+        country: 'Morocco',
+        city: 'Rabat',
+        stadium: {
+            id: 'saf-035',
+            name: 'Stade Moulay Hassan',
+            city: 'Rabat',
+            country: 'Morocco',
+            coordinates: { latitude: 33.95, longitude: -6.8333 },
+            clubs: ['af-035']
+        },
+        coordinates: { latitude: 33.95, longitude: -6.8333 },
+        founded: 1946,
+        colors: ['#ffffff', '#ff0000']
+    },
+    {
+        id: 'af-036',
+        name: 'ASFAR',
+        normalizedName: 'ASFAR',
+        shortName: 'ASFAR',
+        country: 'Morocco',
+        city: 'Rabat',
+        stadium: {
+            id: 'saf-036',
+            name: 'Stade Prince Moulay Abdellah',
+            city: 'Rabat',
+            country: 'Morocco',
+            coordinates: { latitude: 33.95, longitude: -6.8333 },
+            clubs: ['af-036']
+        },
+        coordinates: { latitude: 33.95, longitude: -6.8333 },
+        founded: 1958,
+        colors: ['#000000', '#ff0000', '#008000']
+    },
+    {
+        id: 'af-037',
+        name: 'Moghreb Tétouan',
+        normalizedName: 'MOGHREB TETOUAN',
+        shortName: 'MAT',
+        country: 'Morocco',
+        city: 'Tétouan',
+        stadium: {
+            id: 'saf-037',
+            name: 'Stade Saniat Rmel',
+            city: 'Tétouan',
+            country: 'Morocco',
+            coordinates: { latitude: 35.5667, longitude: -5.3667 },
+            clubs: ['af-037']
+        },
+        coordinates: { latitude: 35.5667, longitude: -5.3667 },
+        founded: 1922,
+        colors: ['#ff0000', '#ffffff', '#0000ff']
+    },
+    {
+        id: 'af-038',
+        name: 'Difaâ Hassani El Jadidi',
+        normalizedName: 'DIFAA HASSANI EL JADIDI',
+        shortName: 'DHJ',
+        country: 'Morocco',
+        city: 'El Jadida',
+        stadium: {
+            id: 'saf-038',
+            name: 'Stade El Abdi',
+            city: 'El Jadida',
+            country: 'Morocco',
+            coordinates: { latitude: 33.2333, longitude: -8.5 },
+            clubs: ['af-038']
+        },
+        coordinates: { latitude: 33.2333, longitude: -8.5 },
+        founded: 1956,
+        colors: ['#008000', '#ffffff']
+    },
+    {
+        id: 'af-039',
+        name: 'Monastir',
+        normalizedName: 'MONASTIR',
+        shortName: 'USM',
+        country: 'Tunisia',
+        city: 'Monastir',
+        stadium: {
+            id: 'saf-039',
+            name: 'Stade Mustapha Ben Jannet',
+            city: 'Monastir',
+            country: 'Tunisia',
+            coordinates: { latitude: 35.7833, longitude: 10.8333 },
+            clubs: ['af-039']
+        },
+        coordinates: { latitude: 35.7833, longitude: 10.8333 },
+        founded: 1923,
+        colors: ['#0000ff', '#ffffff']
+    },
+    {
+        id: 'af-040',
+        name: 'CS Sfaxien',
+        normalizedName: 'CS SFAXIEN',
+        shortName: 'CSS',
+        country: 'Tunisia',
+        city: 'Sfax',
+        stadium: {
+            id: 'saf-040',
+            name: 'Stade Taïeb Mhiri',
+            city: 'Sfax',
+            country: 'Tunisia',
+            coordinates: { latitude: 34.7333, longitude: 10.7667 },
+            clubs: ['af-040']
+        },
+        coordinates: { latitude: 34.7333, longitude: 10.7667 },
+        founded: 1928,
+        colors: ['#000000', '#ffffff']
+    },
+    {
+        id: 'af-041',
+        name: 'Club Africain',
+        normalizedName: 'CLUB AFRICAIN',
+        shortName: 'CA',
+        country: 'Tunisia',
+        city: 'Tunis',
+        stadium: {
+            id: 'saf-005',
+            name: 'Stade Hammadi Agrebi',
+            city: 'Radès',
+            country: 'Tunisia',
+            coordinates: { latitude: 36.7472, longitude: 10.2708 },
+            clubs: ['af-005', 'af-041']
+        },
+        coordinates: { latitude: 36.7472, longitude: 10.2708 },
+        founded: 1920,
+        colors: ['#ff0000', '#ffffff']
+    },
+    {
+        id: 'af-042',
+        name: 'Al Masry SC',
+        normalizedName: 'AL MASRY SC',
+        shortName: 'Al Masry',
+        country: 'Egypt',
+        city: 'Port Said',
+        stadium: {
+            id: 'saf-042',
+            name: 'Port Said Stadium',
+            city: 'Port Said',
+            country: 'Egypt',
+            coordinates: { latitude: 31.2667, longitude: 32.3 },
+            clubs: ['af-042']
+        },
+        coordinates: { latitude: 31.2667, longitude: 32.3 },
+        founded: 1920,
+        colors: ['#008000', '#ffffff']
+    },
+    {
+        id: 'af-043',
+        name: 'Al Ittihad Alexandria',
+        normalizedName: 'AL ITTIHAD ALEXANDRIA',
+        shortName: 'Al Ittihad',
+        country: 'Egypt',
+        city: 'Alexandria',
+        stadium: {
+            id: 'saf-043',
+            name: 'Alexandria Stadium',
+            city: 'Alexandria',
+            country: 'Egypt',
+            coordinates: { latitude: 31.2, longitude: 29.9167 },
+            clubs: ['af-043']
+        },
+        coordinates: { latitude: 31.2, longitude: 29.9167 },
+        founded: 1914,
+        colors: ['#008000', '#ffffff']
+    },
+    {
+        id: 'af-044',
+        name: 'Ismaily SC',
+        normalizedName: 'ISMAILY SC',
+        shortName: 'Ismaily',
+        country: 'Egypt',
+        city: 'Ismailia',
+        stadium: {
+            id: 'saf-044',
+            name: 'Ismailia Stadium',
+            city: 'Ismailia',
+            country: 'Egypt',
+            coordinates: { latitude: 30.6, longitude: 32.2667 },
+            clubs: ['af-044']
+        },
+        coordinates: { latitude: 30.6, longitude: 32.2667 },
+        founded: 1924,
+        colors: ['#ffff00', '#0000ff']
+    },
+    {
         id: '1',
         name: 'Crystal Palace',
         normalizedName: 'CRYSTAL PALACE',
