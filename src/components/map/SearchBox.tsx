@@ -1,14 +1,19 @@
 import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { Search, X } from 'lucide-react';
+import { StadiumIcon } from './StadiumIcon';
 import { MOCK_CLUBS } from '../../services/mock/clubs.mock';
 import { useMapStore } from '../../stores/mapStore';
-import type { Club } from '../../types/domain';
+import type { Club, Stadium } from '../../types/domain';
 
 // NOTE: This component uses inline styles because the project CSS is hand-crafted
 // (no Tailwind JIT processing), so arbitrary utility classes are not generated.
 
 const MAX_RESULTS = 8;
 const NAVIGATE_ZOOM = 14;
+
+type SearchResult =
+    | { kind: 'club'; club: Club }
+    | { kind: 'stadium'; stadium: Stadium; tenants: Club[] };
 
 function scoreClub(club: Club, query: string): number {
     const q = query.toLowerCase();
@@ -22,6 +27,20 @@ function scoreClub(club: Club, query: string): number {
     if (name.includes(q) || short.includes(q)) return 60;
     if (city.startsWith(q) || country.startsWith(q)) return 40;
     if (city.includes(q) || country.includes(q)) return 20;
+    return 0;
+}
+
+function scoreStadium(stadium: Stadium, query: string): number {
+    const q = query.toLowerCase();
+    const name = stadium.name.toLowerCase();
+    const city = stadium.city.toLowerCase();
+    const country = stadium.country.toLowerCase();
+
+    if (name === q) return 95;
+    if (name.startsWith(q)) return 75;
+    if (name.includes(q)) return 55;
+    if (city.startsWith(q) || country.startsWith(q)) return 35;
+    if (city.includes(q) || country.includes(q)) return 15;
     return 0;
 }
 
@@ -49,15 +68,38 @@ export const SearchBox: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const flyTo = useMapStore(state => state.flyTo);
 
-    const results = useMemo(() => {
+    const results = useMemo((): SearchResult[] => {
         const trimmed = query.trim();
         if (!trimmed) return [];
-        return MOCK_CLUBS
-            .map(club => ({ club, score: scoreClub(club, trimmed) }))
-            .filter(({ score }) => score > 0)
+
+        // Score clubs
+        const clubResults = MOCK_CLUBS
+            .map(club => ({ kind: 'club' as const, club, score: scoreClub(club, trimmed) }))
+            .filter(r => r.score > 0);
+
+        // Score unique stadiums (deduplicate by stadium.id)
+        const seenStadiumIds = new Set<string>();
+        const stadiumResults: { kind: 'stadium'; stadium: Stadium; tenants: Club[]; score: number }[] = [];
+        for (const club of MOCK_CLUBS) {
+            if (!club.stadium) continue;
+            const s = club.stadium;
+            if (seenStadiumIds.has(s.id)) continue;
+            seenStadiumIds.add(s.id);
+            const score = scoreStadium(s, trimmed);
+            if (score > 0) {
+                const tenants = MOCK_CLUBS.filter(c => c.stadium?.id === s.id);
+                stadiumResults.push({ kind: 'stadium', stadium: s, tenants, score });
+            }
+        }
+
+        return [...clubResults, ...stadiumResults]
             .sort((a, b) => b.score - a.score)
             .slice(0, MAX_RESULTS)
-            .map(({ club }) => club);
+            .map(({ kind, score: _score, ...rest }) =>
+                kind === 'club'
+                    ? { kind, club: (rest as { club: Club }).club }
+                    : { kind, stadium: (rest as { stadium: Stadium; tenants: Club[] }).stadium, tenants: (rest as { stadium: Stadium; tenants: Club[] }).tenants }
+            );
     }, [query]);
 
     // Reset active index when results change
@@ -76,8 +118,12 @@ export const SearchBox: React.FC = () => {
         return () => document.removeEventListener('mousedown', handler);
     }, []);
 
-    const selectClub = useCallback((club: Club) => {
-        flyTo(club.coordinates, NAVIGATE_ZOOM);
+    const selectResult = useCallback((result: SearchResult) => {
+        if (result.kind === 'club') {
+            flyTo(result.club.coordinates, NAVIGATE_ZOOM);
+        } else {
+            flyTo(result.stadium.coordinates, NAVIGATE_ZOOM);
+        }
         setQuery('');
         setOpen(false);
         inputRef.current?.blur();
@@ -95,15 +141,15 @@ export const SearchBox: React.FC = () => {
         } else if (e.key === 'Enter') {
             e.preventDefault();
             if (activeIndex >= 0 && results[activeIndex]) {
-                selectClub(results[activeIndex]);
+                selectResult(results[activeIndex]);
             } else if (results.length > 0) {
-                selectClub(results[0]);
+                selectResult(results[0]);
             }
         } else if (e.key === 'Escape') {
             setOpen(false);
             inputRef.current?.blur();
         }
-    }, [open, results, activeIndex, selectClub]);
+    }, [open, results, activeIndex, selectResult]);
 
     // Scroll active item into view
     useEffect(() => {
@@ -152,7 +198,7 @@ export const SearchBox: React.FC = () => {
                     onChange={e => { setQuery(e.target.value); setOpen(true); }}
                     onFocus={() => query && setOpen(true)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Search clubs, cities, countries…"
+                    placeholder="Search clubs, stadiums, cities…"
                     className="search-input"
                     style={{
                         flex: 1,
@@ -210,13 +256,13 @@ export const SearchBox: React.FC = () => {
                         boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
                     }}
                 >
-                    {results.map((club, i) => (
+                    {results.map((result, i) => (
                         <li
-                            key={club.id}
+                            key={result.kind === 'club' ? result.club.id : result.stadium.id}
                             role="option"
                             aria-selected={i === activeIndex}
                             onMouseEnter={() => setActiveIndex(i)}
-                            onMouseDown={e => { e.preventDefault(); selectClub(club); }}
+                            onMouseDown={e => { e.preventDefault(); selectResult(result); }}
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -228,27 +274,63 @@ export const SearchBox: React.FC = () => {
                                 transition: 'background 80ms',
                             }}
                         >
-                            {/* Club colour dot */}
-                            <span
-                                style={{
-                                    width: '10px',
-                                    height: '10px',
-                                    borderRadius: '50%',
-                                    flexShrink: 0,
-                                    background: club.colors[0] || '#888',
-                                    boxShadow: '0 0 0 1px rgba(255,255,255,0.12)',
-                                }}
-                            />
+                            {result.kind === 'club' ? (
+                                /* Club colour dot */
+                                <span
+                                    style={{
+                                        width: '10px',
+                                        height: '10px',
+                                        borderRadius: '50%',
+                                        flexShrink: 0,
+                                        background: result.club.colors[0] || '#888',
+                                        boxShadow: '0 0 0 1px rgba(255,255,255,0.12)',
+                                    }}
+                                />
+                            ) : (
+                                /* Stadium icon */
+                                <span
+                                    style={{
+                                        width: '18px',
+                                        height: '18px',
+                                        borderRadius: '4px',
+                                        flexShrink: 0,
+                                        background: 'rgba(255,255,255,0.08)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <StadiumIcon size={11} color="rgba(255,255,255,0.55)" />
+                                </span>
+                            )}
                             <div style={{ flex: 1, minWidth: 0 }}>
-                                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.9)', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                                    {highlight(club.name, query.trim())}
-                                </p>
-                                <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', margin: '2px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                                    {highlight(`${club.city}, ${club.country}`, query.trim())}
-                                    {club.stadium && (
-                                        <span style={{ color: 'rgba(255,255,255,0.22)' }}> · {club.stadium.name}</span>
-                                    )}
-                                </p>
+                                {result.kind === 'club' ? (
+                                    <>
+                                        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.9)', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                            {highlight(result.club.name, query.trim())}
+                                        </p>
+                                        <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', margin: '2px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                            {highlight(`${result.club.city}, ${result.club.country}`, query.trim())}
+                                            {result.club.stadium && (
+                                                <span style={{ color: 'rgba(255,255,255,0.22)' }}> · {result.club.stadium.name}</span>
+                                            )}
+                                        </p>
+                                    </>
+                                ) : (
+                                    <>
+                                        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.9)', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                            {highlight(result.stadium.name, query.trim())}
+                                        </p>
+                                        <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', margin: '2px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                            {highlight(`${result.stadium.city}, ${result.stadium.country}`, query.trim())}
+                                            {result.tenants.length > 0 && (
+                                                <span style={{ color: 'rgba(255,255,255,0.22)' }}>
+                                                    {' · '}{result.tenants.map(c => c.shortName ?? c.name).join(', ')}
+                                                </span>
+                                            )}
+                                        </p>
+                                    </>
+                                )}
                             </div>
                         </li>
                     ))}
