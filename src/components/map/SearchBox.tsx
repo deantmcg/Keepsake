@@ -15,6 +15,11 @@ type SearchResult =
     | { kind: 'club'; club: Club }
     | { kind: 'stadium'; stadium: Stadium; tenants: Club[] };
 
+interface SearchBoxProps {
+    /** When true the component renders as a compact icon-button that expands on tap (mobile mode). */
+    isMobile?: boolean;
+}
+
 function scoreClub(club: Club, query: string): number {
     const q = query.toLowerCase();
     const name = club.name.toLowerCase();
@@ -59,10 +64,12 @@ function highlight(text: string, query: string): React.ReactNode {
     );
 }
 
-export const SearchBox: React.FC = () => {
+export const SearchBox: React.FC<SearchBoxProps> = ({ isMobile = false }) => {
     const [query, setQuery] = useState('');
     const [open, setOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(-1);
+    /** Mobile only: whether the full search bar is expanded */
+    const [mobileExpanded, setMobileExpanded] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
     const listRef = useRef<HTMLUListElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -112,11 +119,15 @@ export const SearchBox: React.FC = () => {
         const handler = (e: MouseEvent) => {
             if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
                 setOpen(false);
+                if (isMobile) {
+                    setMobileExpanded(false);
+                    setQuery('');
+                }
             }
         };
         document.addEventListener('mousedown', handler);
         return () => document.removeEventListener('mousedown', handler);
-    }, []);
+    }, [isMobile]);
 
     const selectResult = useCallback((result: SearchResult) => {
         if (result.kind === 'club') {
@@ -126,8 +137,9 @@ export const SearchBox: React.FC = () => {
         }
         setQuery('');
         setOpen(false);
+        if (isMobile) setMobileExpanded(false);
         inputRef.current?.blur();
-    }, [flyTo]);
+    }, [flyTo, isMobile]);
 
     const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
         if (!open || results.length === 0) return;
@@ -148,8 +160,9 @@ export const SearchBox: React.FC = () => {
         } else if (e.key === 'Escape') {
             setOpen(false);
             inputRef.current?.blur();
+            if (isMobile) { setMobileExpanded(false); setQuery(''); }
         }
-    }, [open, results, activeIndex, selectResult]);
+    }, [open, results, activeIndex, selectResult, isMobile]);
 
     // Scroll active item into view
     useEffect(() => {
@@ -159,8 +172,190 @@ export const SearchBox: React.FC = () => {
         }
     }, [activeIndex]);
 
+    // Focus input when mobile search expands
+    useEffect(() => {
+        if (isMobile && mobileExpanded) {
+            const raf = requestAnimationFrame(() => inputRef.current?.focus());
+            return () => cancelAnimationFrame(raf);
+        }
+    }, [isMobile, mobileExpanded]);
+
     const showDropdown = open && results.length > 0;
 
+    // ─── Mobile: collapsed search icon button ───
+    if (isMobile && !mobileExpanded) {
+        return (
+            <button
+                onClick={() => setMobileExpanded(true)}
+                aria-label="Open search"
+                style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    width: '36px', height: '36px',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    borderRadius: '10px',
+                    cursor: 'pointer',
+                    color: 'rgba(255,255,255,0.7)',
+                    flexShrink: 0,
+                }}
+            >
+                <Search style={{ width: '15px', height: '15px' }} />
+            </button>
+        );
+    }
+
+    // ─── Mobile: expanded search overlay ───
+    if (isMobile && mobileExpanded) {
+        return (
+            <div
+                ref={containerRef}
+                style={{
+                    position: 'fixed',
+                    top: 0, left: 0, right: 0,
+                    zIndex: 40,
+                    padding: '8px 12px',
+                    background: 'rgba(0,0,0,0.85)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    borderBottom: '1px solid rgba(255,255,255,0.08)',
+                }}
+            >
+                {/* Input row */}
+                <div style={{
+                    display: 'flex', alignItems: 'center', gap: '8px',
+                    padding: '10px 12px',
+                    background: 'rgba(255,255,255,0.07)',
+                    border: `1px solid ${showDropdown ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.12)'}`,
+                    borderBottom: showDropdown ? '1px solid rgba(255,255,255,0.07)' : undefined,
+                    borderRadius: showDropdown ? '12px 12px 0 0' : '12px',
+                    transition: 'border-radius 100ms',
+                }}>
+                    <Search style={{ width: '15px', height: '15px', color: 'rgba(255,255,255,0.35)', flexShrink: 0 }} />
+                    <input
+                        ref={inputRef}
+                        value={query}
+                        onChange={e => { setQuery(e.target.value); setOpen(true); }}
+                        onFocus={() => query && setOpen(true)}
+                        onKeyDown={handleKeyDown}
+                        placeholder="Search clubs, stadiums, cities…"
+                        className="search-input"
+                        style={{
+                            flex: 1,
+                            background: 'transparent',
+                            border: 'none',
+                            outline: 'none',
+                            fontSize: '16px',
+                            color: 'rgba(255,255,255,0.9)',
+                            fontFamily: 'inherit',
+                            minWidth: 0,
+                        }}
+                        aria-label="Search"
+                        aria-autocomplete="list"
+                        aria-expanded={showDropdown}
+                        autoComplete="off"
+                        spellCheck={false}
+                    />
+                    <button
+                        onClick={() => { setMobileExpanded(false); setQuery(''); setOpen(false); }}
+                        tabIndex={-1}
+                        aria-label="Close search"
+                        style={{
+                            background: 'none', border: 'none', cursor: 'pointer',
+                            padding: '2px', color: 'rgba(255,255,255,0.5)',
+                            display: 'flex', alignItems: 'center',
+                        }}
+                    >
+                        <X style={{ width: '15px', height: '15px' }} />
+                    </button>
+                </div>
+
+                {/* Dropdown */}
+                {showDropdown && (
+                    <ul
+                        ref={listRef}
+                        role="listbox"
+                        style={{
+                            listStyle: 'none', margin: 0, padding: 0,
+                            background: 'rgba(0,0,0,0.72)',
+                            backdropFilter: 'blur(12px)',
+                            WebkitBackdropFilter: 'blur(12px)',
+                            border: '1px solid rgba(255,255,255,0.12)',
+                            borderTop: 'none',
+                            borderRadius: '0 0 12px 12px',
+                            maxHeight: '50vh',
+                            overflowY: 'auto',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
+                        }}
+                    >
+                        {results.map((result, i) => (
+                            <li
+                                key={result.kind === 'club' ? result.club.id : result.stadium.id}
+                                role="option"
+                                aria-selected={i === activeIndex}
+                                onMouseEnter={() => setActiveIndex(i)}
+                                onMouseDown={e => { e.preventDefault(); selectResult(result); }}
+                                style={{
+                                    display: 'flex', alignItems: 'center', gap: '10px',
+                                    padding: '12px 14px',
+                                    cursor: 'pointer',
+                                    background: i === activeIndex ? 'rgba(255,255,255,0.09)' : 'transparent',
+                                    borderBottom: i < results.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+                                    transition: 'background 80ms',
+                                }}
+                            >
+                                {result.kind === 'club' ? (
+                                    <span style={{
+                                        width: '10px', height: '10px', borderRadius: '50%', flexShrink: 0,
+                                        background: result.club.colors[0] || '#888',
+                                        boxShadow: '0 0 0 1px rgba(255,255,255,0.12)',
+                                    }} />
+                                ) : (
+                                    <span style={{
+                                        width: '18px', height: '18px', borderRadius: '4px', flexShrink: 0,
+                                        background: 'rgba(255,255,255,0.08)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    }}>
+                                        <StadiumIcon size={11} color="rgba(255,255,255,0.55)" />
+                                    </span>
+                                )}
+                                <div style={{ flex: 1, minWidth: 0 }}>
+                                    {result.kind === 'club' ? (
+                                        <>
+                                            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                                {highlight(result.club.name, query.trim())}
+                                            </p>
+                                            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: '2px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                                {highlight(`${result.club.city}, ${result.club.country}`, query.trim())}
+                                                {result.club.stadium && (
+                                                    <span style={{ color: 'rgba(255,255,255,0.22)' }}> · {result.club.stadium.name}</span>
+                                                )}
+                                            </p>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                                {highlight(result.stadium.name, query.trim())}
+                                            </p>
+                                            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: '2px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                                {highlight(`${result.stadium.city}, ${result.stadium.country}`, query.trim())}
+                                                {result.tenants.length > 0 && (
+                                                    <span style={{ color: 'rgba(255,255,255,0.22)' }}>
+                                                        {' · '}{result.tenants.map(c => c.shortName ?? c.name).join(', ')}
+                                                    </span>
+                                                )}
+                                            </p>
+                                        </>
+                                    )}
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+        );
+    }
+
+    // ─── Desktop: always-visible centered search bar ───
     return (
         <div
             ref={containerRef}
@@ -189,6 +384,7 @@ export const SearchBox: React.FC = () => {
                     borderRadius: showDropdown ? '12px 12px 0 0' : '12px',
                     boxShadow: '0 4px 24px rgba(0,0,0,0.55)',
                     transition: 'border-radius 100ms',
+                    height: '38px',
                 }}
             >
                 <Search style={{ width: '15px', height: '15px', color: 'rgba(255,255,255,0.35)', flexShrink: 0 }} />
@@ -339,3 +535,4 @@ export const SearchBox: React.FC = () => {
         </div>
     );
 };
+
