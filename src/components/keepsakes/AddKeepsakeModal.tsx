@@ -34,7 +34,8 @@ const inputStyle: React.CSSProperties = {
     border: '1px solid rgba(255,255,255,0.1)',
     borderRadius: '8px',
     color: '#fafafa',
-    fontSize: '13px',
+    /* 16px minimum prevents iOS Safari from zooming in when the input is focused */
+    fontSize: '16px',
     fontFamily: 'inherit',
     outline: 'none',
     boxSizing: 'border-box',
@@ -86,11 +87,14 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClos
                 inset: 0,
                 zIndex: 100,
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'flex-start',
                 justifyContent: 'center',
                 background: 'rgba(0,0,0,0.6)',
                 backdropFilter: 'blur(4px)',
                 WebkitBackdropFilter: 'blur(4px)',
+                overflowY: 'auto',
+                paddingTop: '2rem',
+                paddingBottom: '2rem',
             }}
             onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
         >
@@ -188,6 +192,10 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClos
                                     onChange={e => setSeason(e.target.value)}
                                     placeholder="e.g. 2023/24"
                                     style={inputStyle}
+                                    autoComplete="off"
+                                    autoCorrect="off"
+                                    autoCapitalize="off"
+                                    spellCheck={false}
                                 />
                             </div>
                             <div style={{ marginBottom: '16px' }}>
@@ -237,6 +245,9 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClos
                             placeholder="Where did you get it? Any story?"
                             rows={2}
                             style={{ ...inputStyle, resize: 'none' }}
+                            autoComplete="off"
+                            autoCorrect="off"
+                            spellCheck={false}
                         />
                     </div>
 

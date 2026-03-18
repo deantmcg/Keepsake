@@ -5,6 +5,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import { flushSync } from 'react-dom';
 import { useMapStore } from '../../../stores/mapStore';
 import { useKeepsakeStore } from '../../../stores/keepsakeStore';
+import { useIsMobile } from '../../../hooks/useIsMobile';
 import { MOCK_CLUBS } from '../../../services/mock/clubs.mock';
 import { ClusterMarker } from '../ClusterMarker';
 import { ClubMarker, KeepsakeMarker } from '../ClubMarker';
@@ -45,6 +46,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
     const { center, zoom, setViewport, flyToTarget } = useMapStore();
     const keepsakes = useKeepsakeStore(state => state.keepsakes);
     const showOnlyKeepsakes = useKeepsakeStore(state => state.showOnlyKeepsakes);
+    const isMobile = useIsMobile();
     
     // Track map bounds for clustering
     const [bounds, setBounds] = useState<BBox | null>(null);
@@ -360,7 +362,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
 
     return (
         <div ref={mapContainer} className="w-full h-full bg-background relative">
-            <LogoBar />
+            {!isMobile && <LogoBar />}
             <MapFilter />
             <ZoomControl zoom={currentZoom} onZoomChange={handleZoomChange} onReset={handleZoomReset} />
         </div>
