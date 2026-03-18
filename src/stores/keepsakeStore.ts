@@ -7,8 +7,20 @@ export interface KeepsakeWithLocation extends CollectionItem {
 
 interface KeepsakeState {
     keepsakes: KeepsakeWithLocation[];
+    showOnlyKeepsakes: boolean;
+    addKeepsake: (keepsake: KeepsakeWithLocation) => void;
+    removeKeepsake: (id: string) => void;
+    setShowOnlyKeepsakes: (value: boolean) => void;
 }
 
-export const useKeepsakeStore = create<KeepsakeState>(() => ({
+export const useKeepsakeStore = create<KeepsakeState>((set) => ({
     keepsakes: [],
+    showOnlyKeepsakes: false,
+    addKeepsake: (keepsake) => set((state) => ({
+        keepsakes: [...state.keepsakes, keepsake],
+    })),
+    removeKeepsake: (id) => set((state) => ({
+        keepsakes: state.keepsakes.filter(k => k.id !== id),
+    })),
+    setShowOnlyKeepsakes: (value) => set({ showOnlyKeepsakes: value }),
 }));
