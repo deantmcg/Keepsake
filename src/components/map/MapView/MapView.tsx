@@ -11,6 +11,7 @@ import { ClubMarker, KeepsakeMarker } from '../ClubMarker';
 import { HoverPreview } from '../HoverPreview';
 import { ZoomControl } from '../ZoomControl';
 import { LogoBar } from '../../layout/LogoBar';
+import { MapFilter } from '../MapFilter';
 import { 
     useSupercluster, 
     isCluster, 
@@ -30,7 +31,11 @@ interface MarkerInstance {
     element: HTMLDivElement;
 }
 
-export const MapView: React.FC = () => {
+interface MapViewProps {
+    onClubClick?: (club: Club) => void;
+}
+
+export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
     const mapContainer = useRef<HTMLDivElement>(null);
     const map = useRef<maplibregl.Map | null>(null);
     const markersRef = useRef<Map<string, MarkerInstance>>(new Map());
@@ -39,6 +44,7 @@ export const MapView: React.FC = () => {
     
     const { center, zoom, setViewport, flyToTarget } = useMapStore();
     const keepsakes = useKeepsakeStore(state => state.keepsakes);
+    const showOnlyKeepsakes = useKeepsakeStore(state => state.showOnlyKeepsakes);
     
     // Track map bounds for clustering
     const [bounds, setBounds] = useState<BBox | null>(null);
@@ -58,9 +64,10 @@ export const MapView: React.FC = () => {
     const points = useMemo((): PointFeature[] => {
         const features: PointFeature[] = [];
 
-        // Add all clubs
+        // Add all clubs (skip clubs without keepsakes when filter is active)
         MOCK_CLUBS.forEach(club => {
             const hasKeepsakes = clubsWithKeepsakes.has(club.id);
+            if (showOnlyKeepsakes && !hasKeepsakes) return;
             
             features.push({
                 type: 'Feature',
@@ -98,7 +105,7 @@ export const MapView: React.FC = () => {
         });
 
         return features;
-    }, [keepsakes, clubsWithKeepsakes, clubsMap]);
+    }, [keepsakes, clubsWithKeepsakes, showOnlyKeepsakes]);
 
     // Use Supercluster for clustering
     const { clusters, getClusterExpansionZoom, getClusterLeaves } = useSupercluster({
@@ -330,10 +337,11 @@ export const MapView: React.FC = () => {
                     />
                 );
             } else {
+                const club = clubsMap.get(feature.properties.clubId);
                 markerInstance.root.render(
                     <ClubMarker
                         properties={feature.properties}
-                        onClick={() => {/* TODO: Open club detail */}}
+                        onClick={() => club && onClubClick?.(club)}
                         onMouseEnter={() => showPopup(coordinates, feature)}
                         onMouseLeave={hidePopup}
                     />
@@ -353,6 +361,7 @@ export const MapView: React.FC = () => {
     return (
         <div ref={mapContainer} className="w-full h-full bg-background relative">
             <LogoBar />
+            <MapFilter />
             <ZoomControl zoom={currentZoom} onZoomChange={handleZoomChange} onReset={handleZoomReset} />
         </div>
     );
