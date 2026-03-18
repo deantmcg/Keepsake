@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Trophy, Shirt, Wind, Award, MapPin, Sparkles } from 'lucide-react';
-import type { PointFeature, ClusterProperties } from '../../hooks/useSupercluster';
+import type { PointFeature, ClusterProperties, KeepsakePointProperties } from '../../hooks/useSupercluster';
 import type { Club } from '../../types/domain';
 import { ItemType } from '../../types/domain';
 
@@ -127,7 +127,9 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                             }}
                         >
                             {group.keepsakes.length > 0 && (
-                                <Trophy style={{ width: '12px', height: '12px', color: '#fff', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.4))' }} />
+                                <span style={{ color: '#fff', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.4))', display: 'flex' }}>
+                                    {getItemIcon((group.keepsakes[0].properties as KeepsakePointProperties).itemType)}
+                                </span>
                             )}
                         </div>
                         
