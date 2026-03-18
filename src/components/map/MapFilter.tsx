@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { SlidersHorizontal, ChevronDown } from 'lucide-react';
 import { useKeepsakeStore } from '../../stores/keepsakeStore';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 export const MapFilter: React.FC = () => {
     const [expanded, setExpanded] = useState(false);
     const showOnlyKeepsakes = useKeepsakeStore(state => state.showOnlyKeepsakes);
     const setShowOnlyKeepsakes = useKeepsakeStore(state => state.setShowOnlyKeepsakes);
+    const isMobile = useIsMobile();
 
     const activeCount = showOnlyKeepsakes ? 1 : 0;
 
@@ -20,7 +22,7 @@ export const MapFilter: React.FC = () => {
     return (
         <div style={{
             position: 'absolute',
-            top: '80px',
+            top: isMobile ? '64px' : '80px',
             left: '20px',
             zIndex: 20,
             pointerEvents: 'auto',
