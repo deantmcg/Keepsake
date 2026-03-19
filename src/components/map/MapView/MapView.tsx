@@ -19,8 +19,7 @@ import {
     isPoint,
     type PointFeature, 
     type MapFeature,
-    type ClubPointProperties,
-    type KeepsakePointProperties
+    type ClubPointProperties
 } from '../../../hooks/useSupercluster';
 import type { Club } from '../../../types/domain';
 import type { BBox } from 'geojson';
@@ -62,6 +61,15 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
         return new Set(keepsakes.map(k => k.clubId));
     }, [keepsakes]);
 
+    // Precompute keepsake totals per club for cluster aggregation
+    const keepsakeCountsByClub = useMemo(() => {
+        const counts = new Map<string, number>();
+        keepsakes.forEach(k => {
+            counts.set(k.clubId, (counts.get(k.clubId) ?? 0) + 1);
+        });
+        return counts;
+    }, [keepsakes]);
+
     // Prepare GeoJSON point features for Supercluster
     const points = useMemo((): PointFeature[] => {
         const features: PointFeature[] = [];
@@ -84,30 +92,13 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
                     color: club.colors[0] || '#888',
                     color2: club.colors[1] || club.colors[0] || '#888',
                     hasKeepsakes,
+                    keepsakeCount: keepsakeCountsByClub.get(club.id) ?? 0,
                 } as ClubPointProperties
             });
         });
 
-        // Add keepsakes as separate points
-        keepsakes.forEach(k => {
-            features.push({
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: [k.coordinates.longitude, k.coordinates.latitude]
-                },
-                properties: {
-                    pointType: 'keepsake',
-                    clubId: k.clubId,
-                    keepsakeId: k.id,
-                    itemType: k.type,
-                    color: '#22c55e', // Green for keepsakes
-                } as KeepsakePointProperties
-            });
-        });
-
         return features;
-    }, [keepsakes, clubsWithKeepsakes, showOnlyKeepsakes]);
+    }, [clubsWithKeepsakes, keepsakeCountsByClub, showOnlyKeepsakes]);
 
     // Use Supercluster for clustering
     const { clusters, getClusterExpansionZoom, getClusterLeaves } = useSupercluster({
@@ -158,6 +149,23 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
         if (isCluster(feature)) {
             features = getClusterLeaves(feature.properties.cluster_id, 50);
             clusterProps = feature.properties;
+        } else if (feature.properties.pointType === 'club') {
+            const clubKeepsakes = keepsakes.filter(k => k.clubId === feature.properties.clubId);
+            const keepsakeFeatures: PointFeature[] = clubKeepsakes.map(k => ({
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [k.coordinates.longitude, k.coordinates.latitude],
+                },
+                properties: {
+                    pointType: 'keepsake',
+                    clubId: k.clubId,
+                    keepsakeId: k.id,
+                    itemType: k.type,
+                    color: '#22c55e',
+                },
+            }) as PointFeature);
+            features = [feature, ...keepsakeFeatures];
         } else {
             features = [feature];
         }
@@ -193,7 +201,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
             .setLngLat(coordinates)
             .setDOMContent(popupElement)
             .addTo(map.current);
-    }, [clubsMap, getClusterLeaves]);
+    }, [clubsMap, getClusterLeaves, keepsakes]);
 
     // Hide popup
     const hidePopup = useCallback(() => {

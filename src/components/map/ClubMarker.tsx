@@ -24,7 +24,7 @@ export const ClubMarker: React.FC<ClubMarkerProps> = ({
     onMouseEnter,
     onMouseLeave,
 }) => {
-    const { color, color2, hasKeepsakes, clubName } = properties;
+    const { color, color2, hasKeepsakes, keepsakeCount, clubName } = properties;
     const gradId = `cg-${properties.clubId}`;
     
     return (
@@ -39,43 +39,38 @@ export const ClubMarker: React.FC<ClubMarkerProps> = ({
             onMouseLeave={onMouseLeave}
             title={clubName}
         >
-            <svg 
-                width="24" 
-                height="28" 
-                viewBox="0 0 24 28" 
-                className="drop-shadow-md"
-            >
-                <defs>
-                    <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor={color} />
-                        <stop offset="100%" stopColor={color2 ?? color} />
-                    </linearGradient>
-                </defs>
-                {/* Shield shape */}
-                <path
-                    d="M12 2 L22 6 L22 14 C22 20 12 26 12 26 C12 26 2 20 2 14 L2 6 L12 2 Z"
-                    fill={`url(#${gradId})`}
-                    stroke="white"
-                    strokeWidth="1.5"
-                />
-                {/* Inner highlight */}
-                <path
-                    d="M12 5 L19 8 L19 13 C19 17.5 12 22 12 22 C12 22 5 17.5 5 13 L5 8 L12 5 Z"
-                    fill="rgba(255,255,255,0.15)"
-                />
-                {/* Keepsake indicator dot */}
+            <div className="flex flex-col items-center gap-0.5">
                 {hasKeepsakes && (
-                    <circle
-                        cx="12"
-                        cy="12"
-                        r="4"
-                        fill="#22c55e"
-                        stroke="white"
-                        strokeWidth="1"
-                        className="animate-pulse"
-                    />
+                    <div className="px-1.5 py-0.5 text-[9px] font-bold leading-none text-white pointer-events-none">
+                        {keepsakeCount}
+                    </div>
                 )}
-            </svg>
+                <svg
+                    width="24"
+                    height="28"
+                    viewBox="0 0 24 28"
+                    className="drop-shadow-md"
+                >
+                    <defs>
+                        <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor={color} />
+                            <stop offset="100%" stopColor={color2 ?? color} />
+                        </linearGradient>
+                    </defs>
+                    {/* Shield shape */}
+                    <path
+                        d="M12 2 L22 6 L22 14 C22 20 12 26 12 26 C12 26 2 20 2 14 L2 6 L12 2 Z"
+                        fill={`url(#${gradId})`}
+                        stroke="white"
+                        strokeWidth="1.5"
+                    />
+                    {/* Inner highlight */}
+                    <path
+                        d="M12 5 L19 8 L19 13 C19 17.5 12 22 12 22 C12 22 5 17.5 5 13 L5 8 L12 5 Z"
+                        fill="rgba(255,255,255,0.15)"
+                    />
+                </svg>
+            </div>
         </div>
     );
 };

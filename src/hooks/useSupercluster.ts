@@ -10,6 +10,7 @@ export interface ClubPointProperties {
     color: string;
     color2: string;
     hasKeepsakes: boolean;
+    keepsakeCount: number;
 }
 
 export interface KeepsakePointProperties {
@@ -61,9 +62,9 @@ const defaultOptions: Supercluster.Options<PointProperties, AggregatedProperties
     minZoom: 0,
     // Map function: transform each point for aggregation
     map: (props): AggregatedProperties => ({
-        keepsakeCount: props.pointType === 'keepsake' ? 1 : 0,
+        keepsakeCount: props.pointType === 'club' ? props.keepsakeCount : 1,
         clubCount: props.pointType === 'club' ? 1 : 0,
-        topColors: [props.color],
+        topColors: props.pointType === 'club' ? [props.color] : [],
         hasKeepsakes: props.pointType === 'keepsake' || 
             (props.pointType === 'club' && props.hasKeepsakes),
     }),

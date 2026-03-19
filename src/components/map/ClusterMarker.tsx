@@ -8,35 +8,25 @@ interface ClusterMarkerProps {
     onMouseLeave: () => void;
 }
 
-// Generate SVG donut chart showing keepsake vs club proportion
+// Generate SVG donut chart for club composition
 function DonutChart({ 
-    keepsakeCount, 
-    clubCount, 
     size, 
     topColors 
 }: { 
-    keepsakeCount: number; 
-    clubCount: number; 
     size: number;
     topColors: string[];
 }) {
-    const total = keepsakeCount + clubCount;
-    const keepsakeRatio = keepsakeCount / total;
-    
     // SVG arc calculation
     const radius = size / 2;
     const strokeWidth = size * 0.15;
     const innerRadius = radius - strokeWidth;
     const circumference = 2 * Math.PI * innerRadius;
-    
-    // Calculate arc lengths
-    const keepsakeArc = circumference * keepsakeRatio;
-    
+
     // If we have colors from clubs, show them in segments
-    const hasMultipleColors = topColors.length > 1 && keepsakeCount === 0;
+    const hasMultipleColors = topColors.length > 1;
     
     if (hasMultipleColors) {
-        // Multi-color arc for clusters with only clubs (no keepsakes)
+        // Multi-color arc for clusters with multiple club colors
         const segmentArc = circumference / topColors.length;
         let offset = 0;
         
@@ -93,21 +83,6 @@ function DonutChart({
                 stroke="rgba(148, 163, 184, 0.4)"
                 strokeWidth={strokeWidth}
             />
-            {/* Keepsake arc (green) */}
-            {keepsakeCount > 0 && (
-                <circle
-                    cx={radius}
-                    cy={radius}
-                    r={innerRadius}
-                    fill="none"
-                    stroke="#22c55e"
-                    strokeWidth={strokeWidth}
-                    strokeDasharray={`${keepsakeArc} ${circumference - keepsakeArc}`}
-                    strokeLinecap="round"
-                    style={{ transform: 'rotate(-90deg)', transformOrigin: 'center' }}
-                    className="drop-shadow-[0_0_4px_rgba(34,197,94,0.6)]"
-                />
-            )}
             {/* Inner fill */}
             <circle
                 cx={radius}
@@ -125,7 +100,7 @@ export const ClusterMarker: React.FC<ClusterMarkerProps> = ({
     onMouseEnter,
     onMouseLeave,
 }) => {
-    const { point_count, keepsakeCount, clubCount, topColors, hasKeepsakes } = properties;
+    const { point_count, keepsakeCount, clubCount, topColors } = properties;
 
     // Dynamic sizing based on point count
     const size = useMemo(() => {
@@ -137,11 +112,7 @@ export const ClusterMarker: React.FC<ClusterMarkerProps> = ({
 
     return (
         <div
-            className={`
-                relative cursor-pointer transition-transform duration-200
-                hover:scale-110 hover:z-10
-                ${hasKeepsakes ? 'cluster-with-keepsakes' : ''}
-            `}
+            className="relative cursor-pointer transition-transform duration-200 hover:scale-110 hover:z-10"
             style={{ width: size, height: size }}
             onClick={onClick}
             onMouseEnter={onMouseEnter}
@@ -149,8 +120,6 @@ export const ClusterMarker: React.FC<ClusterMarkerProps> = ({
         >
             {/* Donut Chart Background */}
             <DonutChart
-                keepsakeCount={keepsakeCount}
-                clubCount={clubCount}
                 size={size}
                 topColors={topColors || []}
             />
@@ -161,22 +130,14 @@ export const ClusterMarker: React.FC<ClusterMarkerProps> = ({
                 style={{ pointerEvents: 'none' }}
             >
                 <span className="text-white font-bold text-sm leading-none">
-                    {point_count}
+                    {clubCount}
                 </span>
                 {keepsakeCount > 0 && (
-                    <span className="text-green-400 text-[9px] font-medium leading-none mt-0.5">
-                        {keepsakeCount} ★
+                    <span className="text-white text-[9px] font-medium leading-none mt-0.5">
+                        {keepsakeCount} ✔
                     </span>
                 )}
             </div>
-            
-            {/* Pulse effect for clusters with keepsakes */}
-            {hasKeepsakes && (
-                <div 
-                    className="absolute inset-0 rounded-full bg-green-500/20 animate-ping"
-                    style={{ animationDuration: '2s' }}
-                />
-            )}
         </div>
     );
 };

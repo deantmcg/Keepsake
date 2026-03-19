@@ -112,7 +112,7 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClos
                                 boxShadow: '0 0 0 1px rgba(255,255,255,0.15)',
                             }} />
                             <span style={{ fontSize: '13px', color: 'rgba(148,163,184,0.9)' }}>
-                                {club.name} · {club.city}
+                                {club.name}
                             </span>
                         </div>
                     </div>

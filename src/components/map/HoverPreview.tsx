@@ -17,6 +17,13 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
     isCluster,
     clusterProps,
 }) => {
+    const itemTypeLabel: Record<string, string> = {
+        [ItemType.SHIRT]: 'Shirt',
+        [ItemType.SCARF]: 'Scarf',
+        [ItemType.BADGE]: 'Badge',
+        [ItemType.OTHER]: 'Other',
+    };
+
     // Group items by club
     const groupedItems = useMemo(() => {
         const groups: Record<string, { 
@@ -105,9 +112,9 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                         key={group.club.id} 
                         style={{
                             display: 'flex',
-                            alignItems: 'center',
+                            alignItems: 'flex-start',
                             gap: '8px',
-                            padding: '3px 4px',
+                            padding: '5px 4px',
                             borderRadius: '8px',
                             margin: '0 -4px'
                         }}
@@ -134,13 +141,42 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                         </div>
                         
                         {/* Club info */}
-                        <div style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                            <span style={{ fontSize: '12px', fontWeight: 600, color: '#fff', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                                {group.club.name}
-                            </span>
-                            <span style={{ fontSize: '10px', color: 'rgba(148,163,184,0.6)', whiteSpace: 'nowrap', flexShrink: 0 }}>
-                                {group.club.city}, {group.club.country}
-                            </span>
+                        <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', minWidth: 0 }}>
+                                <span style={{ fontSize: '12px', fontWeight: 600, color: '#fff', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                    {group.club.name}
+                                </span>
+                                <span style={{ fontSize: '10px', color: 'rgba(148,163,184,0.6)', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                    {group.club.city}, {group.club.country}
+                                </span>
+                            </div>
+
+                            {group.keepsakes.length > 0 && (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexWrap: 'wrap' }}>
+                                    {Object.entries(
+                                        group.keepsakes.reduce<Record<string, number>>((acc, keepsake) => {
+                                            const itemType = (keepsake.properties as KeepsakePointProperties).itemType;
+                                            acc[itemType] = (acc[itemType] ?? 0) + 1;
+                                            return acc;
+                                        }, {})
+                                    ).map(([type, count]) => (
+                                        <span
+                                            key={`${group.club.id}-${type}`}
+                                            style={{
+                                                fontSize: '10px',
+                                                color: 'rgba(226,232,240,0.95)',
+                                                background: 'rgba(15,23,42,0.45)',
+                                                border: '1px solid rgba(148,163,184,0.25)',
+                                                borderRadius: '999px',
+                                                padding: '1px 6px',
+                                                lineHeight: 1.4,
+                                            }}
+                                        >
+                                            {count} {itemTypeLabel[type] || 'Item'}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 ))}
