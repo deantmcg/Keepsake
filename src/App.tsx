@@ -5,7 +5,8 @@ import { KeepsakeListPage } from './components/keepsakes/KeepsakeListPage';
 import { AddKeepsakeModal } from './components/keepsakes/AddKeepsakeModal';
 import { useKeepsakeStore } from './stores/keepsakeStore';
 import { useIsMobile } from './hooks/useIsMobile';
-import { Trophy, Map, Archive } from 'lucide-react';
+import { Map, Archive } from 'lucide-react';
+import { KeepsakeIcon } from './components/common/KeepsakeIcon';
 import type { Club } from './types/domain';
 
 type Page = 'map' | 'keepsakes';
@@ -40,13 +41,8 @@ function App() {
         }}>
           {/* Logo – icon + wordmark */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-            <div style={{
-              width: '28px', height: '28px', borderRadius: '50%',
-              background: 'rgba(52,211,153,0.2)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              flexShrink: 0,
-            }}>
-              <Trophy style={{ width: '14px', height: '14px', color: '#6ee7b7' }} />
+            <div style={{ color: '#fff', display: 'flex', alignItems: 'center' }}>
+              <KeepsakeIcon className="w-5 h-5" />
             </div>
             <span style={{
               fontSize: '16px', fontWeight: 600, letterSpacing: '-0.025em',
