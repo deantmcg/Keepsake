@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Trophy, Shirt, Wind, Award, MapPin, Sparkles } from 'lucide-react';
+import { Trophy, Shirt, Wind, Award, MapPin, CircleCheckBig } from 'lucide-react';
 import type { PointFeature, ClusterProperties, KeepsakePointProperties } from '../../hooks/useSupercluster';
 import type { Club } from '../../types/domain';
 import { ItemType } from '../../types/domain';
@@ -81,9 +81,9 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                 </div>
                 {keepsakeCount > 0 && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <Sparkles style={{ width: '14px', height: '14px', color: '#34d399', flexShrink: 0 }} />
+                        <CircleCheckBig style={{ width: '14px', height: '14px', color: '#34d399', flexShrink: 0 }} />
                         <span style={{ fontSize: '15px', fontWeight: 700, color: '#34d399' }}>{keepsakeCount}</span>
-                        <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>collected</span>
+                        <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>item</span>
                     </div>
                 )}
             </div>
