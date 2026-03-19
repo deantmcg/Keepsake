@@ -122,32 +122,6 @@ function App() {
             pointerEvents: 'auto',
             height: `${NAV_HEIGHT}px`,
           }}>
-            {/* Logo */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{
-                width: '28px', height: '28px', borderRadius: '50%',
-                background: 'rgba(52,211,153,0.2)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                <Trophy style={{ width: '14px', height: '14px', color: '#6ee7b7' }} />
-              </div>
-              <div style={{ lineHeight: '1' }}>
-                <h1 style={{
-                  fontSize: '22px', fontWeight: 600, letterSpacing: '-0.025em',
-                  color: 'rgba(255,255,255,0.95)',
-                  textShadow: '0 1px 10px rgba(0,0,0,0.5)',
-                }}>
-                  Keepsake
-                </h1>
-                <p style={{
-                  fontSize: '10px', textTransform: 'uppercase',
-                  letterSpacing: '0.18em', color: 'rgba(255,255,255,0.45)', marginTop: '2px',
-                }}>
-                  Collection Tracker
-                </p>
-              </div>
-            </div>
-
             {/* Navigation tabs */}
             <nav style={{
               display: 'flex', gap: '2px', height: '100%', alignItems: 'center',
