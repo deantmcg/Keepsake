@@ -70,13 +70,13 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
     const renderClusterHeader = () => {
         if (!isCluster || !clusterProps) return null;
         
-        const { point_count, keepsakeCount } = clusterProps;
+        const { clubCount, keepsakeCount } = clusterProps;
         
         return (
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px', paddingBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <MapPin style={{ width: '14px', height: '14px', color: 'rgba(255,255,255,0.45)', flexShrink: 0 }} />
-                    <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{point_count}</span>
+                    <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{clubCount}</span>
                     <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>clubs</span>
                 </div>
                 {keepsakeCount > 0 && (
