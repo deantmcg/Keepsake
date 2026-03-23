@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 import { ArrowLeft, Shirt, Wind, Award, Trophy, Trash2, PackageOpen } from 'lucide-react';
 import { useKeepsakeStore, type KeepsakeWithLocation } from '../../stores/keepsakeStore';
 import { CLUBS } from '../../services/clubs';
+import { MATCHES } from '../../services/matches';
+import type { MatchData } from '../../services/matches';
 import type { Club } from '../../types/domain';
 import { ItemType } from '../../types/domain';
 
@@ -19,6 +21,10 @@ function getItemIcon(type: string) {
     }
 }
 
+function getMatchById(matchId: string): MatchData | undefined {
+    return MATCHES.find(m => m.id === matchId);
+}
+
 function getItemLabel(k: KeepsakeWithLocation) {
     if (k.type === ItemType.SHIRT && k.shirtDetails) {
         const kitMap: Record<string, string> = {
@@ -28,8 +34,14 @@ function getItemLabel(k: KeepsakeWithLocation) {
         const kit = kitMap[k.shirtDetails.kitType] ?? k.shirtDetails.kitType;
         return `${kit} Shirt${k.season ? ` · ${k.season}` : ''}`;
     }
+    if (k.type === ItemType.MATCH && k.matchId) {
+        const match = getMatchById(k.matchId);
+        if (match) {
+            return `${match.homeTeam.name} ${match.homeTeam.score} - ${match.awayTeam.score} ${match.awayTeam.name}`;
+        }
+    }
     const typeMap: Record<string, string> = {
-        SHIRT: 'Shirt', SCARF: 'Scarf', BADGE: 'Badge', OTHER: 'Other',
+        SHIRT: 'Shirt', SCARF: 'Scarf', BADGE: 'Badge', MATCH: 'Match', OTHER: 'Other',
     };
     return typeMap[k.type] ?? k.type;
 }
@@ -220,6 +232,19 @@ export const KeepsakeListPage: React.FC<KeepsakeListPageProps> = ({ onBack }) =>
                                                 }}>
                                                     {getItemLabel(item)}
                                                 </p>
+                                                {item.type === ItemType.MATCH && item.matchId && (() => {
+                                                    const match = getMatchById(item.matchId);
+                                                    if (!match) return null;
+                                                    return (
+                                                        <p style={{
+                                                            fontSize: '11px', color: 'rgba(148,163,184,0.6)',
+                                                            marginBottom: '2px',
+                                                            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                                                        }}>
+                                                            {match.competition} · {match.stadium}
+                                                        </p>
+                                                    );
+                                                })()}
                                                 {item.notes && (
                                                     <p style={{
                                                         fontSize: '11px', color: 'rgba(148,163,184,0.6)',
