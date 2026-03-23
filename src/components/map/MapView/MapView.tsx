@@ -6,7 +6,7 @@ import { flushSync } from 'react-dom';
 import { useMapStore } from '../../../stores/mapStore';
 import { useKeepsakeStore } from '../../../stores/keepsakeStore';
 import { useIsMobile } from '../../../hooks/useIsMobile';
-import { MOCK_CLUBS } from '../../../services/mock/clubs.mock';
+import { CLUBS } from '../../../services/clubs';
 import { ClusterMarker } from '../ClusterMarker';
 import { ClubMarker, KeepsakeMarker } from '../ClubMarker';
 import { HoverPreview } from '../HoverPreview';
@@ -53,7 +53,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
 
     // Create a map for fast club lookup
     const clubsMap = useMemo(() => {
-        return new Map<string, Club>(MOCK_CLUBS.map(c => [c.id, c]));
+        return new Map<string, Club>(CLUBS.map(c => [c.id, c]));
     }, []);
 
     // Identify clubs that have keepsakes
@@ -75,7 +75,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
         const features: PointFeature[] = [];
 
         // Add all clubs (skip clubs without keepsakes when filter is active)
-        MOCK_CLUBS.forEach(club => {
+        CLUBS.forEach(club => {
             const hasKeepsakes = clubsWithKeepsakes.has(club.id);
             if (showOnlyKeepsakes && !hasKeepsakes) return;
             

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { ArrowLeft, Shirt, Wind, Award, Trophy, Trash2, PackageOpen } from 'lucide-react';
 import { useKeepsakeStore, type KeepsakeWithLocation } from '../../stores/keepsakeStore';
-import { MOCK_CLUBS } from '../../services/mock/clubs.mock';
+import { CLUBS } from '../../services/clubs';
 import type { Club } from '../../types/domain';
 import { ItemType } from '../../types/domain';
 
@@ -38,7 +38,7 @@ export const KeepsakeListPage: React.FC<KeepsakeListPageProps> = ({ onBack }) =>
     const { keepsakes, removeKeepsake } = useKeepsakeStore();
 
     const clubsMap = useMemo(() => {
-        return new Map<string, Club>(MOCK_CLUBS.map(c => [c.id, c]));
+        return new Map<string, Club>(CLUBS.map(c => [c.id, c]));
     }, []);
 
     const groupedKeepsakes = useMemo(() => {

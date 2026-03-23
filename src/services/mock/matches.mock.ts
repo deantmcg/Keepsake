@@ -1,5 +1,5 @@
 import type { Match } from '../../types/domain';
-import { MOCK_CLUBS } from './clubs.mock';
+import { CLUBS } from '../clubs';
 
 export const MOCK_MATCHES: Match[] = [
     {
@@ -71,7 +71,7 @@ export const MOCK_MATCHES: Match[] = [
 
 // Helper function to get club name by ID
 export const getClubById = (id: string) => {
-    return MOCK_CLUBS.find(club => club.id === id);
+    return CLUBS.find(club => club.id === id);
 };
 
 // Helper function to format match for dropdown

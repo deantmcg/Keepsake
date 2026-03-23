@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { Search, X } from 'lucide-react';
 import { StadiumIcon } from './StadiumIcon';
-import { MOCK_CLUBS } from '../../services/mock/clubs.mock';
+import { CLUBS } from '../../services/clubs';
 import { useMapStore } from '../../stores/mapStore';
 import type { Club, Stadium } from '../../types/domain';
 
@@ -80,21 +80,21 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ isMobile = false }) => {
         if (!trimmed) return [];
 
         // Score clubs
-        const clubResults = MOCK_CLUBS
+        const clubResults = CLUBS
             .map(club => ({ kind: 'club' as const, club, score: scoreClub(club, trimmed) }))
             .filter(r => r.score > 0);
 
         // Score unique stadiums (deduplicate by stadium.id)
         const seenStadiumIds = new Set<string>();
         const stadiumResults: { kind: 'stadium'; stadium: Stadium; tenants: Club[]; score: number }[] = [];
-        for (const club of MOCK_CLUBS) {
+        for (const club of CLUBS) {
             if (!club.stadium) continue;
             const s = club.stadium;
             if (seenStadiumIds.has(s.id)) continue;
             seenStadiumIds.add(s.id);
             const score = scoreStadium(s, trimmed);
             if (score > 0) {
-                const tenants = MOCK_CLUBS.filter(c => c.stadium?.id === s.id);
+                const tenants = CLUBS.filter(c => c.stadium?.id === s.id);
                 stadiumResults.push({ kind: 'stadium', stadium: s, tenants, score });
             }
         }
