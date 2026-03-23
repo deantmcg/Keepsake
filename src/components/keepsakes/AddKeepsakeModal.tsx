@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { X, Shirt, Wind, Award } from 'lucide-react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { X, Shirt, Wind, Award, Trophy, Search } from 'lucide-react';
 import type { Club } from '../../types/domain';
 import { ItemType } from '../../types/domain';
 import { useKeepsakeStore } from '../../stores/keepsakeStore';
+import { searchMatches } from '../../services/matches';
+import type { MatchData } from '../../services/matches';
 
 interface AddKeepsakeModalProps {
     club: Club;
@@ -44,20 +46,42 @@ const inputStyle: React.CSSProperties = {
 export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClose }) => {
     const addKeepsake = useKeepsakeStore(state => state.addKeepsake);
 
-    const [itemType, setItemType] = useState<'SHIRT' | 'SCARF' | 'BADGE'>('SHIRT');
+    const [itemType, setItemType] = useState<'SHIRT' | 'SCARF' | 'BADGE' | 'MATCH'>('SHIRT');
     const [season, setSeason] = useState('');
     const [kitType, setKitType] = useState<'HOME' | 'AWAY' | 'THIRD' | 'GOALKEEPER' | 'SPECIAL'>('HOME');
     const [notes, setNotes] = useState('');
+    const [matchQuery, setMatchQuery] = useState('');
+    const [selectedMatch, setSelectedMatch] = useState<MatchData | null>(null);
+    const [showMatchResults, setShowMatchResults] = useState(false);
+    const matchSearchRef = useRef<HTMLDivElement>(null);
+
+    const matchResults = useMemo(() => {
+        if (itemType !== 'MATCH') return [];
+        return searchMatches(matchQuery, club.id);
+    }, [matchQuery, itemType, club.id]);
+
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (matchSearchRef.current && !matchSearchRef.current.contains(e.target as Node)) {
+                setShowMatchResults(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (itemType === 'MATCH' && !selectedMatch) return;
 
         const keepsake = {
             id: crypto.randomUUID(),
             type: itemType as typeof ItemType[keyof typeof ItemType],
             clubId: club.id,
+            matchId: itemType === 'MATCH' && selectedMatch ? selectedMatch.id : undefined,
             season: itemType === 'SHIRT' ? (season || undefined) : undefined,
-            dateAcquired: new Date().toISOString().split('T')[0],
+            dateAcquired: itemType === 'MATCH' && selectedMatch ? selectedMatch.date : new Date().toISOString().split('T')[0],
             notes: notes || undefined,
             coordinates: club.coordinates,
             ...(itemType === 'SHIRT' ? { shirtDetails: { kitType } } : {}),
@@ -145,11 +169,12 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClos
                     {/* Item Type */}
                     <div style={{ marginBottom: '16px' }}>
                         <label style={labelStyle}>Type</label>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
                             {([
                                 { type: 'SHIRT', label: 'Shirt', Icon: Shirt },
                                 { type: 'SCARF', label: 'Scarf', Icon: Wind },
                                 { type: 'BADGE', label: 'Badge', Icon: Award },
+                                { type: 'MATCH', label: 'Match', Icon: Trophy },
                             ] as const).map(({ type, label, Icon }) => (
                                 <button
                                     key={type}
@@ -231,6 +256,149 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClos
                         </>
                     )}
 
+                    {/* Match search */}
+                    {itemType === 'MATCH' && (
+                        <div style={{ marginBottom: '16px' }} ref={matchSearchRef}>
+                            <label style={labelStyle}>Search Match</label>
+                            {selectedMatch ? (
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    padding: '10px 12px',
+                                    background: 'rgba(34,197,94,0.08)',
+                                    border: '1px solid rgba(34,197,94,0.3)',
+                                    borderRadius: '8px',
+                                }}>
+                                    <div style={{ flex: 1, minWidth: 0 }}>
+                                        <div style={{ fontSize: '13px', fontWeight: 600, color: '#fafafa' }}>
+                                            {selectedMatch.homeTeam.name} {selectedMatch.homeTeam.score} - {selectedMatch.awayTeam.score} {selectedMatch.awayTeam.name}
+                                        </div>
+                                        <div style={{ fontSize: '11px', color: 'rgba(148,163,184,0.7)', marginTop: '2px' }}>
+                                            {selectedMatch.competition} · {new Date(selectedMatch.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
+                                        </div>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={() => { setSelectedMatch(null); setMatchQuery(''); }}
+                                        style={{
+                                            background: 'rgba(255,255,255,0.08)',
+                                            border: '1px solid rgba(255,255,255,0.1)',
+                                            borderRadius: '6px',
+                                            color: 'rgba(255,255,255,0.5)',
+                                            cursor: 'pointer',
+                                            width: '24px',
+                                            height: '24px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            flexShrink: 0,
+                                            marginLeft: '8px',
+                                        }}
+                                        aria-label="Clear selection"
+                                    >
+                                        <X style={{ width: '12px', height: '12px' }} />
+                                    </button>
+                                </div>
+                            ) : (
+                                <div style={{ position: 'relative' }}>
+                                    <div style={{ position: 'relative' }}>
+                                        <Search style={{
+                                            position: 'absolute',
+                                            left: '10px',
+                                            top: '50%',
+                                            transform: 'translateY(-50%)',
+                                            width: '14px',
+                                            height: '14px',
+                                            color: 'rgba(148,163,184,0.5)',
+                                            pointerEvents: 'none',
+                                        }} />
+                                        <input
+                                            type="text"
+                                            value={matchQuery}
+                                            onChange={e => { setMatchQuery(e.target.value); setShowMatchResults(true); }}
+                                            onFocus={() => setShowMatchResults(true)}
+                                            placeholder="Search by team, competition, date..."
+                                            style={{ ...inputStyle, paddingLeft: '32px' }}
+                                            autoComplete="off"
+                                            autoCorrect="off"
+                                            autoCapitalize="off"
+                                            spellCheck={false}
+                                        />
+                                    </div>
+                                    {showMatchResults && matchResults.length > 0 && (
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '100%',
+                                            left: 0,
+                                            right: 0,
+                                            marginTop: '4px',
+                                            background: 'rgba(15,23,42,0.98)',
+                                            border: '1px solid rgba(255,255,255,0.1)',
+                                            borderRadius: '8px',
+                                            maxHeight: '200px',
+                                            overflowY: 'auto',
+                                            zIndex: 10,
+                                            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                                        }}>
+                                            {matchResults.map(match => (
+                                                <button
+                                                    key={match.id}
+                                                    type="button"
+                                                    onClick={() => {
+                                                        setSelectedMatch(match);
+                                                        setMatchQuery('');
+                                                        setShowMatchResults(false);
+                                                    }}
+                                                    style={{
+                                                        display: 'block',
+                                                        width: '100%',
+                                                        padding: '10px 12px',
+                                                        border: 'none',
+                                                        borderBottom: '1px solid rgba(255,255,255,0.05)',
+                                                        background: 'transparent',
+                                                        color: '#fafafa',
+                                                        cursor: 'pointer',
+                                                        textAlign: 'left',
+                                                        fontFamily: 'inherit',
+                                                        transition: 'background 100ms',
+                                                    }}
+                                                    onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.06)')}
+                                                    onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                                                >
+                                                    <div style={{ fontSize: '13px', fontWeight: 600 }}>
+                                                        {match.homeTeam.name} {match.homeTeam.score} - {match.awayTeam.score} {match.awayTeam.name}
+                                                    </div>
+                                                    <div style={{ fontSize: '11px', color: 'rgba(148,163,184,0.6)', marginTop: '2px' }}>
+                                                        {match.competition} · {new Date(match.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} · {match.stadium}
+                                                    </div>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                    {showMatchResults && matchQuery && matchResults.length === 0 && (
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '100%',
+                                            left: 0,
+                                            right: 0,
+                                            marginTop: '4px',
+                                            padding: '12px',
+                                            background: 'rgba(15,23,42,0.98)',
+                                            border: '1px solid rgba(255,255,255,0.1)',
+                                            borderRadius: '8px',
+                                            color: 'rgba(148,163,184,0.6)',
+                                            fontSize: '12px',
+                                            textAlign: 'center',
+                                        }}>
+                                            No matches found
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    )}
+
                     {/* Notes */}
                     <div style={{ marginBottom: '20px' }}>
                         <label style={labelStyle}>
@@ -273,16 +441,21 @@ export const AddKeepsakeModal: React.FC<AddKeepsakeModalProps> = ({ club, onClos
                         </button>
                         <button
                             type="submit"
+                            disabled={itemType === 'MATCH' && !selectedMatch}
                             style={{
                                 flex: 2,
                                 padding: '11px',
                                 borderRadius: '10px',
                                 border: '1px solid rgba(34,197,94,0.4)',
-                                background: 'rgba(34,197,94,0.15)',
-                                color: '#22c55e',
+                                background: itemType === 'MATCH' && !selectedMatch
+                                    ? 'rgba(34,197,94,0.05)'
+                                    : 'rgba(34,197,94,0.15)',
+                                color: itemType === 'MATCH' && !selectedMatch
+                                    ? 'rgba(34,197,94,0.4)'
+                                    : '#22c55e',
                                 fontSize: '13px',
                                 fontWeight: 600,
-                                cursor: 'pointer',
+                                cursor: itemType === 'MATCH' && !selectedMatch ? 'not-allowed' : 'pointer',
                                 fontFamily: 'inherit',
                             }}
                         >

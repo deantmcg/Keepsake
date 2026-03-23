@@ -32,6 +32,7 @@ export interface Coordinates {
 
 export const ItemType = {
     BADGE: 'BADGE',
+    MATCH: 'MATCH',
     SCARF: 'SCARF',
     SHIRT: 'SHIRT',
     OTHER: 'OTHER'
@@ -43,6 +44,7 @@ export interface CollectionItem {
     id: string;
     type: ItemType;
     clubId: string;
+    matchId?: string; // Link to a match from matches data
     season?: string; // e.g., "2023/24"
     dateAcquired: string; // ISO date
     notes?: string;
