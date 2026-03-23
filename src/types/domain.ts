@@ -6,6 +6,7 @@ export interface Club {
     country: string;
     city: string;
     stadium?: Stadium;
+    stadiumId?: string;
     coordinates: Coordinates;
     founded?: number;
     colors: string[];

@@ -1,4 +1,10 @@
-import type { Club } from '../types/domain';
-import clubsData from './data/clubs.json';
+import type { Club, Stadium } from '../types/domain';
+import clubsRaw from './data/clubs.json';
+import stadiumsRaw from './data/stadiums.json';
 
-export const CLUBS: Club[] = clubsData as Club[];
+const stadiums = stadiumsRaw as Stadium[];
+
+export const CLUBS: Club[] = (clubsRaw as any[]).map(club => ({
+    ...club,
+    stadium: stadiums.find(s => s.id === club.stadiumId)
+})) as Club[];
