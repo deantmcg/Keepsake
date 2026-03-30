@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shirt, Wind, Award, Trophy } from 'lucide-react';
 import type { ClubPointProperties, KeepsakePointProperties } from '../../hooks/useSupercluster';
+import { getCrestUrl } from '../../utils/crests';
 
 interface ClubMarkerProps {
     properties: ClubPointProperties;
@@ -24,8 +25,9 @@ export const ClubMarker: React.FC<ClubMarkerProps> = ({
     onMouseEnter,
     onMouseLeave,
 }) => {
-    const { color, color2, hasKeepsakes, keepsakeCount, clubName } = properties;
-    const gradId = `cg-${properties.clubId}`;
+    const { color, color2, hasKeepsakes, keepsakeCount, clubName, clubId } = properties;
+    const gradId = `cg-${clubId}`;
+    const crestUrl = getCrestUrl(clubId);
     
     return (
         <div
@@ -45,31 +47,42 @@ export const ClubMarker: React.FC<ClubMarkerProps> = ({
                         {keepsakeCount}
                     </div>
                 )}
-                <svg
-                    width="24"
-                    height="28"
-                    viewBox="0 0 24 28"
-                    className="drop-shadow-md"
-                >
-                    <defs>
-                        <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor={color} />
-                            <stop offset="100%" stopColor={color2 ?? color} />
-                        </linearGradient>
-                    </defs>
-                    {/* Shield shape */}
-                    <path
-                        d="M12 2 L22 6 L22 14 C22 20 12 26 12 26 C12 26 2 20 2 14 L2 6 L12 2 Z"
-                        fill={`url(#${gradId})`}
-                        stroke="white"
-                        strokeWidth="1.5"
+                {crestUrl ? (
+                    <img
+                        src={crestUrl}
+                        alt={clubName}
+                        width={28}
+                        height={28}
+                        className="drop-shadow-md"
+                        draggable={false}
                     />
-                    {/* Inner highlight */}
-                    <path
-                        d="M12 5 L19 8 L19 13 C19 17.5 12 22 12 22 C12 22 5 17.5 5 13 L5 8 L12 5 Z"
-                        fill="rgba(255,255,255,0.15)"
-                    />
-                </svg>
+                ) : (
+                    <svg
+                        width="24"
+                        height="28"
+                        viewBox="0 0 24 28"
+                        className="drop-shadow-md"
+                    >
+                        <defs>
+                            <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor={color} />
+                                <stop offset="100%" stopColor={color2 ?? color} />
+                            </linearGradient>
+                        </defs>
+                        {/* Shield shape */}
+                        <path
+                            d="M12 2 L22 6 L22 14 C22 20 12 26 12 26 C12 26 2 20 2 14 L2 6 L12 2 Z"
+                            fill={`url(#${gradId})`}
+                            stroke="white"
+                            strokeWidth="1.5"
+                        />
+                        {/* Inner highlight */}
+                        <path
+                            d="M12 5 L19 8 L19 13 C19 17.5 12 22 12 22 C12 22 5 17.5 5 13 L5 8 L12 5 Z"
+                            fill="rgba(255,255,255,0.15)"
+                        />
+                    </svg>
+                )}
             </div>
         </div>
     );

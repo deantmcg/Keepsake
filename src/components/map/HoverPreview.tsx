@@ -3,6 +3,7 @@ import { Trophy, Shirt, Wind, Award, MapPin, CircleCheckBig } from 'lucide-react
 import type { PointFeature, ClusterProperties, KeepsakePointProperties } from '../../hooks/useSupercluster';
 import type { Club } from '../../types/domain';
 import { ItemType } from '../../types/domain';
+import { getCrestUrl } from '../../utils/crests';
 
 interface HoverPreviewProps {
     features: PointFeature[];
@@ -119,26 +120,35 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                             margin: '0 -4px'
                         }}
                     >
-                        {/* Club color badge */}
-                        <div 
-                            style={{ 
-                                width: '24px',
-                                height: '24px',
-                                borderRadius: '6px',
-                                flexShrink: 0,
-                                boxShadow: '0 2px 4px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.2)',
-                                background: `linear-gradient(135deg, ${group.club.colors[0] || '#666'}, ${group.club.colors[1] || group.club.colors[0] || '#666'})`,
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            {group.keepsakes.length > 0 && (
-                                <span style={{ color: '#fff', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.4))', display: 'flex' }}>
-                                    {getItemIcon((group.keepsakes[0].properties as KeepsakePointProperties).itemType)}
-                                </span>
-                            )}
-                        </div>
+                        {/* Club crest or colour badge */}
+                        {getCrestUrl(group.club.id) ? (
+                            <img
+                                src={getCrestUrl(group.club.id)}
+                                alt={group.club.name}
+                                style={{ width: '24px', height: '24px', flexShrink: 0, objectFit: 'contain' }}
+                                draggable={false}
+                            />
+                        ) : (
+                            <div 
+                                style={{ 
+                                    width: '24px',
+                                    height: '24px',
+                                    borderRadius: '6px',
+                                    flexShrink: 0,
+                                    boxShadow: '0 2px 4px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.2)',
+                                    background: `linear-gradient(135deg, ${group.club.colors[0] || '#666'}, ${group.club.colors[1] || group.club.colors[0] || '#666'})`,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}
+                            >
+                                {group.keepsakes.length > 0 && (
+                                    <span style={{ color: '#fff', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.4))', display: 'flex' }}>
+                                        {getItemIcon((group.keepsakes[0].properties as KeepsakePointProperties).itemType)}
+                                    </span>
+                                )}
+                            </div>
+                        )}
                         
                         {/* Club info */}
                         <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: '2px' }}>
