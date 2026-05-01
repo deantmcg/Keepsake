@@ -1,13 +1,15 @@
 import React, { useMemo } from 'react';
 import { Trophy, Shirt, Wind, Award, MapPin, CircleCheckBig } from 'lucide-react';
-import type { PointFeature, ClusterProperties, KeepsakePointProperties } from '../../hooks/useSupercluster';
-import type { Club } from '../../types/domain';
+import type { PointFeature, ClusterProperties, KeepsakePointProperties, StadiumPointProperties } from '../../hooks/useSupercluster';
+import type { Club, Stadium } from '../../types/domain';
 import { ItemType } from '../../types/domain';
 import { getCrestUrl } from '../../utils/crests';
+import { StadiumIcon } from './StadiumIcon';
 
 interface HoverPreviewProps {
     features: PointFeature[];
     clubsMap: Map<string, Club>;
+    stadiumsMap?: Map<string, Stadium>;
     isCluster: boolean;
     clusterProps?: ClusterProperties;
 }
@@ -15,6 +17,7 @@ interface HoverPreviewProps {
 export const HoverPreview: React.FC<HoverPreviewProps> = ({
     features,
     clubsMap,
+    stadiumsMap,
     isCluster,
     clusterProps,
 }) => {
@@ -24,6 +27,18 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         [ItemType.BADGE]: 'Badge',
         [ItemType.OTHER]: 'Other',
     };
+
+    // Detect mode from the feature types
+    const isStadiumMode = features.length > 0 && features[0].properties.pointType === 'stadium';
+
+    // Stadium items list (stadium mode)
+    const stadiumItems = useMemo((): Stadium[] => {
+        if (!isStadiumMode || !stadiumsMap) return [];
+        return features
+            .filter(f => f.properties.pointType === 'stadium')
+            .map(f => stadiumsMap.get((f.properties as StadiumPointProperties).stadiumId))
+            .filter((s): s is Stadium => s !== undefined);
+    }, [features, isStadiumMode, stadiumsMap]);
 
     // Group items by club
     const groupedItems = useMemo(() => {
@@ -79,13 +94,14 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         if (!isCluster || !clusterProps) return null;
         
         const { clubCount, keepsakeCount } = clusterProps;
+        const entityLabel = isStadiumMode ? 'stadiums' : 'clubs';
         
         return (
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px', paddingBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <MapPin style={{ width: '14px', height: '14px', color: 'rgba(255,255,255,0.45)', flexShrink: 0 }} />
                     <span style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{clubCount}</span>
-                    <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>clubs</span>
+                    <span style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(148,163,184,0.9)' }}>{entityLabel}</span>
                 </div>
                 {keepsakeCount > 0 && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -98,17 +114,63 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
         );
     };
 
-    // Limit displayed clubs for large clusters
+    // Limit displayed items for large clusters
     const displayLimit = isCluster ? 8 : 10;
     const displayedGroups = groupedItems.slice(0, displayLimit);
-    const remainingCount = groupedItems.length - displayLimit;
+    const displayedStadiums = stadiumItems.slice(0, displayLimit);
+    const remainingCount = isStadiumMode
+        ? stadiumItems.length - displayLimit
+        : groupedItems.length - displayLimit;
 
     return (
         <div className="p-4 min-w-[240px] max-w-[340px] font-sans">
             {renderClusterHeader()}
             
             <div className="hide-scrollbar" style={{ display: 'flex', flexDirection: 'column', gap: '3px', maxHeight: '300px', overflowY: 'auto', paddingRight: '4px', scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}>
-                {displayedGroups.map((group) => (
+                {/* Stadium mode list */}
+                {isStadiumMode && displayedStadiums.map((stadium) => (
+                    <div
+                        key={stadium.id}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            padding: '5px 4px',
+                            borderRadius: '8px',
+                            margin: '0 -4px',
+                        }}
+                    >
+                        {/* Stadium icon badge */}
+                        <div style={{
+                            width: '24px',
+                            height: '24px',
+                            borderRadius: '50%',
+                            background: 'rgba(14,165,233,0.15)',
+                            border: '1px solid rgba(14,165,233,0.5)',
+                            flexShrink: 0,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}>
+                            <StadiumIcon size={13} color="rgba(14,165,233,1)" />
+                        </div>
+
+                        {/* Stadium info */}
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', minWidth: 0 }}>
+                                <span style={{ fontSize: '12px', fontWeight: 600, color: '#fff', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                    {stadium.name}
+                                </span>
+                                <span style={{ fontSize: '10px', color: 'rgba(148,163,184,0.6)', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                    {stadium.city}, {stadium.country}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+
+                {/* Club mode list */}
+                {!isStadiumMode && displayedGroups.map((group) => (
                     <div 
                         key={group.club.id} 
                         style={{
@@ -193,7 +255,7 @@ export const HoverPreview: React.FC<HoverPreviewProps> = ({
                 
                 {remainingCount > 0 && (
                     <div style={{ fontSize: '11px', color: 'rgba(148,163,184,0.7)', textAlign: 'center', paddingTop: '6px', marginTop: '2px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                        +{remainingCount} more clubs
+                        +{remainingCount} more {isStadiumMode ? 'stadiums' : 'clubs'}
                     </div>
                 )}
             </div>

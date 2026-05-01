@@ -1,7 +1,8 @@
 import React from 'react';
 import { Shirt, Wind, Award, Trophy } from 'lucide-react';
-import type { ClubPointProperties, KeepsakePointProperties } from '../../hooks/useSupercluster';
+import type { ClubPointProperties, KeepsakePointProperties, StadiumPointProperties } from '../../hooks/useSupercluster';
 import { getCrestUrl } from '../../utils/crests';
+import { StadiumIcon } from './StadiumIcon';
 
 interface ClubMarkerProps {
     properties: ClubPointProperties;
@@ -168,6 +169,48 @@ export const KeepsakeMarker: React.FC<KeepsakeMarkerProps> = ({
                 <div className="absolute top-[10px] left-1/2 -translate-x-1/2 flex items-center justify-center w-5 h-5">
                     {getIcon()}
                 </div>
+            </div>
+        </div>
+    );
+};
+
+interface StadiumMarkerProps {
+    properties: StadiumPointProperties;
+    onClick: () => void;
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
+}
+
+export const StadiumMarker: React.FC<StadiumMarkerProps> = ({
+    properties,
+    onClick,
+    onMouseEnter,
+    onMouseLeave,
+}) => {
+    const { stadiumName } = properties;
+
+    return (
+        <div
+            className="cursor-pointer transition-all duration-200 hover:scale-125 hover:z-10"
+            onClick={onClick}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            title={stadiumName}
+        >
+            <div
+                style={{
+                    width: '34px',
+                    height: '34px',
+                    borderRadius: '50%',
+                    background: 'rgba(14,165,233,0.18)',
+                    border: '2px solid rgba(14,165,233,0.75)',
+                    boxShadow: '0 0 8px rgba(14,165,233,0.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <StadiumIcon size={18} color="rgba(14,165,233,1)" />
             </div>
         </div>
     );

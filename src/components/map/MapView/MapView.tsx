@@ -6,9 +6,9 @@ import { flushSync } from 'react-dom';
 import { useMapStore } from '../../../stores/mapStore';
 import { useKeepsakeStore } from '../../../stores/keepsakeStore';
 import { useIsMobile } from '../../../hooks/useIsMobile';
-import { CLUBS } from '../../../services/clubs';
+import { CLUBS, STADIUMS } from '../../../services/clubs';
 import { ClusterMarker } from '../ClusterMarker';
-import { ClubMarker, KeepsakeMarker } from '../ClubMarker';
+import { ClubMarker, KeepsakeMarker, StadiumMarker } from '../ClubMarker';
 import { HoverPreview } from '../HoverPreview';
 import { ZoomControl } from '../ZoomControl';
 import { LogoBar } from '../../layout/LogoBar';
@@ -19,7 +19,8 @@ import {
     isPoint,
     type PointFeature, 
     type MapFeature,
-    type ClubPointProperties
+    type ClubPointProperties,
+    type StadiumPointProperties
 } from '../../../hooks/useSupercluster';
 import type { Club } from '../../../types/domain';
 import type { BBox } from 'geojson';
@@ -43,6 +44,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
     const popupRootRef = useRef<Root | null>(null);
     
     const { center, zoom, setViewport, flyToTarget } = useMapStore();
+    const showStadiums = useMapStore(state => state.showStadiums);
     const keepsakes = useKeepsakeStore(state => state.keepsakes);
     const showOnlyKeepsakes = useKeepsakeStore(state => state.showOnlyKeepsakes);
     const isMobile = useIsMobile();
@@ -54,6 +56,11 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
     // Create a map for fast club lookup
     const clubsMap = useMemo(() => {
         return new Map<string, Club>(CLUBS.map(c => [c.id, c]));
+    }, []);
+
+    // Create a map for fast stadium lookup
+    const stadiumsMap = useMemo(() => {
+        return new Map(STADIUMS.map(s => [s.id, s]));
     }, []);
 
     // Identify clubs that have keepsakes
@@ -72,6 +79,23 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
 
     // Prepare GeoJSON point features for Supercluster
     const points = useMemo((): PointFeature[] => {
+        // Stadium mode: plot all stadiums instead of clubs
+        if (showStadiums) {
+            return STADIUMS.map(stadium => ({
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [stadium.coordinates.longitude, stadium.coordinates.latitude]
+                },
+                properties: {
+                    pointType: 'stadium',
+                    stadiumId: stadium.id,
+                    stadiumName: stadium.name,
+                    color: '#0ea5e9',
+                } as StadiumPointProperties
+            }));
+        }
+
         const features: PointFeature[] = [];
 
         // Add all clubs (skip clubs without keepsakes when filter is active)
@@ -98,7 +122,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
         });
 
         return features;
-    }, [clubsWithKeepsakes, keepsakeCountsByClub, showOnlyKeepsakes]);
+    }, [clubsWithKeepsakes, keepsakeCountsByClub, showOnlyKeepsakes, showStadiums]);
 
     // Use Supercluster for clustering
     const { clusters, getClusterExpansionZoom, getClusterLeaves } = useSupercluster({
@@ -115,6 +139,9 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
         const props = feature.properties;
         if (props.pointType === 'keepsake') {
             return `keepsake-${props.keepsakeId}`;
+        }
+        if (props.pointType === 'stadium') {
+            return `stadium-${props.stadiumId}`;
         }
         return `club-${props.clubId}`;
     }, []);
@@ -166,6 +193,29 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
                 },
             }) as PointFeature);
             features = [feature, ...keepsakeFeatures];
+        } else if (feature.properties.pointType === 'stadium') {
+            // Show a simple name label — no HoverPreview needed
+            const stadiumName = feature.properties.stadiumName;
+            const popupElement = document.createElement('div');
+            popupElement.style.cssText = 'padding:8px 12px;font-size:13px;font-weight:500;color:#fff;white-space:nowrap;';
+            popupElement.textContent = stadiumName;
+
+            const screenPoint = map.current.project(coordinates);
+            const mapHeight = map.current.getContainer().clientHeight;
+            const anchor = screenPoint.y < mapHeight * 0.45 ? 'top' : 'bottom';
+
+            popupRef.current = new maplibregl.Popup({
+                closeButton: false,
+                closeOnClick: false,
+                className: 'keepsake-popup',
+                maxWidth: '340px',
+                offset: 15,
+                anchor,
+            })
+                .setLngLat(coordinates)
+                .setDOMContent(popupElement)
+                .addTo(map.current);
+            return;
         } else {
             features = [feature];
         }
@@ -184,6 +234,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
                 <HoverPreview 
                     features={features}
                     clubsMap={clubsMap}
+                    stadiumsMap={stadiumsMap}
                     isCluster={isCluster(feature)}
                     clusterProps={clusterProps}
                 />
@@ -201,7 +252,7 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
             .setLngLat(coordinates)
             .setDOMContent(popupElement)
             .addTo(map.current);
-    }, [clubsMap, getClusterLeaves, keepsakes]);
+    }, [clubsMap, stadiumsMap, getClusterLeaves, keepsakes]);
 
     // Hide popup
     const hidePopup = useCallback(() => {
@@ -342,6 +393,15 @@ export const MapView: React.FC<MapViewProps> = ({ onClubClick }) => {
                         properties={feature.properties}
                         clubColor={club?.colors[0] || '#888'}
                         onClick={() => {/* TODO: Open keepsake detail */}}
+                        onMouseEnter={() => showPopup(coordinates, feature)}
+                        onMouseLeave={hidePopup}
+                    />
+                );
+            } else if (feature.properties.pointType === 'stadium') {
+                markerInstance.root.render(
+                    <StadiumMarker
+                        properties={feature.properties}
+                        onClick={() => {}}
                         onMouseEnter={() => showPopup(coordinates, feature)}
                         onMouseLeave={hidePopup}
                     />

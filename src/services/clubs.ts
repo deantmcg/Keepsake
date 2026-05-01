@@ -4,6 +4,8 @@ import stadiumsRaw from './data/stadiums.json';
 
 const stadiums = stadiumsRaw as Stadium[];
 
+export const STADIUMS: Stadium[] = stadiums;
+
 export const CLUBS: Club[] = (clubsRaw as any[]).map(club => ({
     ...club,
     stadium: stadiums.find(s => s.id === club.stadiumId)

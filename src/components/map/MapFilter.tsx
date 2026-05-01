@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { SlidersHorizontal, ChevronDown } from 'lucide-react';
 import { useKeepsakeStore } from '../../stores/keepsakeStore';
+import { useMapStore } from '../../stores/mapStore';
 import { useIsMobile } from '../../hooks/useIsMobile';
 
 export const MapFilter: React.FC = () => {
-    const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = useState(true);
     const showOnlyKeepsakes = useKeepsakeStore(state => state.showOnlyKeepsakes);
     const setShowOnlyKeepsakes = useKeepsakeStore(state => state.setShowOnlyKeepsakes);
+    const showStadiums = useMapStore(state => state.showStadiums);
+    const setShowStadiums = useMapStore(state => state.setShowStadiums);
     const isMobile = useIsMobile();
 
-    const activeCount = showOnlyKeepsakes ? 1 : 0;
+    const activeCount = (showOnlyKeepsakes ? 1 : 0) + (showStadiums ? 1 : 0);
 
     const panelBase: React.CSSProperties = {
         background: 'rgba(0,0,0,0.65)',
@@ -77,7 +80,11 @@ export const MapFilter: React.FC = () => {
                     borderTop: 'none',
                     borderRadius: '0 0 12px 12px',
                     padding: '10px 14px 12px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px',
                 }}>
+                    {/* Keepsakes filter */}
                     <label style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -99,6 +106,64 @@ export const MapFilter: React.FC = () => {
                         />
                         <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.8)', whiteSpace: 'nowrap' }}>
                             Keepsakes only
+                        </span>
+                    </label>
+
+                    {/* Divider */}
+                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }} />
+
+                    {/* Map section label */}
+                    <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase' }}>
+                        Map
+                    </span>
+
+                    {/* Show clubs */}
+                    <label style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        cursor: 'pointer',
+                        userSelect: 'none',
+                    }}>
+                        <input
+                            type="checkbox"
+                            checked={!showStadiums}
+                            onChange={() => setShowStadiums(false)}
+                            style={{
+                                width: '15px',
+                                height: '15px',
+                                cursor: 'pointer',
+                                accentColor: '#22c55e',
+                                flexShrink: 0,
+                            }}
+                        />
+                        <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.8)', whiteSpace: 'nowrap' }}>
+                            Show clubs
+                        </span>
+                    </label>
+
+                    {/* Show stadiums */}
+                    <label style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        cursor: 'pointer',
+                        userSelect: 'none',
+                    }}>
+                        <input
+                            type="checkbox"
+                            checked={showStadiums}
+                            onChange={e => setShowStadiums(e.target.checked)}
+                            style={{
+                                width: '15px',
+                                height: '15px',
+                                cursor: 'pointer',
+                                accentColor: '#0ea5e9',
+                                flexShrink: 0,
+                            }}
+                        />
+                        <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.8)', whiteSpace: 'nowrap' }}>
+                            Show stadiums
                         </span>
                     </label>
                 </div>

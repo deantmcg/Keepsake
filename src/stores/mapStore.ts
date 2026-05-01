@@ -13,6 +13,7 @@ interface MapState {
     selectedMarkerId: string | null;
     selectedMarkerType: 'CLUB' | 'STADIUM' | 'MATCH' | null;
     flyToTarget: FlyToTarget | null;
+    showStadiums: boolean;
 
     // Actions
     setCenter: (center: Coordinates) => void;
@@ -21,6 +22,7 @@ interface MapState {
     selectMarker: (id: string, type: 'CLUB' | 'STADIUM' | 'MATCH') => void;
     clearSelection: () => void;
     flyTo: (center: Coordinates, zoom: number) => void;
+    setShowStadiums: (value: boolean) => void;
 }
 
 const DEFAULT_CENTER: Coordinates = { latitude: 20, longitude: 0 }; // World view
@@ -32,6 +34,7 @@ export const useMapStore = create<MapState>((set) => ({
     selectedMarkerId: null,
     selectedMarkerType: null,
     flyToTarget: null,
+    showStadiums: false,
 
     setCenter: (center) => set({ center }),
     setZoom: (zoom) => set({ zoom }),
@@ -41,4 +44,5 @@ export const useMapStore = create<MapState>((set) => ({
     flyTo: (center, zoom) => set((state) => ({
         flyToTarget: { center, zoom, id: (state.flyToTarget?.id ?? 0) + 1 }
     })),
+    setShowStadiums: (value) => set({ showStadiums: value }),
 }));

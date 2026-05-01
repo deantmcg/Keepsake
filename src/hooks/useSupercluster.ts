@@ -21,7 +21,14 @@ export interface KeepsakePointProperties {
     color: string;
 }
 
-export type PointProperties = ClubPointProperties | KeepsakePointProperties;
+export interface StadiumPointProperties {
+    pointType: 'stadium';
+    stadiumId: string;
+    stadiumName: string;
+    color: string;
+}
+
+export type PointProperties = ClubPointProperties | KeepsakePointProperties | StadiumPointProperties;
 
 // Custom aggregated properties (used during reduce)
 export interface AggregatedProperties {
@@ -62,9 +69,9 @@ const defaultOptions: Supercluster.Options<PointProperties, AggregatedProperties
     minZoom: 0,
     // Map function: transform each point for aggregation
     map: (props): AggregatedProperties => ({
-        keepsakeCount: props.pointType === 'club' ? props.keepsakeCount : 1,
-        clubCount: props.pointType === 'club' ? 1 : 0,
-        topColors: props.pointType === 'club' ? [props.color] : [],
+        keepsakeCount: props.pointType === 'club' ? props.keepsakeCount : props.pointType === 'keepsake' ? 1 : 0,
+        clubCount: props.pointType === 'club' || props.pointType === 'stadium' ? 1 : 0,
+        topColors: props.pointType === 'club' || props.pointType === 'stadium' ? [props.color] : [],
         hasKeepsakes: props.pointType === 'keepsake' || 
             (props.pointType === 'club' && props.hasKeepsakes),
     }),
